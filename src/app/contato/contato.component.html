@@ -1,0 +1,44 @@
+<div id="background">
+    <div style="padding-top:20px" class="container">
+        <div style="text-align: center;" class="row">
+            <div class="col-12">
+                <!-- <img src="/Imagens/LOGO_MENOR-01.png" alt="Logo da AmaZ" id="Logo"> -->
+            </div>
+            <div class="col-12" id="caixa1">
+                <img src="assets/CONTATO-01.png" alt="Título da página: Contato" id="titcontato">
+            </div>
+    
+            <form>
+                <div>
+                    <label class="titulos" for="name">Nome:</label>
+                    <input type="text" id="name" name="name_usuario">
+                    <div style="display: none" class="alert alert-danger" role="alert-name" id="alert-name">
+                    </div>
+                </div>
+                <div>
+                    <label class="titulos" for="email">E-mail:</label>
+                    <input type="email" id="email" name="email_usuario" size="40" maxlength="40">
+                    <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu email com mais
+                        ninguém.</small>
+                    <div style="display: none" class="alert alert-danger" role="alert-email" id="alert-email">
+                    </div>
+                </div>
+                <div>
+                    <label class="titulos" for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone_usuario"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="14">
+                    <div style="display: none" class="alert alert-danger" role="alert-tel" id="alert-tel">
+                    </div>
+                </div>
+                <div>
+                    <label class="titulos" for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem_usuario"></textarea>
+                    <div style="display: none" class="alert alert-danger" role="alert-mensagem" id="alert-mensagem">
+                    </div>
+                </div>
+                <div>
+                    <button class="btn" type="button" onclick="validateForm()" id="enviar">Enviar</button>
+                    <button class="btn" type="reset">Redefinir</button>
+                </div>
+            </form>
+        </div>
