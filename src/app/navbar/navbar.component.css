@@ -1,16 +1,12 @@
-.navbar-bege {
-    background-color: rgb(189, 196, 170);
-    height: 55px;
+.navbar-collapse{
+    background-color: rgb(189, 196, 170)!important;
+}
+
+.navbar-light {
+    background-color: rgb(189, 196, 170)!important;
 }
 
 .nav-link {
     color: rgba(72, 97, 77, 1);
     font-weight: 550;
 }
-
-.navbar-brand {
-    color: rgba(72, 97, 77, 1);
-    padding-left: 10px;
-    padding-top: 10px;
-}
-
