@@ -1,1 +1,70 @@
-<p>produtos works!</p>
+<div style="margin-top: 50px" class="d-block position-sticky text-center">
+    <h4>Consulta de Produtos</h4>
+</div>
+
+<div style="margin-top: 50px" class="d-block position-sticky text-center">
+    <input class="align-middle" style="height: 40px; width:200px; margin:5px" id="idProduto" type="number"
+        [(ngModel)]="idProduto" />
+    <button class="btn btn-info align-middle" id="btnId" (click)="findIdProduto()">Consultar Id</button>
+    <button class="btn btn-info align-middle" id="btnAll" (click)="btnAll()">Consultar All</button>
+    <br />
+</div>
+
+<div style="margin-top: 50px" class="d-block position-sticky">
+
+    <div class="container col-8 align-middle" style="width: 720px;" *ngIf="produtoNao == true">
+        <div class="card mb-3 align-middle" style="max-width: 720px;">
+            <div class="row no-gutters">
+                               <div style="background-color: rgb(170, 170, 170)" class="col-xl-7 col-lg-7 col-sm-12">
+                    <div class="card-body">
+                        <h5 class="card-title">Produto não encontrado!</h5>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="container col-8 align-middle" style="width: 720px;" *ngIf="showId == true">
+        <div class="card mb-3 align-middle" style="max-width: 720px;">
+            <div class="row no-gutters">
+                <div class="col-xl-5 col-lg-5 col-sm-12">
+                    <img src="{{item.linkfoto}}" class="card-img" alt="...">
+                </div>
+                <div style="background-color: rgb(170, 170, 170)" class="col-xl-7 col-lg-7 col-sm-12">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.idProduto}} - {{item.titulo}}</h5>
+                        <h6 class="card-text">Preço: R$ {{item.preco}},00</h6>
+                        <p class="card-text">Detalhes: {{item.detalhes}}</p>
+                        <p class="card-text"><small class="text-muted">Quantidade no Estoque:
+                                {{item.qtdEstoque}}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container col-8 align-middle" style="width: 720px;" *ngIf="showAll == true">
+        <div *ngFor="let item of itens">
+            <div class="card mb-3 align-middle" style="max-width: 720px;">
+                <div class="row no-gutters">
+                    <div class="col-xl-5 col-lg-5 col-sm-12">
+                        <img src="{{item.linkfoto}}" class="card-img" alt="...">
+                    </div>
+                    <div style="background-color: rgb(170, 170, 170)" class="col-xl-7 col-lg-7 col-sm-12">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.idProduto}} - {{item.titulo}}</h5>
+                            <h6 class="card-text">Preço: R$ {{item.preco}},00</h6>
+                            <p class="card-text">Detalhes: {{item.detalhes}}</p>
+                            <p class="card-text"><small class="text-muted">Quantidade no
+                                    Estoque:{{item.qtdEstoque}}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
