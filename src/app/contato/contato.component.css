@@ -3,47 +3,18 @@
     background-image: url("../../assets/fundoform.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    
-  
-  }
-  #titulo{
-      margin-left: 65%;
-      text-align: center;
-      width: 50%;
+    height: 90ch;
+    margin-bottom: -100px;
   }
   #titcontato{
       margin-left: 65%;
       text-align: center;
-      width: 30%;
-      
+      width: 30%;   
   }
-  #logo{
-      text-align: center;
-      width: 10px;
-      height: 10px;
-  }
-  
-  .legenda-imagem label{
-      opacity: 0;
-      color: black;
-      font-size: 12px;
-      position: absolute;
-      top: 25px;
-      padding: 10px;
-      transition: opacity 1s;
-      display: inline-block;
-  }
-  /* quando mouse passar por cima */
-  .legenda-imagem:hover label {
-      background-color: white;
-      opacity: 0.5;
-      padding: 10px;
-      position: absolute;
-  }
-  form {
+  #formulario {
       /* Centralizar o formulário na pagina */
       margin-left: 65%;
-      margin-top: 2%;
+      margin-top: 3%;
       width: 400px;
       /* Ver o esboço do formulário */
       padding: 1em;
@@ -52,11 +23,6 @@
       border-radius: 1em;
       box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.452);
     }
-    
-    form div + div {
-      margin-top: 15px;
-    }
-    
     label {
       /* Para garantir que todos os rótulos tenham o mesmo tamanho e estejam devidamente alinhados*/
       display: block;
@@ -75,6 +41,7 @@
       box-sizing: border-box;
       /* Para harmonizar o aspecto e a sensação da borda do campo de texto */
       border: 1px solid #999;
+      margin-left: 10%;
     }
     
     input:focus, textarea:focus {

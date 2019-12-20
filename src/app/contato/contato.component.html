@@ -7,38 +7,33 @@
             <div class="col-12" id="caixa1">
                 <img src="assets/CONTATO-01.png" alt="Título da página: Contato" id="titcontato">
             </div>
-    
-            <form>
-                <div>
-                    <label class="titulos" for="name">Nome:</label>
-                    <input type="text" id="name" name="name_usuario">
-                    <div style="display: none" class="alert alert-danger" role="alert-name" id="alert-name">
-                    </div>
+            <div class="container" id="formulario">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Digite o nome" [(ngModel)]="nome"
+                        maxlength="15" required>
+                    <span *ngIf='_msgErroN'>{{_msgErroN}}</span>
                 </div>
-                <div>
-                    <label class="titulos" for="email">E-mail:</label>
-                    <input type="email" id="email" name="email_usuario" size="40" maxlength="40">
-                    <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu email com mais
-                        ninguém.</small>
-                    <div style="display: none" class="alert alert-danger" role="alert-email" id="alert-email">
-                    </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com.br"
+                        [(ngModel)]="email" maxlength="25" required>
+                    <span *ngIf='_msgErroE'>{{_msgErroE}}</span>
                 </div>
-                <div>
-                    <label class="titulos" for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone_usuario"
-                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="14">
-                    <div style="display: none" class="alert alert-danger" role="alert-tel" id="alert-tel">
-                    </div>
+                <div class="form-group">
+                    <label for="Telefone">Telefone:</label>
+                    <input type="tel" class="form-control" id="tel" [(ngModel)]="tel" placeholder="(XX) 99999-9999"
+                        maxlength="11" required>
+                    <span *ngIf='_msgErroT'>{{_msgErroT}}</span>
                 </div>
-                <div>
-                    <label class="titulos" for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem_usuario"></textarea>
-                    <div style="display: none" class="alert alert-danger" role="alert-mensagem" id="alert-mensagem">
-                    </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea class="form-control" [(ngModel)]="msg" id="mensagem" rows="5" maxlength="400"
+                        required></textarea>
                 </div>
-                <div>
-                    <button class="btn" type="button" onclick="validateForm()" id="enviar">Enviar</button>
-                    <button class="btn" type="reset">Redefinir</button>
-                </div>
-            </form>
+                <button type="submit" class="btn btn-primary butao" (click)="validacao()">Enviar</button>
+            </div>
         </div>
+
+    </div>
+</div>
