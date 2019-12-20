@@ -1,6 +1,10 @@
+.container-lg {
+    height: 75ch;
+}
 #titulo {
     text-align: center;
-    width: 50%;
+    width: 40%;
+    margin-top: -15px;
 }
 
 #logo {
@@ -14,11 +18,13 @@
     -webkit-box-shadow: 2px 3px 8px 0px rgba(50, 50, 50, 0.55);
     -moz-box-shadow: 2px 3px 8px 0px rgba(50, 50, 50, 0.55);
     box-shadow: 2px 3px 8px 0px rgba(50, 50, 50, 0.55);
-}
+    margin-top: 5%;
 
+}
+    
 .capa {
     display: none;
-    background: rgba(255, 255, 255, 0.801);
+    background: rgba(255, 255, 255, 0.701);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -43,4 +49,9 @@
     padding-top: 15px;
     font-size: 15px;
     font-stretch: normal;
+}
+.recuo {
+    margin-top: 20px;
+    text-indent:2em;
+    font-size: 16px;
 }
