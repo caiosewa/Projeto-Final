@@ -9,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class ContatoComponent implements OnInit {
 
   private nome: string = "";
-  private email: string  = "";
-  private tel: string  = "";
-  private mensagem: any  = "";
+  private nomeOk: boolean;
+  private email: string = "";
+  private emailOk: boolean;
+  private tel: string = "";
+  private telOk: boolean;
+  private msg: any = "";
+  private msgOk: boolean;
   private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
   private num: any = /^[0-9]+$/;
   private _msgErroN: string = null;
-  private _msgErroS: string = null;
+  private _msgErroM: string = null;
   private _msgErroE: string = null;
   private _msgErroT: string = null;
 
@@ -24,51 +28,69 @@ export class ContatoComponent implements OnInit {
   ngOnInit() {
   }
 
-  validacao() {
+  validarNome() {
 
-    if (this.nome == "" || this.email == "" || this.tel == "" || this.mensagem == "") {
-      alert('Preencha todos os campos!');
-    }
-    
     if (!this.filtro.test(this.nome)) {
       this.nome = "";
       this._msgErroN = "Nome inválido!";
+      this.nomeOk = false;
     }
     else {
-      this._msgErroN = null;
+      this._msgErroN = "";
+      this.nomeOk = true;
     }
+  }
 
-    if (this.email.indexOf("@") == -1 && this.email.indexOf("@") > 1 || this.email.indexOf(".") == -1) {
-      this.email = "";
+  validarEmail() {
+    if (this.email.indexOf("@") == -1 || this.email.indexOf(".") == -1) {
       this._msgErroE = "Email inválido!";
+      this.emailOk = false;
     }
     else {
       this._msgErroE = "";
+      this.emailOk = true;
     }
+  }
 
-    if(!this.num.test(this.tel)){
+  validarTel() {
+
+    if (!this.num.test(this.tel)) {
       this.tel = "";
-      this._msgErroT = "Apenas digitos!";
-    }
-    else{
-      this._msgErroT = null;
-    }
-    
-    if(this.tel.length < 11){
-      this.tel = "";
+      this.telOk = false;
+    } else if (this.tel.length < 11) {
       this._msgErroT = "Digite 11 digitos!";
-    }
-    else{
+      this.telOk = false;
+    } else {
       this._msgErroT = null;
-    } 
+      this.telOk = true;
+    }
 
-    if (this.nome != "" && this.email != "" && this.tel != "" && this.mensagem != "") {
+  }
+
+  validarMsg() {
+    if (this.filtro.test(this.msg) || this.num.test(this.msg)) {
+      this._msgErroM = "";
+      this.msgOk = true;
+    } else if (this.msg == "") {
+      this._msgErroM = "Favor preencher este campo!";
+      this.msgOk = false;
+    }
+  }
+
+  enviar() {
+    if (this.nomeOk == true && this.emailOk == true && this.telOk == true && this.msgOk == true) {
       alert("Dados enviados com sucesso!");
       this.nome = "";
       this.email = "";
       this.tel = "";
-      this.mensagem = "";
+      this.msg = "";
+      this.nomeOk = false;
+      this.emailOk = false;
+      this.telOk = false;
+      this.msgOk = false;
+    } else {
+      alert("Favor preencher todos os campos corretamente!");
     }
-    
+
   }
 }

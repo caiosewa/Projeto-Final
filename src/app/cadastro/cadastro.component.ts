@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -8,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class CadastroComponent implements OnInit {
 
   private nome: string = "";
+  private nomeOk: boolean;
   private email: string = "";
+  private emailOk: boolean;
   private tel: string = "";
+  private telOk: boolean;
   private senha: any = "";
+  private senhaOk: boolean;
   private csenha: any = "";
-  private senhafraca: boolean = null;
+  private csenhaOk: boolean;
   private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
   private num: any = /^[0-9]+$/;
   private _msgErroN: string = null;
@@ -26,76 +31,86 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {
   }
 
-  validacao() {
-
-    if (this.nome == "" || this.email == "" || this.tel == "" || this.senha == "" || this.csenha == "") {
-      alert('Preencha todos os campos!');
-    }
+  validarNome() {
 
     if (!this.filtro.test(this.nome)) {
       this.nome = "";
       this._msgErroN = "Nome inválido!";
+      this.nomeOk = false;
     }
     else {
       this._msgErroN = "";
+      this.nomeOk = true;
     }
+  }
 
-    if (this.email.indexOf("@") == -1 && this.email.indexOf("@") > 1 || this.email.indexOf(".") == -1) {
-      this.email = "";
+  validarEmail() {
+    if (this.email.indexOf("@") == -1 || this.email.indexOf(".") == -1) {
       this._msgErroE = "Email inválido!";
+      this.emailOk = false;
     }
     else {
       this._msgErroE = "";
+      this.emailOk = true;
     }
+  }
+
+  validarTel() {
 
     if (!this.num.test(this.tel)) {
       this.tel = "";
-      this._msgErroT = "Apenas digitos!";
-    }
-    else {
-      this._msgErroT = null;
-    }
-
-    if (this.tel.length < 11) {
-      this.tel = "";
+      this.telOk = false;
+    } else if (this.tel.length < 11) {
       this._msgErroT = "Digite 11 digitos!";
-    }
-    else {
+      this.telOk = false;
+    } else {
       this._msgErroT = null;
+      this.telOk = true;
     }
 
-    if (this.senha.indexOf("@") == -1 || this.senha.indexOf(".") == -1) {
-      this._msgErroS = "Senha fraca! Digite pelo menos um @";
-      this.senhafraca = true;
-    }
-    else {
-      this._msgErroS = null;
-      this.senhafraca = false;
-    }
+  }
 
+  validarSenha() {
     if (this.senha.length < 10) {
-      this.senha = "";
       this._msgErroS = "Digite pelo menos 10 caracteres!";
-    }
-    else {
+      this.senhaOk = false;
+    } else if (this.senha.indexOf("@") == -1) {
+      this._msgErroS = "Senha fraca";
+      this.senhaOk = true;
+    } else {
       this._msgErroS = null;
+      this.senhaOk = true;
     }
 
+  }
+
+  validarCsenha() {
     if (this.senha != this.csenha) {
-      this.csenha = "";
-      this._msgErroCS = "Senhas não iguais, por favor, digitar corretamente!";
+      this._msgErroCS = "Senhas não são iguais!";
+      this.csenhaOk = false;
     } else {
       this._msgErroCS = null;
+      this.csenhaOk = true;
     }
+  }
 
-    if (this.nome != "" && this.email != "" && this.tel != "" && this.senha != "" && this.csenha != "") {
+  enviar() {
+    if (this.nomeOk == true && this.emailOk == true && this.telOk == true && this.senhaOk == true && this.csenhaOk == true) {
       alert("Dados enviados com sucesso!");
       this.nome = "";
       this.email = "";
       this.tel = "";
       this.senha = "";
       this.csenha = "";
-      this.senhafraca = false;
+      this._msgErroS = "";
+      this.nomeOk = false;
+      this.emailOk = false;
+      this.telOk = false;
+      this.senhaOk = false;
+      this.csenhaOk = false;
+    } else {
+      alert("Favor preencher todos os campos corretamente!");
     }
+
   }
 }
