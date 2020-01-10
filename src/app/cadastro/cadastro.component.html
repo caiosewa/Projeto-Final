@@ -1,1 +1,57 @@
-<p>cadastro works!</p>
+<div id="background">
+    <div style="padding-top:20px" class="container">
+        <div style="text-align: center;" class="row">
+            <div class="col-12">
+                <!-- <img src="/Imagens/LOGO_MENOR-01.png" alt="Logo da AmaZ" id="Logo"> -->
+            </div>
+            <div class="col-12" id="caixa1">
+                <h1>CADASTRO</h1>
+                <!--<img src="" alt="Título da página: Cadastro" id="titcadastro">-->
+            </div>
+
+            <div class="container" id="formulario">
+
+
+                <div class="form-group">
+                    <label for="nome">Nome completo:</label>
+                    <input class="form-control" id="nome" required="required" type="text" placeholder="Digite o nome" [(ngModel)]="nome" maxlength="30" required>
+                    <span *ngIf='_msgErroN'>{{_msgErroN}}</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input class="form-control" id="email" required="required" type="email" placeholder="name@example.com.br" [(ngModel)]="email" maxlength="25" required>
+                    <span *ngIf='_msgErroE'>{{_msgErroE}}</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input class="form-control" id="tel" required="required" type="tel" placeholder="(XX) 99999-9999" [(ngModel)]="tel" maxlength="11" required>
+                    <span *ngIf='_msgErroT'>{{_msgErroT}}</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input class="form-control" id="senha" required="required" type="password" placeholder="ex. 1234" [(ngModel)]="senha" minlength="10" required>
+                    <span *ngIf='_msgErroS'>{{_msgErroS}}</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="csenha">Confirmar sua senha:</label>
+                    <input class="form-control" id="csenha" required="required" type="password" placeholder="ex. 1234" [(ngModel)]="csenha" minlength="10" required>
+                    <span *ngIf='_msgErroCS'>{{_msgErroCS}}</span>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary butao" (click)="validacao()">Cadastrar</button>
+                </div>
+
+                <div class="link">
+                    Já tem conta?
+                    <a class="linklogin" href=""> Ir para Login </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

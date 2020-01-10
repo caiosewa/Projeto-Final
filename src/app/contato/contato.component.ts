@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-contato',
   templateUrl: './contato.component.html',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoComponent implements OnInit {
 
-  private nome: string;
-  private email: string;
-  private telefone: string;
-  private mensagem: any;
+  private nome: string = "";
+  private email: string  = "";
+  private tel: string  = "";
+  private mensagem: any  = "";
   private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
-  private num: any = /([0-9])/;
+  private num: any = /^[0-9]+$/;
   private _msgErroN: string = null;
   private _msgErroS: string = null;
   private _msgErroE: string = null;
@@ -24,45 +25,50 @@ export class ContatoComponent implements OnInit {
   }
 
   validacao() {
-    if (this.nome == "" || this.email == "" || this.telefone == null || this.mensagem == "") {
+
+    if (this.nome == "" || this.email == "" || this.tel == "" || this.mensagem == "") {
       alert('Preencha todos os campos!');
     }
-    if (!this.filtro.test(this.nome)){
+    
+    if (!this.filtro.test(this.nome)) {
       this.nome = "";
-      this._msgErroN = "Dado inválido!";
+      this._msgErroN = "Nome inválido!";
     }
-    else{
+    else {
       this._msgErroN = null;
     }
-    
+
     if (this.email.indexOf("@") == -1 && this.email.indexOf("@") > 1 || this.email.indexOf(".") == -1) {
       this.email = "";
-      this._msgErroE = "Dado inválido!";
+      this._msgErroE = "Email inválido!";
+    }
+    else {
+      this._msgErroE = "";
+    }
+
+    if(!this.num.test(this.tel)){
+      this.tel = "";
+      this._msgErroT = "Apenas digitos!";
     }
     else{
-      this._msgErroE = null;
+      this._msgErroT = null;
     }
     
-    if(!this.num.test(this.telefone)){
-      this.telefone = null;
-      this._msgErroT = `Apenas digitos!`;
+    if(this.tel.length < 11){
+      this.tel = "";
+      this._msgErroT = "Digite 11 digitos!";
     }
     else{
       this._msgErroT = null;
-    }
-    if(this.telefone.length < 11){
-      this.telefone = null;
-      this._msgErroT = `Digite 11 digitos!`;
-    }
-    else{
-      this._msgErroT = null;
-    }    
-    if(this.nome != "" && this.email != "" && this.telefone != null && this.mensagem != "") {
-      alert("Dados enviados com sucesso!")
+    } 
+
+    if (this.nome != "" && this.email != "" && this.tel != "" && this.mensagem != "") {
+      alert("Dados enviados com sucesso!");
       this.nome = "";
       this.email = "";
-      this.telefone = null;
+      this.tel = "";
       this.mensagem = "";
     }
+    
   }
 }
