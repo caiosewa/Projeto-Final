@@ -9,43 +9,45 @@
                 <!--<img src="" alt="Título da página: Cadastro" id="titcadastro">-->
             </div>
 
-            <div class="container" id="formulario">
+            
 
+            <div class="container" id="formulario">
 
                 <div class="form-group">
                     <label for="nome">Nome completo:</label>
-                    <input class="form-control" id="nome" required="required" type="text" placeholder="Digite o nome"
-                        [(ngModel)]="nome" (keyup)="validarNome()" maxlength="30" required>
-                    <span class="alert alert-danger" *ngIf='_msgErroN'>{{_msgErroN}}</span>
+                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroN}" id="nome" required="required"
+                        type="text" placeholder="Digite o nome" [(ngModel)]="nome" (keyup)="validarNome()"
+                        maxlength="30" required> 
+                    <span class="invalid-feedback" *ngIf='_msgErroN'>{{_msgErroN}}</span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">E-mail:</label>
-                    <input class="form-control" id="email" required="required" type="email"
+                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required" type="email"
                         placeholder="name@example.com.br" [(ngModel)]="email" (keyup)="validarEmail()" maxlength="25"
                         required>
-                    <span *ngIf='_msgErroE'>{{_msgErroE}}</span>
+                    <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
                 </div>
 
                 <div class="form-group">
                     <label for="telefone">Telefone:</label>
-                    <input class="form-control" id="tel" required="required" type="tel" placeholder="(XX) 99999-9999"
+                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroT}" id="tel" required="required" type="tel" placeholder="(XX) 99999-9999"
                         [(ngModel)]="tel" (keyup)="validarTel()" maxlength="11" required>
-                    <span *ngIf='_msgErroT'>{{_msgErroT}}</span>
+                    <span class="invalid-feedback" *ngIf='_msgErroT'>{{_msgErroT}}</span>
                 </div>
 
                 <div class="form-group">
                     <label for="senha">Senha:</label>
-                    <input class="form-control" id="senha" required="required" type="password" placeholder="ex. 1234"
+                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroS}" id="senha" required="required" type="password" placeholder="ex. 1234"
                         [(ngModel)]="senha" (keyup)="validarSenha()" minlength="10" required>
-                    <span *ngIf='_msgErroS'>{{_msgErroS}}</span>
+                    <span class="invalid-feedback" *ngIf='_msgErroS'>{{_msgErroS}}</span>
                 </div>
 
                 <div class="form-group">
                     <label for="csenha">Confirmar sua senha:</label>
-                    <input class="form-control" id="csenha" required="required" type="password" placeholder="ex. 1234"
+                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroCS}" id="csenha" required="required" type="password" placeholder="ex. 1234"
                         [(ngModel)]="csenha" (keyup)="validarCsenha()" minlength="10" required>
-                    <span *ngIf='_msgErroCS'>{{_msgErroCS}}</span>
+                    <span class="invalid-feedback" *ngIf='_msgErroCS'>{{_msgErroCS}}</span>
                 </div>
 
                 <div>

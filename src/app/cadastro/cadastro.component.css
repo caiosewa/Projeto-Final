@@ -6,6 +6,16 @@
     height: 90ch;
 }
 
+.form-control {
+    cursor: Text;
+}
+
+.form-control.erro {
+    cursor: Text;
+    border: 1.5px solid rgba(175, 0, 0, 0.800);
+    background-color: rgba(223, 0, 48, 0.377);
+}
+
 h1 {
     color: #18211A;
     font-size: 55px;

@@ -25,11 +25,13 @@ export class CadastroComponent implements OnInit {
   private _msgErroCS: string = null;
   private _msgErroE: string = null;
   private _msgErroT: string = null;
+ 
 
   constructor() { }
 
   ngOnInit() {
   }
+  
 
   validarNome() {
 
