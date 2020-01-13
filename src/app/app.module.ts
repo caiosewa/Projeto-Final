@@ -14,7 +14,11 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { NovoComponent } from './components/novo/novo.component';
+import { ListarComponent } from './components/listar/listar.component';
+import { AlterarComponent } from './components/alterar/alterar.component';
+import { ConsultaUsuarioService } from './service/consulta-usuario.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { HttpClientModule } from '@angular/common/http'
     SobrenosComponent,
     CarrinhoComponent,
     PagamentoComponent,
-    MenuLateralComponent
+    MenuLateralComponent,
+    NovoComponent,
+    ListarComponent,
+    AlterarComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,7 @@ import { HttpClientModule } from '@angular/common/http'
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ConsultaUsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

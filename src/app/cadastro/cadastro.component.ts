@@ -1,4 +1,7 @@
+import { ConsultaUsuarioService } from './../service/consulta-usuario.service';
+import { Usuario } from './../model/usuario';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -6,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
+
 export class CadastroComponent implements OnInit {
+
+  usuario: Usuario = new Usuario(0, "", "", "", "");
 
   private nome: string = "";
   private nomeOk: boolean;
@@ -18,6 +24,7 @@ export class CadastroComponent implements OnInit {
   private senhaOk: boolean;
   private csenha: any = "";
   private csenhaOk: boolean;
+  private sucesso: boolean;
   private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
   private num: any = /^[0-9]+$/;
   private _msgErroN: string = null;
@@ -25,13 +32,13 @@ export class CadastroComponent implements OnInit {
   private _msgErroCS: string = null;
   private _msgErroE: string = null;
   private _msgErroT: string = null;
- 
 
-  constructor() { }
+
+  constructor(private route: ActivatedRoute, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
   }
-  
+
 
   validarNome() {
 
@@ -43,6 +50,7 @@ export class CadastroComponent implements OnInit {
     else {
       this._msgErroN = "";
       this.nomeOk = true;
+      this.usuario.nome = this.nome;
     }
   }
 
@@ -54,6 +62,7 @@ export class CadastroComponent implements OnInit {
     else {
       this._msgErroE = "";
       this.emailOk = true;
+      this.usuario.email = this.email;
     }
   }
 
@@ -68,6 +77,7 @@ export class CadastroComponent implements OnInit {
     } else {
       this._msgErroT = null;
       this.telOk = true;
+      this.usuario.telefone = this.tel;
     }
 
   }
@@ -93,11 +103,22 @@ export class CadastroComponent implements OnInit {
     } else {
       this._msgErroCS = null;
       this.csenhaOk = true;
+      this.usuario.senha = this.senha;
     }
   }
 
   enviar() {
-    if (this.nomeOk == true && this.emailOk == true && this.telOk == true && this.senhaOk == true && this.csenhaOk == true) {
+    if (this.nomeOk != true && this.emailOk != true && this.telOk != true && this.senhaOk != true && this.csenhaOk != true) {
+      alert("Favor preencher todos os campos corretamente!");
+    } else {
+      this.ConsultaUsuarioService.insert(this.usuario).subscribe((usuario: Usuario) => {
+        this.usuario = usuario;
+      }, err => {
+        alert(`Usuário já cadastrado!`);
+        this.sucesso = false;
+      });
+    }
+    if (this.sucesso == true) {
       alert("Dados enviados com sucesso!");
       this.nome = "";
       this.email = "";
@@ -110,9 +131,8 @@ export class CadastroComponent implements OnInit {
       this.telOk = false;
       this.senhaOk = false;
       this.csenhaOk = false;
-    } else {
-      alert("Favor preencher todos os campos corretamente!");
-    }
-
+    };
   }
 }
+
+
