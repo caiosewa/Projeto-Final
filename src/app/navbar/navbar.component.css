@@ -1,12 +1,15 @@
 .navbar-collapse{
-    background-color: rgb(189, 196, 170)!important;
+    background-color: #252f15!important;
 }
 
 .navbar-light {
-    background-color: rgb(189, 196, 170)!important;
+    background-color: #252f15!important;
 }
 
 .nav-link {
-    color: rgba(72, 97, 77, 1);
+    color: #BBD28E!important;
     font-weight: 550;
+}
+.col-3 {
+    margin-left: 10%;
 }

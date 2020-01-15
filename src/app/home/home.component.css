@@ -1,0 +1,53 @@
+.carousel-inner .item {
+  height: 100px;
+}
+.edit-font-carousel {
+  font-family: Helvetica, sans-serif;
+}
+.d-block {
+  height: 600px;
+  width: 800px;
+}
+.carousel-caption {
+  margin-bottom: 100px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.carousel-caption h2 {
+  font-size: 55px;
+  color: #A6641C;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.carousel-caption h2 span {
+    color: #252f15;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+  }
+.carousel-caption h3 {
+    color: rgb(0, 0, 0);
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: justify;
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+.carousel-caption a {
+  background: #252f15;
+  padding: 12px 35px;
+  display: inline-block;
+  margin-top: 15px;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  border-radius: 25px;
+}
+
+.carousel-control.right {
+  background-image: none;
+}
+.carousel-control.left {
+  background-image: none;
+}
+
+.carousel-indicators .active {
+  background: #252f15;
+  border-color: #252f15;
+}

@@ -19,6 +19,7 @@ import { NovoComponent } from './components/novo/novo.component';
 import { ListarComponent } from './components/listar/listar.component';
 import { AlterarComponent } from './components/alterar/alterar.component';
 import { ConsultaUsuarioService } from './service/consulta-usuario.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ConsultaUsuarioService } from './service/consulta-usuario.service';
     MenuLateralComponent,
     NovoComponent,
     ListarComponent,
-    AlterarComponent
+    AlterarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

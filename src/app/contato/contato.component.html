@@ -15,27 +15,31 @@
 
                 <div class="form-group">
                     <label for="nome">Nome:</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Digite o nome" [(ngModel)]="nome"
-                        (keyup)="validarNome()" maxlength="15" required>
-                    <span *ngIf='_msgErroN'>{{_msgErroN}}</span>
+                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroN}" id="nome" required="required"
+                        type="text" placeholder="Digite o nome" [(ngModel)]="nome" (keyup)="validarNome()"
+                        maxlength="30" required> 
+                    <span class="invalid-feedback" *ngIf='_msgErroN'>{{_msgErroN}}</span>
                 </div>
+
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com.br"
-                        [(ngModel)]="email" (keyup)="validarEmail()" maxlength="25" required>
-                    <span *ngIf='_msgErroE'>{{_msgErroE}}</span>
+                    <label for="email">E-mail:</label>
+                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required" type="email"
+                        placeholder="name@example.com.br" [(ngModel)]="email" (keyup)="validarEmail()" maxlength="25"
+                        required>
+                    <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
                 </div>
+
                 <div class="form-group">
-                    <label for="Telefone">Telefone:</label>
-                    <input type="text" class="form-control" id="tel" placeholder="(XX) 99999-9999" [(ngModel)]="tel"
-                        (keyup)="validarTel()" maxlength="11" required>
-                    <span *ngIf='_msgErroT'>{{_msgErroT}}</span>
+                    <label for="telefone">Telefone:</label>
+                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroT}" id="tel" required="required" type="tel" placeholder="(XX) 99999-9999"
+                        [(ngModel)]="tel" (keyup)="validarTel()" maxlength="11" required>
+                    <span class="invalid-feedback" *ngIf='_msgErroT'>{{_msgErroT}}</span>
                 </div>
                 <div class="form-group">
                     <label for="msg">Mensagem:</label>
-                    <textarea class="form-control" [(ngModel)]="msg" (keyup)="validarMsg()" id="msg" rows="5"
+                    <textarea class="form-control" [ngClass]="{'is-invalid': _msgErroM}" [(ngModel)]="msg" (keyup)="validarMsg()" id="msg" rows="5"
                         maxlength="400" required></textarea>
-                    <span *ngIf='_msgErroM'>{{_msgErroM}}</span>
+                    <span class="invalid-feedback" *ngIf='_msgErroM'>{{_msgErroM}}</span>
                 </div>
                 <button class="btn btn-primary butao" (click)="enviar()">Enviar</button>
             </div>

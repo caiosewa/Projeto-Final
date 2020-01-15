@@ -6,24 +6,31 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="nav navbar-nav mr-lg-auto">
-            <li class="nav-item active">
-                <a class="nav-link"> Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="'/produtos'">Produtos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="'/sobrenos'">Sobre Nós</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="'/contato'">Contato</a>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="'/cadastro'">Login/Cadastre-se</a>
-            </li>
-        </ul>
+        <div class="col-9">
+            <ul class="nav navbar-nav mr-lg-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="'/home'">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/produtos'">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/sobrenos'">Sobre Nós</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/contato'">Contato</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-3">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/login'">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/cadastro'">Cadastre-se</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
