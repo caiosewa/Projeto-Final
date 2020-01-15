@@ -116,6 +116,7 @@ export class CadastroComponent implements OnInit {
       }, err => {
         alert(`Usuário já cadastrado!`);
         this.sucesso = false;
+        this.emailOk = false;
       });
     }
     if (this.sucesso == true) {
