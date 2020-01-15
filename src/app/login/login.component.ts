@@ -58,8 +58,4 @@ export class LoginComponent implements OnInit {
       alert("Favor preencher todos os campos corretamente!");
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 32526e201aab0a50d4c9c137a9a787f658666f86
