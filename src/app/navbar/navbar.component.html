@@ -9,26 +9,35 @@
         <div class="col-9">
             <ul class="nav navbar-nav mr-lg-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" [routerLink]="'/home'">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" [routerLink]="'/home'"><button  mat-button>Home</button><span
+                            class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'/produtos'">Produtos</a>
+                    <a class="nav-link" [routerLink]="'/produtos'"><button class="mat-button" mat-button>Produtos</button></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'/sobrenos'">Sobre Nós</a>
+                    <a class="nav-link" [routerLink]="'/sobrenos'"><button class="mat-button" mat-button>Sobre Nós</button></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'/contato'">Contato</a>
+                    <a class="nav-link" [routerLink]="'/contato'"><button class="mat-button" mat-button>Contato</button></a>
                 </li>
+                <form class=" edit-form form-inline my-2 my-lg-0">
+                    <div class="search-area c-height">
+                        <input class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search">
+                        <button mat-button color="basic" class="custom-input btn-search btn btn-outline-success my-2 my-sm-0"
+                            type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </form> 
             </ul>
+
         </div>
         <div class="col-3">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'/login'">Login</a>
+                    <a class="nav-link" [routerLink]="'/login'"><button class="mat-button" mat-button>Login</button></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'/cadastro'">Cadastre-se</a>
+                    <a class="nav-link" [routerLink]="'/cadastro'"><button class="mat-button" mat-button>Cadastre-se</button></a>
                 </li>
             </ul>
         </div>
