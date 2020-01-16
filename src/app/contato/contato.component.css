@@ -1,10 +1,9 @@
 #background {
   background-color: rgba(236, 227, 214, 0.882);
-  background-image: url("../../assets/fundoform.jpeg");
+  background-image: url("../../assets/fundocontato2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90ch;
-  margin-bottom: -100px;
+  height: 80ch;
 }
 .form-control {
   cursor: Text;
@@ -16,14 +15,12 @@
   background-color: rgba(223, 0, 48, 0.377);
 }
 #titcontato {
-  margin-left: 65%;
   text-align: center;
-  width: 30%;
+  width: 28%;
 }
 #formulario {
-  margin-left: 65%;
-  margin-top: 3%;
-  width: 400px;
+  margin-top: 2%;
+  width: 450px;
   padding: 1em;
   background-color: rgba(255, 255, 255, 0.555);
   border: 1px solid #ccc;
