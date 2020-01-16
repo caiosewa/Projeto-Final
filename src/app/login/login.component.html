@@ -5,7 +5,9 @@
                 <!-- <img src="/Imagens/LOGO_MENOR-01.png" alt="Logo da AmaZ" id="Logo"> -->
             </div>
             <div class="col-12" id="caixa1">
-                <h1>Login</h1>
+                <div id="caixa1">
+                    <img src="assets/Login-01.png" alt="Título da página: Contato" id="titlogin">
+                </div>
             </div>
 
             <div class="container" id="formulario">
@@ -15,14 +17,26 @@
                     <input class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
                         type="email" placeholder="name@example.com.br" [(ngModel)]="email" (keyup)="validarEmail()"
                         maxlength="25" required>
-                    <!-- <span class="fas fa-envelope"></span> -->
+                        <!-- <span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span> -->
                     <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
                 </div>
 
                 <div class="form-group">
                     <label for="senha">Senha:</label>
+<<<<<<< HEAD
                     <input class="form-control" id="senha" required="required"
                         type="password" placeholder="ex. 1234" [(ngModel)]="senha" (keyup)="validarSenha()" required>
+=======
+                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroS}" id="senha" required="required"
+                        type="password" placeholder="ex. 1234" [(ngModel)]="senha" (keyup)="validarSenha()"
+                        minlength="10" required>
+                    <!-- <span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span> --> 
+                    <span class="invalid-feedback" *ngIf='_msgErroS'>{{_msgErroS}}</span>
+>>>>>>> mariana
                 </div>
 
                 <div class="row">
