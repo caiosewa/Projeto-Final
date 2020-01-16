@@ -24,11 +24,11 @@ export class CadastroComponent implements OnInit {
   private senhaOk: boolean;
   private csenha: any = "";
   private csenhaOk: boolean;
-  private sucesso: boolean;
   private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
   private num: any = /^[0-9]+$/;
   private _msgErroN: string = null;
   private _msgErroS: string = null;
+  private _msgErroSF: string = null;
   private _msgErroCS: string = null;
   private _msgErroE: string = null;
   private _msgErroT: string = null;
@@ -84,16 +84,16 @@ export class CadastroComponent implements OnInit {
 
   validarSenha() {
     if (this.senha.length < 10) {
-      this._msgErroS = "Digite pelo menos 10 caracteres!";
+      this._msgErroS = "A";
       this.senhaOk = false;
     } else if (this.senha.indexOf("@") == -1) {
-      this._msgErroS = "Senha fraca";
+      this._msgErroSF = "Senha fraca";
       this.senhaOk = true;
     } else {
+      this._msgErroSF = null;
       this._msgErroS = null;
       this.senhaOk = true;
     }
-
   }
 
   validarCsenha() {
@@ -113,26 +113,23 @@ export class CadastroComponent implements OnInit {
     } else {
       this.ConsultaUsuarioService.insert(this.usuario).subscribe((usuario: Usuario) => {
         this.usuario = usuario;
-      }, err => {
-        alert(`Usuário já cadastrado!`);
-        this.sucesso = false;
+        this.nome = "";
+        this.email = "";
+        this.tel = "";
+        this.senha = "";
+        this.csenha = "";
+        this._msgErroS = "";
+        this.nomeOk = false;
         this.emailOk = false;
+        this.telOk = false;
+        this.senhaOk = false;
+        this.csenhaOk = false;
+        alert("Dados enviados com sucesso!");
+      }, err => {
+        this._msgErroE = "Email inválido!";
+        alert(`Usuário já cadastrado!`);
       });
     }
-    if (this.sucesso == true) {
-      alert("Dados enviados com sucesso!");
-      this.nome = "";
-      this.email = "";
-      this.tel = "";
-      this.senha = "";
-      this.csenha = "";
-      this._msgErroS = "";
-      this.nomeOk = false;
-      this.emailOk = false;
-      this.telOk = false;
-      this.senhaOk = false;
-      this.csenhaOk = false;
-    };
   }
 }
 

@@ -1,4 +1,7 @@
+import { ConsultaUsuarioService } from './../service/consulta-usuario.service';
+import { Login } from './../model/login';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,19 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  login: Login = new Login("", "");
+
   private email: string = "";
   private emailOk: boolean;
   private senha: any = "";
-  private senhaOk: boolean;
   private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
   private num: any = /^[0-9]+$/;
   private _msgErroN: string = null;
-  private _msgErroS: string = null;
   private _msgErroE: string = null;
   private _msgErroT: string = null;
 
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
   }
@@ -32,30 +35,26 @@ export class LoginComponent implements OnInit {
     else {
       this._msgErroE = "";
       this.emailOk = true;
+      this.login.email = this.email;
     }
   }
 
   validarSenha() {
-    if (this.senha.length < 10) {
-      this._msgErroS = "Digite pelo menos 10 caracteres!";
-      this.senhaOk = false;
-    } else {
-      this._msgErroS = null;
-      this.senhaOk = true;
-    }
-
+    this.login.senha = this.senha;
   }
 
   enviar() {
-    if (this.emailOk == true && this.senhaOk == true) {
-      alert("Dados enviados com sucesso!");
-      this.email = "";
-      this.senha = "";
-      this._msgErroS = "";
-      this.emailOk = false;
-      this.senhaOk = false;
-    } else {
+    if (this.emailOk != true) {
       alert("Favor preencher todos os campos corretamente!");
+    } else {
+      this.ConsultaUsuarioService.consulta(this.login).subscribe((login: Login) => {
+        this.login = login;
+        this.email = "";
+        this.senha = "";
+        alert("Login realizado!");
+      }, err => {
+        alert("Usuário ou senha incorreta!");
+      });
     }
   }
 }
