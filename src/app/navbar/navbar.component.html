@@ -6,20 +6,20 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <div class="col-10">
+        <div class="col-9">
             <ul class="nav navbar-nav mr-lg-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" [routerLink]="'/home'"><button  mat-button>Home</button><span
-                            class="sr-only">(current)</span></a>
+                    <button [routerLink]="'/home'" class="nav-link mat-button"  mat-button>Home</button><span
+                            class="sr-only">(current)</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'/produtos'"><button class="mat-button" mat-button>Produtos</button></a>
+                    <button [routerLink]="'/produtos'" class="nav-link mat-button" mat-button>Produtos</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'/sobrenos'"><button class="mat-button" mat-button>Sobre Nós</button></a>
+                    <button [routerLink]="'/sobrenos'" class="nav-link mat-button" mat-button>Sobre Nós</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'/contato'"><button class="mat-button" mat-button>Contato</button></a>
+                    <button [routerLink]="'/contato'" class="nav-link mat-button" mat-button>Contato</button>
                 </li>
                 <form class=" edit-form form-inline my-2 my-lg-0">
                     <div class="search-area c-height">
@@ -31,14 +31,14 @@
             </ul>
 
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'/login'"><button class="mat-button" mat-button>Login</button></a>
+                    <button [routerLink]="'/login'" class="nav-link mat-button" mat-button >Login</button>
                 </li>
                 <li>ou</li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'/cadastro'"><button class="mat-button" mat-button>Cadastre-se</button></a>
+                    <button [routerLink]="'/cadastro'" class="nav-link mat-button" mat-button>Cadastre-se</button>
                 </li>
             </ul>
         </div>

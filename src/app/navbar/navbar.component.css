@@ -7,26 +7,24 @@
     background-color: #252f15!important;
 }
 
-.nav-link {
+/* .nav-link {
     color: #BBD28E!important;
     font-weight: 550;
-}
-<<<<<<< HEAD
-.col-3 {
+} */
+
+/* .col-3 {
     margin-left: 10%;
-}
+} */
 .btn-search{
     color: #fff;
 }
 .edit-form {
     padding-left: 180px;
 
-
-
 }
 .mat-button{
+    color: #BBD28E!important;
+    font-weight: 550;
     border-radius: 10px;
     outline: none; 
 }
-=======
->>>>>>> 892ea00c46099732319f3b5d0f83cad4a8db14f6
