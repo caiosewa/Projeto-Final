@@ -16,7 +16,6 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NovoComponent } from './components/novo/novo.component';
 import { ListarComponent } from './components/listar/listar.component';
 import { AlterarComponent } from './components/alterar/alterar.component';
 import { ConsultaUsuarioService } from './service/consulta-usuario.service';
@@ -37,7 +36,6 @@ import {MatButtonModule} from '@angular/material/button';
     CarrinhoComponent,
     PagamentoComponent,
     MenuLateralComponent,
-    NovoComponent,
     ListarComponent,
     AlterarComponent,
     HomeComponent
