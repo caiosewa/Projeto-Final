@@ -1,3 +1,4 @@
+import { FaqComponent } from './faq/faq.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,7 @@ import { ProdutosComponent } from './produtos/produtos.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 
 
+
 const routes: Routes = [
   {path: '', component:HomeComponent},
   {path:'home', component:HomeComponent},
@@ -15,7 +17,8 @@ const routes: Routes = [
   {path:'contato', component:ContatoComponent},
   {path:'produtos', component:ProdutosComponent},
   {path:'cadastro', component:CadastroComponent},
-  {path:'login', component:LoginComponent} 
+  {path:'login', component:LoginComponent} ,
+  {path:'faq', component:FaqComponent},
 ];
 
 @NgModule({

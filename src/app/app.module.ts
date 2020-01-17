@@ -22,6 +22,9 @@ import { ConsultaUsuarioService } from './service/consulta-usuario.service';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FaqComponent } from './faq/faq.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import {MatButtonModule} from '@angular/material/button';
     MenuLateralComponent,
     ListarComponent,
     AlterarComponent,
-    HomeComponent
+    HomeComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,

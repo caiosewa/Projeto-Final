@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand">
         <img src="assets/LogoAmaZAimarrom-01.png" width="40" height="40" class="d-inline-block align-top">
@@ -9,11 +10,11 @@
         <div class="col-9">
             <ul class="nav navbar-nav mr-lg-auto">
                 <li class="nav-item active">
-                    <button [routerLink]="'/home'" class="nav-link mat-button"  mat-button>Home</button><span
-                            class="sr-only">(current)</span>
+                    <button [routerLink]="'/home'" class="nav-link mat-button" mat-button>Home</button><span
+                        class="sr-only">(current)</span>
                 </li>
                 <li class="nav-item">
-                    <button [routerLink]="'/produtos'" class="nav-link mat-button" mat-button>Produtos</button>
+                    <button [routerLink]="'/produtos'" class="nav-link mat-button hvr-float " mat-button >Produtos</button>
                 </li>
                 <li class="nav-item">
                     <button [routerLink]="'/sobrenos'" class="nav-link mat-button" mat-button>Sobre Nós</button>
@@ -21,20 +22,22 @@
                 <li class="nav-item">
                     <button [routerLink]="'/contato'" class="nav-link mat-button" mat-button>Contato</button>
                 </li>
-                <form class=" edit-form form-inline my-2 my-lg-0">
+                <div class="wrapper c-height">
                     <div class="search-area c-height">
-                        <input class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search">
-                        <button mat-button color="basic" class="custom-input btn-search btn btn-outline-success my-2 my-sm-0"
-                            type="submit"><i class="fa fa-search"></i></button>
+                        <div class="single-search">
+                            <input class="custom-input" type="text" name="" placeholder="">
+                            <a href="#" class="icon-area"><i class="fa fa-search"></i></a>
+                        </div>
                     </div>
-                </form> 
+                </div>
+
             </ul>
 
         </div>
         <div class="col-3">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
-                    <button [routerLink]="'/login'" class="nav-link mat-button" mat-button >Login</button>
+                    <button [routerLink]="'/login'" class="nav-link mat-button" mat-button>Login</button>
                 </li>
                 <li>ou</li>
                 <li class="nav-item">
