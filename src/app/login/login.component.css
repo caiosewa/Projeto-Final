@@ -3,7 +3,7 @@
     background-image: url("../../assets/fundologin.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 80ch;
+    height: 90ch;
 }
 
 .form-control {
@@ -16,14 +16,9 @@
     background-color: rgba(223, 0, 48, 0.377);
 }
 
-h1 {
-    color: #18211A;
-    font-size: 55px;
-}
-
-#titcadastro {
+#titlogin {
     text-align: center;
-    width: 30%;
+    width: 20%;
 }
 
 #formulario {
