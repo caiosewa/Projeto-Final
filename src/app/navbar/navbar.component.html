@@ -7,7 +7,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <div class="col-9">
+        <div class="col-10">
             <ul class="nav navbar-nav mr-lg-auto">
                 <li class="nav-item active">
                     <button [routerLink]="'/home'" class="nav-link mat-button" mat-button>Home</button><span
@@ -22,6 +22,9 @@
                 <li class="nav-item">
                     <button [routerLink]="'/contato'" class="nav-link mat-button" mat-button>Contato</button>
                 </li>
+                <li class="nav-item">
+                        <button [routerLink]="'/faq'" class="nav-link mat-button" mat-button>Ajuda</button>
+                    </li>
                 <div class="wrapper c-height">
                     <div class="search-area c-height">
                         <div class="single-search">
@@ -34,12 +37,12 @@
             </ul>
 
         </div>
-        <div class="col-3">
+        <div class="col-2">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
-                    <button [routerLink]="'/login'" class="nav-link mat-button" mat-button>Login</button>
+                    <button [routerLink]="'/login'" class="nav-link mat-button" mat-button>Entre</button>
                 </li>
-                <li>ou</li>
+                <li class="nav-link">|</li>
                 <li class="nav-item">
                     <button [routerLink]="'/cadastro'" class="nav-link mat-button" mat-button>Cadastre-se</button>
                 </li>
