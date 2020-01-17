@@ -1,5 +1,5 @@
 import { ConsultaUsuarioService } from './../service/consulta-usuario.service';
-import { Usuario } from './../model/usuario';
+import { Usuario } from '../model/usuario';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 

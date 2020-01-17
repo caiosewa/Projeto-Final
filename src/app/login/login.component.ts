@@ -1,20 +1,20 @@
+import { Usuario } from 'src/app/model/usuario';
 import { ConsultaUsuarioService } from './../service/consulta-usuario.service';
-import { Login } from './../model/login';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Globals } from '../model/Globals';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [ Globals ]
 })
 export class LoginComponent implements OnInit {
 
-  login: Login = new Login("", "");
+  usuario: Usuario = new Usuario(0,"","","","");
 
-  private email: string = "";
-  private emailOk: boolean;
-  private senha: any = "";
+  emailOk: boolean = false;
   private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
   private num: any = /^[0-9]+$/;
   private _msgErroN: string = null;
@@ -22,38 +22,32 @@ export class LoginComponent implements OnInit {
   private _msgErroT: string = null;
 
 
-  constructor(private route: ActivatedRoute, private ConsultaUsuarioService: ConsultaUsuarioService) { }
+  constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
   }
 
   validarEmail() {
-    if (this.email.indexOf("@") == -1 || this.email.indexOf(".") == -1) {
+    if (this.usuario.email.indexOf("@") == -1 || this.usuario.email.indexOf(".") == -1) {
       this._msgErroE = "Email inválido!";
       this.emailOk = false;
     }
     else {
       this._msgErroE = "";
       this.emailOk = true;
-      this.login.email = this.email;
     }
-  }
-
-  validarSenha() {
-    this.login.senha = this.senha;
   }
 
   enviar() {
     if (this.emailOk != true) {
       alert("Favor preencher todos os campos corretamente!");
     } else {
-      this.ConsultaUsuarioService.consulta(this.login).subscribe((login: Login) => {
-        this.login = login;
-        this.email = "";
-        this.senha = "";
-        alert("Login realizado!");
+      this.ConsultaUsuarioService.consulta(this.usuario).subscribe((usuario: Usuario) => {
+        Globals.USUARIO = usuario;
+        this.router.navigate(['admin']);
       }, err => {
         alert("Usuário ou senha incorreta!");
+        this.router.navigate(['']);
       });
     }
   }

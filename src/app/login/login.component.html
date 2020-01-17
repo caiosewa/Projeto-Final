@@ -9,20 +9,21 @@
             </div>
 
             <div class="container" id="formulario">
-                <p class="login-box-msg">Já sou cadastrado!</p>
+                    <p style="font-size: 18px;margin-bottom: 1.5rem;margin-top: 1rem">Entre com a sua conta</p>
                 <div class="form-group">
                     <label for="email">E-mail:</label>
                     <input class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
-                        type="email" placeholder="name@example.com.br" [(ngModel)]="email" (keyup)="validarEmail()"
-                        maxlength="25" required>
+                        type="email" placeholder="name@example.com.br" [(ngModel)]="usuario.email"
+                        (keyup)="validarEmail()" maxlength="25" required>
                     <!-- <span class="fas fa-envelope"></span> -->
                     <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
                 </div>
 
                 <div class="form-group">
                     <label for="senha">Senha:</label>
-                    <input class="form-control" id="senha" required="required"
-                        type="password" placeholder="ex. 1234" [(ngModel)]="senha" (keyup)="validarSenha()" required>
+                    <input class="form-control" id="senha" required="required" type="password" placeholder="ex. 1234"
+                        [(ngModel)]="usuario.senha" required>
+                    <a class="links" href="forgot-password.html">Esqueceu sua senha?</a>
                 </div>
 
                 <div class="row">
@@ -36,7 +37,7 @@
                     </div> -->
 
                     <div class="logar col-12">
-                        <button type="submit" class="btn btn-primary btn-block" (click)="enviar()">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-block" (click)="enviar()">Entrar</button>
                     </div>
                 </div>
 
@@ -54,12 +55,9 @@
                     </div>
                 </div> -->
 
-                <p class="links">
-                    <a href="forgot-password.html">Esqueci minha senha!</a>
-                </p>
-                <p class="linkc">
-                    <a class="linkcadastro" [routerLink]="'/cadastro'">Cadastrar-se!</a>
-                </p>
+                <div>
+                    <p style="font-size: 14px">Ainda não é nosso cliente? <a class="links" [routerLink]="'/cadastro'">Cadastrar-se</a></p>
+                </div>
             </div>
         </div>
     </div>

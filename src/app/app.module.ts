@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FaqComponent } from './faq/faq.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { FaqComponent } from './faq/faq.component';
     ListarComponent,
     AlterarComponent,
     HomeComponent,
-    FaqComponent
+    FaqComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

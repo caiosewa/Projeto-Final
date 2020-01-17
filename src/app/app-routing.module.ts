@@ -7,6 +7,7 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'cadastro', component:CadastroComponent},
   {path:'login', component:LoginComponent} ,
   {path:'faq', component:FaqComponent},
+  {path:'admin', component:AdminComponent},
 ];
 
 @NgModule({

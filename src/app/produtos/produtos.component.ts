@@ -1,6 +1,9 @@
+import { Globals } from './../model/Globals';
+import { Usuario } from 'src/app/model/Usuario';
 import { ConsultaProdutosService } from './../service/consulta-produtos.service';
-import { Produto } from './../model/produto';
+import { Produto } from '../model/produto';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-produtos',
@@ -15,11 +18,12 @@ export class ProdutosComponent implements OnInit {
   showId: boolean;
   showAll: boolean;
   produtoNao: boolean;
+  usuario: Usuario = Globals.USUARIO;
 
-  constructor(public ConsultaProdutosService: ConsultaProdutosService) { }
+  constructor(public ConsultaProdutosService: ConsultaProdutosService, public router:Router) { }
 
   ngOnInit() {
-
+   
   }
 
   findAllProduto() {

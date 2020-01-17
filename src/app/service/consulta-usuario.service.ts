@@ -1,4 +1,3 @@
-import { Login } from './../model/login';
 import { Usuario } from 'src/app/model/usuario';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -26,8 +25,8 @@ export class ConsultaUsuarioService {
     return this.http.put(`http://cloud.professorisidro.com.br:8088/usuario/`, usuario);
   }
 
-  consulta(login: Login){
-    return this.http.post(`http://cloud.professorisidro.com.br:8088/usuario/login`, login);
+  consulta(usuario: Usuario){
+    return this.http.post(`http://cloud.professorisidro.com.br:8088/usuario/login`, usuario);
   }
 
 }

@@ -93,5 +93,10 @@ input:focus {
     color: rgba(72, 97, 77, 1);
 }
 .links {
+    font-size: 14px;
     color: rgba(72, 97, 77, 1);
+}
+
+.logar{
+    margin-top: 2rem;
 }
