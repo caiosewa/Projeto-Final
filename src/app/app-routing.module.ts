@@ -11,7 +11,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 
 
 const routes: Routes = [
-  {path: '', component:HomeComponent},
+  {path: '', component:LoginComponent},
   {path:'home', component:HomeComponent},
   {path:'sobrenos', component:SobrenosComponent},
   {path:'contato', component:ContatoComponent},
