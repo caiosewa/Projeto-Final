@@ -1,3 +1,4 @@
+import { ComunidadesComponent } from './comunidades/comunidades.component';
 import { FaqComponent } from './faq/faq.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'login', component:LoginComponent} ,
   {path:'faq', component:FaqComponent},
   {path:'admin', component:AdminComponent},
+  {path:'comunidades', component:ComunidadesComponent}
 ];
 
 @NgModule({

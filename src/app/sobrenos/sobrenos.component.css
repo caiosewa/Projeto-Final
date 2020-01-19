@@ -1,5 +1,6 @@
 .container-lg {
     height: 75ch;
+    font-family: "Open Sans", sans-serif;
 }
 #titulo {
     text-align: center;

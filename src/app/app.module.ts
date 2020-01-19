@@ -25,6 +25,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FaqComponent } from './faq/faq.component';
 import { AdminComponent } from './admin/admin.component';
+import { ComunidadesComponent } from './comunidades/comunidades.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { AdminComponent } from './admin/admin.component';
     AlterarComponent,
     HomeComponent,
     FaqComponent,
-    AdminComponent
+    AdminComponent,
+    ComunidadesComponent
   ],
   imports: [
     BrowserModule,

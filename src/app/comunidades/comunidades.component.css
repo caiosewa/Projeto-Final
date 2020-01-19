@@ -1,0 +1,85 @@
+.imgcomunidade1 {
+  height: 400px;
+  width: 50%;
+  float: left;
+}
+.imgcomunidade2 {
+  height: 400px;
+  width: 50%;
+  float: right;
+}
+.imgcomunidade3 {
+  height: 400px;
+  width: 50%;
+  float: left;
+}
+.imgcomunidade4 {
+  height: 400px;
+  width: 50%;
+  float: right;
+}
+.imgcomunidade5 {
+  height: 400px;
+  width: 50%;
+  float: left;
+}
+.txtcomunidade1 {
+  font-family: "Open Sans", sans-serif;
+  width: 50%;
+  font-size: 1em;
+  text-indent: 2em;
+  float: right;
+  text-align: justify;
+  padding: 20px;
+}
+h3 .com1 {
+  float: right;
+}
+.txtcomunidade2 {
+  font-family: "Open Sans", sans-serif;
+  width: 50%;
+  font-size: 1em;
+  text-indent: 2em;
+  float: left;
+  text-align: justify;
+  padding: 20px;
+}
+h3 .com2 {
+  float: left;
+}
+.txtcomunidade3 {
+  font-family: "Open Sans", sans-serif;
+  width: 50%;
+  font-size: 1em;
+  text-indent: 2em;
+  float: right;
+  text-align: justify;
+  padding: 20px;
+}
+h3 .com3 {
+  float: right;
+}
+.txtcomunidade4 {
+  font-family: "Open Sans", sans-serif;
+  width: 50%;
+  font-size: 1em;
+  text-indent: 2em;
+  float: left;
+  text-align: justify;
+  padding: 20px;
+}
+h3 .com4 {
+  float: left;
+}
+.txtcomunidade5 {
+  font-family: "Open Sans", sans-serif;
+  width: 50%;
+  font-size: 1em;
+  text-indent: 2em;
+  float: right;
+  text-align: justify;
+  padding: 20px;
+}
+h3 .com5 {
+  float: right;
+}
