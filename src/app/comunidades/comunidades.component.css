@@ -1,32 +1,30 @@
-.no-gutter {
-  margin-right: 0!important;
-  margin-left: 0!important;
-}
-
-.no-gutter > [class*="col-"] {
-  padding-right: 0!important;
-  padding-left: 0!important;
-}
-
 .imgcomunidade1 {
-  height: 400px;
+  height: 100%;
   width: 100%;
 }
 .imgcomunidade2 {
-  height: 400px;
+  height: 100%;
   width: 100%;
 }
 .imgcomunidade3 {
-  height: 400px;
+  height: 100%;
   width: 100%;
 }
 .imgcomunidade4 {
-  height: 400px;
+  height: 100%;
   width: 100%;
 }
 .imgcomunidade5 {
-  height: 400px;
+  height: 100%;
   width: 100%;
+}
+h3 {
+  font-size: 1.5em;
+}
+hr {
+  border-color:#252f15!important;
+  box-sizing:border-box;
+  width:100%; 
 }
 .txt-one {
   font-family: "Open Sans", sans-serif;
@@ -41,6 +39,7 @@
   text-indent: 2em;
   text-align: justify;
   padding: 20px;
+  width: 90%;
 }
 .txt-three {
   font-family: "Open Sans", sans-serif;
@@ -48,6 +47,7 @@
   text-indent: 2em;
   text-align: justify;
   padding: 20px;
+  width: 90%;
 }
 .txt-four {
   font-family: "Open Sans", sans-serif;
@@ -55,6 +55,7 @@
   text-indent: 2em;
   text-align: justify;
   padding: 20px;
+  width: 90%;
 }
 .txt-five {
   font-family: "Open Sans", sans-serif;
@@ -62,6 +63,7 @@
   text-indent: 2em;
   text-align: justify;
   padding: 20px;
+  width: 90%;
 }
 
 /* Responsividade CSS */

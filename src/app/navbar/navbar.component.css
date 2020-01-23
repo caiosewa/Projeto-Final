@@ -4,11 +4,14 @@
 
 .navbar-light {
     background-color: #252f15!important;
+    padding: 0!important;
 }
 
 .nav-link {
     color: #BBD28E!important;
-    font-weight: 550;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-size: .9em;
 }
 
 .mat-button{
@@ -16,6 +19,11 @@
     outline: none; 
 }
 
+.navbar-brand {
+  text-align: center;
+  padding: 1%;
+  margin-top: .5%;
+}
 /* pesquisa */
 
   .single-search {
@@ -72,5 +80,4 @@
     display: flex;
     text-decoration: none;
     color: #353d36;
-
   }
