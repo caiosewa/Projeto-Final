@@ -1,21 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="wrapper c-height">
-        <div class="search-area c-height">
-            <div class="single-search">
-                <input class="custom-input" type="text" name="" placeholder="">
-                <a href="#" class="icon-area"><i class="fa fa-search"></i></a>
+<header class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-4">
+                <div class="container justify-content-start">
+                    <a id="btnSearch" class="btn-search"><i class="fa fa-search"></i></a>
+                    <input id="searchBar" class="searchbar" type="text" placeholder="Pesquisar...">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="logo">
+                    <a>
+                        <img src="assets/AMAZ2.png" width="30%" height="30%">
+                    </a>
+                </div>
+            </div>
+            <div class="col-4">
+                <ul class="nav navbar-nav justify-content-end">
+                    <li class="nav-item">
+                        <button [routerLink]="'/login'" class="nav-link mat-button" mat-button>Entre</button>
+                    </li>
+                    <li class="nav-link">|</li>
+                    <li class="nav-item">
+                        <button [routerLink]="'/cadastro'" class="nav-link mat-button" mat-button>Cadastre-se</button>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </div>
-    <a class="navbar-brand">
-        <img src="assets/AMAZ2.png" width="12%" height="12%" class="d-inline-block align-top">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</nav>
+</header>
 
-<nav id="nav2" class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- <a class="navbar-brand">
         <img src="assets/LogoAmaZAimarrom-01.png" width="40" height="40" class="d-inline-block align-top">
     </a> -->
@@ -23,15 +39,15 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <div class="col-4"></div>
-        <div class="col-6">
-            <ul class="nav navbar-nav mr-lg-auto">
+        <div class="col-12">
+            <ul class="nav navbar-nav mr-lg-auto justify-content-center">
                 <li class="nav-item active">
                     <button [routerLink]="'/home'" class="nav-link mat-button" mat-button>Home</button><span
                         class="sr-only">(current)</span>
                 </li>
                 <li class="nav-item">
-                    <button [routerLink]="'/produtos'" class="nav-link mat-button hvr-float " mat-button >Produtos</button>
+                    <button [routerLink]="'/produtos'" class="nav-link mat-button hvr-float "
+                        mat-button>Produtos</button>
                 </li>
                 <li class="nav-item">
                     <button [routerLink]="'/sobrenos'" class="nav-link mat-button" mat-button>Sobre Nós</button>
@@ -43,19 +59,7 @@
                     <button [routerLink]="'/contato'" class="nav-link mat-button" mat-button>Contato</button>
                 </li>
                 <li class="nav-item">
-                        <button [routerLink]="'/faq'" class="nav-link mat-button" mat-button>Ajuda</button>
-                    </li>
-            </ul>
-
-        </div>
-        <div class="col-2">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item">
-                    <button [routerLink]="'/login'" class="nav-link mat-button" mat-button>Entre</button>
-                </li>
-                <li class="nav-link">|</li>
-                <li class="nav-item">
-                    <button [routerLink]="'/cadastro'" class="nav-link mat-button" mat-button>Cadastre-se</button>
+                    <button [routerLink]="'/faq'" class="nav-link mat-button" mat-button>Ajuda</button>
                 </li>
             </ul>
         </div>

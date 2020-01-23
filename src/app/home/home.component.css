@@ -2,7 +2,7 @@
   height: 100px;
 }
 .edit-font-carousel {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 .d-block {
   height: 600px;
@@ -15,16 +15,16 @@
 .carousel-caption h2 {
   font-size: 55px;
   color: #A6641C;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 .carousel-caption h2 span {
     color: #252f15;
     font-weight: bold;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Ubuntu', sans-serif;
   }
 .carousel-caption h3 {
     color: rgb(0, 0, 0);
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 17px;
     text-align: justify;
     margin-right: 3%;
@@ -66,6 +66,31 @@
   float: left;
   position:absolute; 
 }
+.carousel-control-prev{
+  color: #252f15!important;
+}
+.carousel-control-next{
+  color: #252f15!important;
+}
+.descricao {
+  text-align: center;
+  font-size: 1em;
+}
+.preco {
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+.img-fluid {
+  height: 25%;
+  width: 25%;
+}
+h1 {
+  margin: 5%;
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Ubuntu', sans-serif;
+}
 /* animação de aproximação de imagem */
 #carouselExampleIndicators .carousel-inner .carousel-item img{
   height: 100vh;
@@ -83,4 +108,30 @@
   to{
       transform: scale(1.5,1.5);
   }
+}
+
+.col-md-4{
+  display: inline-block;
+  margin-left:-10px;
+}
+.col-md-4 img{
+  width:100%;
+  height:auto;
+}
+  
+body .carousel-control-prev-icon,
+body .carousel-indicators li,
+body .carousel-control-next-icon{
+  background-color:#000;
+}
+
+span.carousel-control-prev-icon {
+ position: relative;
+ bottom: 40px;
+ right: 40px;
+}
+
+span.carousel-control-next-icon {
+ position: relative;
+ bottom: 40px;
 }
