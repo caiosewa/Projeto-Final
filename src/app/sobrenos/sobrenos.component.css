@@ -1,6 +1,6 @@
-.container-lg {
-    height: 75ch;
-    font-family: "Open Sans", sans-serif;
+    
+.container-bg{
+    background: #BBD28E!important;      
 }
 #titulo {
     text-align: center;
@@ -38,7 +38,7 @@
 }
 .team-img img{
     width: 100%;
-    transition: .4s ;
+    transition: .4s ;   
 }
 .single-team:hover .team-img img{
     transform:scale(1.1) ;
@@ -51,7 +51,7 @@
     overflow: hidden;
     bottom: 0;
      transition: all .4s;
-     background: rgb(16, 48, 10);
+     background: #252f15;
      z-index: 5;
 }
 .single-team:hover .team-content{
