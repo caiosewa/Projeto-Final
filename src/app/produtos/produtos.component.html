@@ -6,7 +6,8 @@
     <input class="align-middle" style="height: 40px; width:200px; margin:5px" id="idProduto" type="number"
         [(ngModel)]="idProduto" />
     <button class="btn btn-info align-middle" id="btnId" (click)="findIdProduto()">Consultar Id</button>
-    <button class="btn btn-info align-middle" id="btnAll" (click)="btnAll()">Consultar All</button>
+    <button class="btn btn-info align-middle" id="btnAll" (click)="findAllProduto()">Consultar All</button>
+    <button class="btn btn-info align-middle" id="update" (click)="ativarUpdateProduto()">Alterar </button>
     <br />
 </div>
 
@@ -15,29 +16,29 @@
     <div class="container col-8 align-middle" style="width: 720px;" *ngIf="produtoNao == true">
         <div class="card mb-3 align-middle" style="max-width: 720px;">
             <div class="row no-gutters">
-                               <div style="background-color: rgb(170, 170, 170)" class="col-xl-7 col-lg-7 col-sm-12">
+                <div style="background-color: rgb(170, 170, 170)" class="col-xl-7 col-lg-7 col-sm-12">
                     <div class="card-body">
                         <h5 class="card-title">Produto não encontrado!</h5>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-   
+
     <div class="container col-8 align-middle" style="width: 720px;" *ngIf="showId == true">
         <div class="card mb-3 align-middle" style="max-width: 720px;">
             <div class="row no-gutters">
                 <div class="col-xl-5 col-lg-5 col-sm-12">
-                    <img src="{{item.linkfoto}}" class="card-img" alt="...">
+                    <img src="{{produto.linkfoto}}" class="card-img" alt="...">
                 </div>
                 <div style="background-color: rgb(170, 170, 170)" class="col-xl-7 col-lg-7 col-sm-12">
                     <div class="card-body">
-                        <h5 class="card-title">{{item.idProduto}} - {{item.titulo}}</h5>
-                        <h6 class="card-text">Preço: R$ {{item.preco}},00</h6>
-                        <p class="card-text">Detalhes: {{item.detalhes}}</p>
+                        <h5 class="card-title">{{produto.idProduto}} - {{produto.titulo}}</h5>
+                        <h6 class="card-text">Preço: R$ {{produto.preco}},00</h6>
+                        <p class="card-text">Descricao: {{produto.descricao}}</p>
                         <p class="card-text"><small class="text-muted">Quantidade no Estoque:
-                                {{item.qtdEstoque}}</small>
+                                {{produto.qtdEstoque}}</small>
                         </p>
                     </div>
                 </div>
@@ -47,20 +48,33 @@
 
 
     <div class="container col-8 align-middle" style="width: 720px;" *ngIf="showAll == true">
-        <div *ngFor="let item of itens">
+        <div *ngFor="let produto of produtos">
             <div class="card mb-3 align-middle" style="max-width: 720px;">
                 <div class="row no-gutters">
                     <div class="col-xl-5 col-lg-5 col-sm-12">
-                        <img src="{{item.linkfoto}}" class="card-img" alt="...">
+                        <img src="{{produto.linkfoto}}" class="card-img" alt="...">
                     </div>
                     <div style="background-color: rgb(170, 170, 170)" class="col-xl-7 col-lg-7 col-sm-12">
                         <div class="card-body">
-                            <h5 class="card-title">{{item.idProduto}} - {{item.titulo}}</h5>
-                            <h6 class="card-text">Preço: R$ {{item.preco}},00</h6>
-                            <p class="card-text">Detalhes: {{item.detalhes}}</p>
-                            <p class="card-text"><small class="text-muted">Quantidade no
-                                    Estoque:{{item.qtdEstoque}}</small>
+                            <h5 *ngIf="!ativarAlterar" class="card-title">{{produto.idProduto}} - {{produto.titulo}}
+                            </h5>
+                            <input name="idProduto" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
+                                value="{{produto.idProduto}}" [(ngModel)]="idProduto" required>
+                            <input name="titulo" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
+                                value="{{produto.titulo}}" [(ngModel)]="produto.titulo" required>
+                            <h6 *ngIf="!ativarAlterar" class="card-text">Preço: R$ {{produto.preco}},00</h6>
+                            <input name="preco" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
+                                value="{{produto.preco}}" [(ngModel)]="produto.preco" required>
+                            <p *ngIf="!ativarAlterar" class="card-text">Descricao: {{produto.descricao}}</p>
+                            <input  name="descricao" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
+                                value="{{produto.descricao}}" [(ngModel)]="produto.descricao" required>
+                            <p *ngIf="!ativarAlterar" class="card-text"><small class="text-muted">Quantidade no
+                                    Estoque:{{produto.qtdEstoque}}</small>
                             </p>
+                            <input name="qtdEstoque" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
+                                value="{{produto.qtdEstoque}}" [(ngModel)]="produto.qtdEstoque" required>
+                            
+                            <button class="links" id="alterar" (click)="alterar()">Confirmar</button>
                         </div>
                     </div>
                 </div>
