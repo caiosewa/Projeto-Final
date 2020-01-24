@@ -16,8 +16,6 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ListarComponent } from './components/listar/listar.component';
-import { AlterarComponent } from './components/alterar/alterar.component';
 import { ConsultaUsuarioService } from './service/consulta-usuario.service';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -26,6 +24,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FaqComponent } from './faq/faq.component';
 import { AdminComponent } from './admin/admin.component';
 import { ComunidadesComponent } from './comunidades/comunidades.component';
+import { InserirProdutoComponent } from './inserir-produto/inserir-produto.component';
+import { AlterarProdutoComponent } from './alterar-produto/alterar-produto.component';
 
 
 @NgModule({
@@ -41,12 +41,12 @@ import { ComunidadesComponent } from './comunidades/comunidades.component';
     CarrinhoComponent,
     PagamentoComponent,
     MenuLateralComponent,
-    ListarComponent,
-    AlterarComponent,
     HomeComponent,
     FaqComponent,
     AdminComponent,
-    ComunidadesComponent
+    ComunidadesComponent,
+    InserirProdutoComponent,
+    AlterarProdutoComponent
   ],
   imports: [
     BrowserModule,
