@@ -1,21 +1,21 @@
-.navbar {
-  text-align: center!important;
+header {
+  background-color: #252f15!important;
 }
 .navbar-logo {
   background-color: #252f15!important;
 }
 .navbar-collapse{
-    background-color: #252f15!important;
+    background-color: rgba(37, 47, 21, 0.0)!important;
 }
 .navbar-light {
-    background-color: #252f15!important;
-    padding: 5px!important;
+    background-color: rgba(37, 47, 21, 0.75)!important;
+    padding: 2px!important;
 }
 .nav-link {
     color: #F8ECEC!important;
     text-transform: uppercase;
     font-family: 'Ubunto', sans-serif;
-    font-size: .8em;
+    font-size: .75em;
 }
 .mat-button{
     border-radius: 10px;
@@ -45,15 +45,13 @@
     margin-top: 1px;
     margin-right: 8px;
     font-family: 'Ubunto', sans-serif;
-    font-size: 1em;
+    font-size: .75em;
     border-bottom: #F8ECEC solid 1px;
     transition: 0.3s;
 }
 
 .searchbar::placeholder {
-    color: #F8ECEC;
-    font-family: 'Ubunto', sans-serif;
-    font-size: 1em;
+    color: rgba(248, 236, 236, 0.25);
 }
 
 .searchbar:focus {

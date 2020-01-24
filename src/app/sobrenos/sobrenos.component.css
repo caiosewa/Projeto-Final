@@ -1,19 +1,25 @@
-    
+.container {
+    margin-bottom: 5%;
+}
 .container-bg{
-    background: #BBD28E!important;      
+    background: #BBD28E!important;
+    height: 20%;     
 }
-#titulo {
+h1 {
+    text-align: center!important;
+    margin-top: -10px;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 2%;
+}
+h2 {
+    text-align: center!important;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 2%;
+    margin-bottom: -5%;
+}
+#caixa1 {
     text-align: center;
-    width: 40%;
-    margin-top: -15px;
 }
-
-#logo {
-    text-align: center;
-    width: 10px;
-    height: 10px;
-}
-
 .section-title h2{
     text-transform: uppercase;
 }
@@ -29,7 +35,7 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
-    box-shadow: 5px 5px 15px #000;
+    box-shadow: 5px 5px 15px rgb(143, 143, 143);
 }
 .team-img{
     position: relative;
@@ -60,6 +66,7 @@
 .team-info{
     padding: 5px 20px 5px 20px;
     transition: all .5s;
+    font-family: 'Open sans', sans-serif;
 }
 .single-team:hover .team-content{
     background: rgba(0, 0, 0, 0.753);
@@ -69,6 +76,7 @@
     color: #fff;
     font-size: 16px;
     margin: 5px;
+    font-family: 'Open sans', sans-serif;
 }
 .single-team:hover .team-info h3{
     color: tomato;
@@ -76,9 +84,10 @@
 .team-info p{
     margin-top: 15px;
     color: #fff;
+    font-family: 'Open sans', sans-serif;
 }
 .team-text{
     color: #fff;
     padding: 0 5px 5px;
-
+    font-family: 'Open sans', sans-serif;
 }
