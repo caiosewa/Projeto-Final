@@ -42,16 +42,7 @@ export class ProdutosComponent implements OnInit {
     });
   }
 
-  alterar() {
-    console.log(this.produto);
-    this.ConsultaProdutosService.update(this.produto).subscribe((produtoOut: Produto) => {
-      this.produto = produtoOut;
-      console.log(this.produto);
-      this.ativarAlterar = false;
-    }, err => {
-      this.produtoNao = false;
-    });
-  }
+
 
   ativarUpdateProduto() {
     this.ativarAlterar = true;

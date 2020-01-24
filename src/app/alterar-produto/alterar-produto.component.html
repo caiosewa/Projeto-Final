@@ -1,31 +1,42 @@
-<!-- <div class="container col-8 align-middle" style="width: 720px;" *ngIf="showId == true">
-        <div class="card mb-3 align-middle" style="max-width: 720px;">
-            <div class="row no-gutters">
-                <div class="col-xl-5 col-lg-5 col-sm-12">
-                    <img src="{{produto.linkfoto}}" class="card-img" alt="...">
-                </div>
-                <div style="background-color: rgb(170, 170, 170)" class="col-xl-7 col-lg-7 col-sm-12">
-                    <div class="card-body">
+<div style="margin-top: 50px" class="d-block position-sticky text-center">
+    <h4>Alteração de Produtos</h4>
+</div>
 
-                        <h5 *ngIf="!ativarAlterar" class="card-title">{{produto.idProduto}} - {{produto.titulo}}</h5>
-                        <input name="idProduto" *ngIf="ativarAlterar" class="form-control" required="required"
-                            type="text" value="{{produto.idProduto}}" [(ngModel)]="idProduto" required>
-                        <input name="titulo" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
-                            value="{{produto.titulo}}" [(ngModel)]="produto.titulo" required>
-                        <h6 *ngIf="!ativarAlterar" class="card-text">Preço: R$ {{produto.preco}},00</h6>
-                        <input name="preco" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
-                            value="{{produto.preco}}" [(ngModel)]="produto.preco" required>
-                        <p *ngIf="!ativarAlterar" class="card-text">Descricao: {{produto.descricao}}</p>
-                        <input name="descricao" *ngIf="ativarAlterar" class="form-control" required="required"
-                            type="text" value="{{produto.descricao}}" [(ngModel)]="produto.descricao" required>
-                        <p *ngIf="!ativarAlterar" class="card-text"><small class="text-muted">Quantidade no Estoque:
-                                {{produto.qtdEstoque}}</small>
-                            <input name="qtdEstoque" *ngIf="ativarAlterar" class="form-control" required="required"
-                                type="text" value="{{produto.qtdEstoque}}" [(ngModel)]="produto.qtdEstoque" required>
-                        </p>
-                        <button *ngIf="ativarAlterar" class="links" id="alterar" (click)="alterar()">Confirmar</button>
-                    </div>
-                </div>
+<div class="container col-8 align-middle" style="width: 720px;">
+    <div style="margin-top: 1rem;margin-bottom: 2rem" class="d-block position-sticky text-center">
+        <label for="singleSelect"> Selecione o produto: </label>
+        <select name="singleSelect" [(ngModel)]="idProduto" (click)="findIdProduto()">
+            <option *ngFor="let produto of produtos" name="idProduto" value="{{produto.idProduto}}">
+                {{produto.idProduto}} -
+                {{produto.titulo}}</option>
+        </select>
+    </div>
+
+    <div class="container col-8 align-middle" style="width: 720px;">
+        <div class="card mb-3 align-middle" style="max-width: 940px;">
+
+
+            <div class="card-body">
+                
+                    <h5 class="card-title">{{produto.idProduto}} - </h5> <input name="titulo" class="form-control"
+                        required="required" type="text" value="{{produto.titulo}}" [(ngModel)]="produto.titulo"
+                        required>
+                
+                <h6 class="card-text">Preço: <input name="preco" class="form-control" required="required" type="text"
+                        value="{{produto.preco}}" [(ngModel)]="produto.preco" required> </h6>
+                        
+                <p class="card-text">Descricao: <input name="descricao" class="form-control" required="required"
+                        type="text" value="{{produto.descricao}}" [(ngModel)]="produto.descricao" required></p>
+
+                <p class="card-text"><small class="text-muted">Quantidade no Estoque:
+                        <input name="qtdEstoque" class="form-control" required="required" type="text"
+                            value="{{produto.qtdEstoque}}" [(ngModel)]="produto.qtdEstoque" required></small>
+                </p>
+                <button class="links" id="alterar" (click)="alterar()">Confirmar</button>
             </div>
+
         </div>
-    </div> -->
+
+    </div>
+
+</div>

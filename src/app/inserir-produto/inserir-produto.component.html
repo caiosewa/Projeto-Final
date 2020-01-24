@@ -1,1 +1,29 @@
-<p>inserir-produto works!</p>
+<div style="margin-top: 50px" class="d-block position-sticky text-center">
+    <h4>Inserir Produto</h4>
+</div>
+
+<div class="container col-8 align-middle" style="width: 720px;">
+    <div class="card mb-3 align-middle" style="max-width: 940px;">
+
+
+        <div class="card-body">
+
+            <h5 class="card-title">Titulo: </h5> <input name="titulo" class="form-control" required="required"
+                type="text" value="{{produto.titulo}}" [(ngModel)]="produto.titulo" required>
+
+            <h6 class="card-text">Preço: <input name="preco" class="form-control" required="required" type="text"
+                    value="{{produto.preco}}" [(ngModel)]="produto.preco" required> </h6>
+
+            <p class="card-text">Descricao: <input name="descricao" class="form-control" required="required" type="text"
+                    value="{{produto.descricao}}" [(ngModel)]="produto.descricao" required></p>
+
+            <p class="card-text"><small class="text-muted">Quantidade no Estoque:
+                    <input name="qtdEstoque" class="form-control" required="required" type="text"
+                        value="{{produto.qtdEstoque}}" [(ngModel)]="produto.qtdEstoque" required></small>
+            </p>
+            <button class="links" id="inserir" (click)="insert()">Confirmar</button>
+        </div>
+
+    </div>
+
+</div>
