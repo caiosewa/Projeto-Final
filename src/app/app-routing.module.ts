@@ -9,6 +9,8 @@ import { ContatoComponent } from './contato/contato.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { AdminComponent } from './admin/admin.component';
+import { AlterarProdutoComponent } from './alterar-produto/alterar-produto.component';
+import { InserirProdutoComponent } from './inserir-produto/inserir-produto.component';
 
 
 
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path:'login', component:LoginComponent} ,
   {path:'faq', component:FaqComponent},
   {path:'admin', component:AdminComponent},
-  {path:'comunidades', component:ComunidadesComponent}
+  {path:'comunidades', component:ComunidadesComponent},
+  {path:'alterar-produto', component:AlterarProdutoComponent},
+  {path:'inserir-produto', component:InserirProdutoComponent},
 ];
 
 @NgModule({

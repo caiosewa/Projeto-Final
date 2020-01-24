@@ -1,14 +1,22 @@
 <div style="margin-top: 50px" class="d-block position-sticky text-center">
-    <h4>Consulta de Produtos</h4>
+    <h4>Produtos AmaZ</h4>
 </div>
 
 <div style="margin-top: 50px" class="d-block position-sticky text-center">
+    <button *ngIf="usuario" [routerLink]="'/alterar-produto'" class="btn btn-info align-middle" id="update">Alterar</button>
+    <button *ngIf="usuario" [routerLink]="'/inserir-produto'" class="btn btn-info align-middle" id="insert">Inserir</button>
+
     <input class="align-middle" style="height: 40px; width:200px; margin:5px" id="idProduto" type="number"
         [(ngModel)]="idProduto" />
+    <!-- <label for="singleSelect"> Single select: </label>
+    <select name="singleSelect" [(ngModel)]="idProduto">
+        <option *ngFor="let produto of produtos" name="idProduto" value="{{produto.idProduto}}">{{produto.idProduto}} -
+            {{produto.titulo}}</option>
+    </select>-->
     <button class="btn btn-info align-middle" id="btnId" (click)="findIdProduto()">Consultar Id</button>
-    <button class="btn btn-info align-middle" id="btnAll" (click)="findAllProduto()">Consultar All</button>
+    <!--<button class="btn btn-info align-middle" id="btnAll" (click)="findAllProduto()">Consultar All</button>
     <button class="btn btn-info align-middle" id="update" (click)="ativarUpdateProduto()">Alterar </button>
-    <br />
+    <br /> -->
 </div>
 
 <div style="margin-top: 50px" class="d-block position-sticky">
@@ -19,14 +27,13 @@
                 <div style="background-color: rgb(170, 170, 170)" class="col-xl-7 col-lg-7 col-sm-12">
                     <div class="card-body">
                         <h5 class="card-title">Produto não encontrado!</h5>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container col-8 align-middle" style="width: 720px;" *ngIf="showId == true">
+ <div class="container col-8 align-middle" style="width: 720px;" *ngIf="showId == true">
         <div class="card mb-3 align-middle" style="max-width: 720px;">
             <div class="row no-gutters">
                 <div class="col-xl-5 col-lg-5 col-sm-12">
@@ -36,10 +43,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{produto.idProduto}} - {{produto.titulo}}</h5>
                         <h6 class="card-text">Preço: R$ {{produto.preco}},00</h6>
-                        <p class="card-text">Descricao: {{produto.descricao}}</p>
-                        <p class="card-text"><small class="text-muted">Quantidade no Estoque:
-                                {{produto.qtdEstoque}}</small>
-                        </p>
+                        <p  class="card-text">Descricao: {{produto.descricao}}</p>
+                        <p  class="card-text"><small class="text-muted">Quantidade no Estoque:
+                                {{produto.qtdEstoque}}</small></p>
                     </div>
                 </div>
             </div>
@@ -56,25 +62,12 @@
                     </div>
                     <div style="background-color: rgb(170, 170, 170)" class="col-xl-7 col-lg-7 col-sm-12">
                         <div class="card-body">
-                            <h5 *ngIf="!ativarAlterar" class="card-title">{{produto.idProduto}} - {{produto.titulo}}
-                            </h5>
-                            <input name="idProduto" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
-                                value="{{produto.idProduto}}" [(ngModel)]="idProduto" required>
-                            <input name="titulo" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
-                                value="{{produto.titulo}}" [(ngModel)]="produto.titulo" required>
-                            <h6 *ngIf="!ativarAlterar" class="card-text">Preço: R$ {{produto.preco}},00</h6>
-                            <input name="preco" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
-                                value="{{produto.preco}}" [(ngModel)]="produto.preco" required>
-                            <p *ngIf="!ativarAlterar" class="card-text">Descricao: {{produto.descricao}}</p>
-                            <input  name="descricao" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
-                                value="{{produto.descricao}}" [(ngModel)]="produto.descricao" required>
-                            <p *ngIf="!ativarAlterar" class="card-text"><small class="text-muted">Quantidade no
+                            <h5 class="card-title">{{produto.idProduto}} - {{produto.titulo}}</h5>
+                            <h6 class="card-text">Preço: R$ {{produto.preco}},00</h6>
+                            <p class="card-text">Descricao: {{produto.descricao}}</p>
+                            <p class="card-text"><small class="text-muted">Quantidade no
                                     Estoque:{{produto.qtdEstoque}}</small>
                             </p>
-                            <input name="qtdEstoque" *ngIf="ativarAlterar" class="form-control" required="required" type="text"
-                                value="{{produto.qtdEstoque}}" [(ngModel)]="produto.qtdEstoque" required>
-                            
-                            <button class="links" id="alterar" (click)="alterar()">Confirmar</button>
                         </div>
                     </div>
                 </div>

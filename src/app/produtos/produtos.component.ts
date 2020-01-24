@@ -20,7 +20,7 @@ export class ProdutosComponent implements OnInit {
   private linkFoto: string;
   private preco: number;
   private qtdEstoque: number;
-  private produto: Produto = new Produto(this.idProduto,this.titulo, this.descricao, null, this.preco, this.qtdEstoque);
+  private produto: Produto = new Produto(0, "", "", "", null, null);
   private produtos: Array<Produto> = new Array<Produto>();
   private showId: boolean;
   private showAll: boolean;
@@ -31,6 +31,7 @@ export class ProdutosComponent implements OnInit {
 
   ngOnInit() {
     this.usuario = Globals.USUARIO;
+    this.findAllProduto();
   }
 
   insert() {
@@ -41,8 +42,7 @@ export class ProdutosComponent implements OnInit {
     });
   }
 
-  alterar(){
-    this.produto.titulo = this.titulo;
+  alterar() {
     console.log(this.produto);
     this.ConsultaProdutosService.update(this.produto).subscribe((produtoOut: Produto) => {
       this.produto = produtoOut;
@@ -52,8 +52,8 @@ export class ProdutosComponent implements OnInit {
       this.produtoNao = false;
     });
   }
-  
-  ativarUpdateProduto(){
+
+  ativarUpdateProduto() {
     this.ativarAlterar = true;
   }
 
@@ -68,16 +68,16 @@ export class ProdutosComponent implements OnInit {
 
   findIdProduto() {
     this.ConsultaProdutosService.getById(this.idProduto).subscribe((produtoOut: Produto) => {
-      if (this.idProduto == 0) {
-        this.showAll = false;
-        this.showId = false;
-        this.produtoNao = true;
-      } else {
-        this.produto = produtoOut;
-        this.showAll = false;
-        this.showId = true;
-        this.produtoNao = false;
-      }
+        if (this.idProduto <= 0) {
+          this.showAll = false;
+          this.showId = false;
+          this.produtoNao = true;
+        } else {
+          this.produto = produtoOut;
+          this.showAll = false;
+          this.showId = true;
+          this.produtoNao = false;
+        }
     });
   }
 }
