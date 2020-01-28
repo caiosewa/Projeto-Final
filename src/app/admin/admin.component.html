@@ -1,11 +1,47 @@
-<div *ngIf="usuario" class="logado">
-    <h3>Bem vindo, {{usuario.nome}}</h3>
-</div>
-<div class="container col-8 align-middle" style="width: 720px;">
-    <div class="card-title">
-        <h5>Id: {{usuario.idUsuario}}</h5>
-        <h5>Nome: {{usuario.nome}}</h5>
-        <h5>Email: {{usuario.email}}</h5>
-        <h5>Telefone: {{usuario.telefone}}</h5>
-    </div>
-</div>
+<section class="row">
+
+  <!-- Sidebar -->
+  <div class="col-sm-12 col-md-3 col-12 ">
+
+
+    <!--Card-->
+    <mdb-card cascade="true" narrower="true">
+
+      <!--Card image-->
+      <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
+        <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20%283%29.jpg" class="img-fluid">
+        <a>
+          <div class="mask"></div>
+        </a>
+      </div>
+      <!--/Card image-->
+
+      <!--Card content-->
+      <mdb-card-body class="text-center">
+        <!--Title-->
+        <h4 class="card-title font-bold mb-2"><strong>{{usuario.nome}}</strong></h4>
+        <h5 class="indigo-text"><strong>Developer</strong></h5>
+      </mdb-card-body>
+      <!--/.Card content-->
+      <div class="list-group list-group-flush">
+        <div class="list-group list-group-flush">
+          <a class="list-group-item list-group-item-action waves-effect">
+            <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>{{usuario.idUsuario}}
+          </a>
+          <a class="list-group-item list-group-item-action waves-effect">
+            <mdb-icon fas icon="user" class="mr-3"></mdb-icon>{{usuario.telefone}} 
+          </a>
+          <a class="list-group-item list-group-item-action waves-effect">
+            <mdb-icon far icon="map" class="mr-3"></mdb-icon>{{usuario.email}}
+          </a>
+        </div>
+      </div>
+    </mdb-card>
+  <!-- FIM DO MENU DE NAVEGAÇÃO LATERAL -->
+  </div>
+  <br>  
+  <div class="example-button-row">
+  <button mat-raised-button>Alterar Produtos | Inserir produtos</button>
+  <br>
+  </div>
+</section>

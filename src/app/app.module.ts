@@ -25,6 +25,7 @@ import { InserirProdutoComponent } from './inserir-produto/inserir-produto.compo
 import { AlterarProdutoComponent } from './alterar-produto/alterar-produto.component';
 /* Modulo do Material Angular que esta em pasta separada, afim de deixar o codigo mais Clean */
 import { MaterialModule } from './material/material.module';
+
 /* ----------------------------------------------------------------------------------------- */
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MaterialModule } from './material/material.module';
     AdminComponent,
     ComunidadesComponent,
     InserirProdutoComponent,
-    AlterarProdutoComponent
+    AlterarProdutoComponent,
+
   ],
   imports: [
     BrowserModule,
