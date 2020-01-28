@@ -52,7 +52,6 @@ import { MaterialModule } from './material/material.module';
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
     MaterialModule
-    
   ],
   providers: [ConsultaUsuarioService],
   bootstrap: [AppComponent]
