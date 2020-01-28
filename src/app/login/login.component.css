@@ -80,7 +80,7 @@ input {
 }
 
 .linklogin {
-  color: #18211a;
+  color: #252f15 !important;
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
 }
@@ -100,11 +100,22 @@ input {
   font-size: 15px;
 }
 .linkc {
-  color: rgba(72, 97, 77, 1);
+  font-size: 1em;
+  color: #252f15 !important;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
 }
 .links {
-  font-size: 14px;
-  color: rgba(72, 97, 77, 1);
+  font-size: 1.2em;
+  color: #202020 !important;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+}
+.linkfp {
+  font-size: 1em;
+  color: #202020 !important;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
 }
 .logar {
   margin-top: 2rem;
