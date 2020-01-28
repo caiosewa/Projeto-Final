@@ -1,47 +1,43 @@
-<div id="background">
-    <div style="padding-top:20px" class="container">
-        <div style="text-align: center;" class="row">
-            <div class="col-12">
-                <!-- <img src="/Imagens/LOGO_MENOR-01.png" alt="Logo da AmaZ" id="Logo"> -->
+<div class="container-fluid">
+    <div class="row no-gutters">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 md-mb-30 sm-mb-30 justify-content-center">
+            <h2>CONTATO</h2>
+
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input class="form-control" [ngClass]="{'is-invalid': _msgErroN}" id="nome" required="required"
+                    type="text" placeholder="Digite o nome" [(ngModel)]="nome" (keyup)="validarNome()" maxlength="30"
+                    required>
+                <span class="invalid-feedback" *ngIf='_msgErroN'>{{_msgErroN}}</span>
             </div>
-            <div id="caixa1">
-                <img src="assets/CONTATO-01.png" alt="Título da página: Contato" id="titcontato">
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
+                    type="email" placeholder="name@example.com.br" [(ngModel)]="email" (keyup)="validarEmail()"
+                    maxlength="25" required>
+                <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
             </div>
 
-            <div class="container" id="formulario">
-
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroN}" id="nome" required="required"
-                        type="text" placeholder="Digite o nome" [(ngModel)]="nome" (keyup)="validarNome()"
-                        maxlength="30" required>
-                    <span class="invalid-feedback" *ngIf='_msgErroN'>{{_msgErroN}}</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
-                        type="email" placeholder="name@example.com.br" [(ngModel)]="email" (keyup)="validarEmail()"
-                        maxlength="25" required>
-                    <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="telefone">Telefone:</label>
-                    <input class="form-control" [ngClass]="{'is-invalid': _msgErroT}" id="tel" required="required"
-                        type="tel" placeholder="(XX) 99999-9999" [(ngModel)]="tel" (keyup)="validarTel()" maxlength="11"
-                        required>
-                    <span class="invalid-feedback" *ngIf='_msgErroT'>{{_msgErroT}}</span>
-                </div>
-                <div class="form-group">
-                    <label for="msg">Mensagem:</label>
-                    <textarea class="form-control" [ngClass]="{'is-invalid': _msgErroM}" [(ngModel)]="msg"
-                        (keyup)="validarMsg()" id="msg" rows="5" maxlength="400" required></textarea>
-                    <span class="invalid-feedback" *ngIf='_msgErroM'>{{_msgErroM}}</span>
-                </div>
-                <p class="login-box-msg">Alguma dúvida? Consulte nosso <a class="linkcadastro" [routerLink]="'/faq'">FAQ!</a></p>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input class="form-control" [ngClass]="{'is-invalid': _msgErroT}" id="tel" required="required"
+                    type="tel" placeholder="(XX) 99999-9999" [(ngModel)]="tel" (keyup)="validarTel()" maxlength="11"
+                    required>
+                <span class="invalid-feedback" *ngIf='_msgErroT'>{{_msgErroT}}</span>
+            </div>
+            <div class="form-group">
+                <label for="msg">Mensagem:</label>
+                <textarea class="form-control" [ngClass]="{'is-invalid': _msgErroM}" [(ngModel)]="msg"
+                    (keyup)="validarMsg()" id="msg" rows="5" maxlength="400" required></textarea>
+                <span class="invalid-feedback" *ngIf='_msgErroM'>{{_msgErroM}}</span>
+            </div>
+            <div class="logar justify-content-center">
+                <p class="login-box-msg">Alguma dúvida? Consulte nosso <a class="linkcadastro"
+                        [routerLink]="'/faq'">FAQ!</a></p>
                 <button class="btn btn-primary butao" (click)="enviar()">Enviar</button>
             </div>
+
         </div>
     </div>
 </div>

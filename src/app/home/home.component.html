@@ -9,7 +9,6 @@
     <div class="logado">
       <p *ngIf="usuario" style="font-size: 14px">Bem vindo, <a class="links"
           [routerLink]="'/admin'">{{usuario.nome}}</a></p>
-      <a *ngIf="!usuario" class="links" [routerLink]="'/login'">Logar-se</a>
     </div>
     <div class="carousel-item active">
       <img class="d-block w-100" src="../../assets/visitaramazonia.jpg" alt="Primeiro Slide">
@@ -85,7 +84,7 @@
 
 <div class="container justify-content-center">
   <h1>Mais vendidos</h1>
-  <div id="demo" class="carousel slide" data-ride="carousel">
+  <div id="demo" class="carousel slide justify-content-center" data-ride="carousel">
 
     <ul class="carousel-indicators mb-0 pb-0">
       <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -162,3 +161,4 @@
     </a>
   </div>
 </div>
+
