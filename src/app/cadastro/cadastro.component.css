@@ -49,7 +49,8 @@
   
   input {
     background-color: transparent;
-    width: 80% !important;
+    padding: 2%;
+    width: 100% !important;
     outline: none;
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.5);
     border-left: transparent;
@@ -61,6 +62,15 @@
     transition: all 0.2s ease;
     display: inline-block;
   }
+  /* Estilo para retirar o sublinhado do input Material Angular */
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+.example-full-width {
+  border-bottom: none;
+  width: 70%;
+}
   
   .btn {
     background-color: #252f15 !important;

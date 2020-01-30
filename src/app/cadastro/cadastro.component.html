@@ -4,39 +4,47 @@
             <h2>CADASTRO</h2>
 
             <div class="form-group">
-                <label for="nome">Nome completo:</label>
-                <input class="form-control" [ngClass]="{'is-invalid': _msgErroN}" id="nome" required="required"
-                    type="text" placeholder="Digite o nome" [(ngModel)]="nome" (keyup)="validarNome()" maxlength="30"
+                <mat-form-field class="example-full-width">  
+                <input matInput class="form-control" [ngClass]="{'is-invalid': _msgErroN}" id="nome" required="required"
+                    type="text" placeholder="Digite o seu Nome" [(ngModel)]="nome" (keyup)="validarNome()" maxlength="30"
                     required>
+                    </mat-form-field>
             </div>
 
             <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
-                    type="email" placeholder="name@example.com.br" [(ngModel)]="email" (keyup)="validarEmail()"
+       
+       <mat-form-field class="example-full-width">  
+                <input matInput class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
+                    type="email" placeholder="Digite um Email valido" [(ngModel)]="email" (keyup)="validarEmail()"
                     maxlength="25" required>
+       </mat-form-field >
             </div>
 
             <div class="form-group">
-                <label for="telefone">Telefone:</label>
-                <input class="form-control" [ngClass]="{'is-invalid': _msgErroT}" id="tel" required="required"
-                    type="tel" placeholder="(XX) 99999-9999" [(ngModel)]="tel" (keyup)="validarTel()" maxlength="11"
+        
+                <mat-form-field class="example-full-width">  
+                <input matInput class="form-control" [ngClass]="{'is-invalid': _msgErroT}" id="tel" required="required"
+                    type="tel" placeholder="Telefone com DDD" [(ngModel)]="tel" (keyup)="validarTel()" maxlength="11"
                     required>
+                    </mat-form-field>
             </div>
 
             <div class="form-group">
-                <label for="senha">Senha:</label>
-                <input class="form-control" [ngClass]="{'is-invalid': _msgErroS}" id="senha" required="required"
-                    type="password" placeholder="ex. 1234" [(ngModel)]="senha" (keyup)="validarSenha()" minlength="10"
+                <mat-form-field class="example-full-width">  
+                <input matInput class="form-control" [ngClass]="{'is-invalid': _msgErroS}" id="senha" required="required"
+                    type="password" placeholder="Digite sua senha" [(ngModel)]="senha" (keyup)="validarSenha()" minlength="10"
                     required>
                 <span class="invalid-feedback" *ngIf='_msgErroSF'>{{_msgErroSF}}</span>
+                </mat-form-field>
             </div>
 
             <div class="form-group">
-                <label for="csenha">Confirmar sua senha:</label>
-                <input class="form-control" [ngClass]="{'is-invalid': _msgErroCS}" id="csenha" required="required"
-                    type="password" placeholder="ex. 1234" [(ngModel)]="csenha" (keyup)="validarCsenha()" minlength="10"
+              
+                <mat-form-field class="example-full-width">  
+                <input matInput class="form-control" [ngClass]="{'is-invalid': _msgErroCS}" id="csenha" required="required"
+                    type="password" placeholder="Confirme sua senha" [(ngModel)]="csenha" (keyup)="validarCsenha()" minlength="10"
                     required>
+                    </mat-form-field>
             </div>
 
             <div class="logar justify-content-center">

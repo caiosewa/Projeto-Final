@@ -5,18 +5,23 @@
             <p style="text-align: center;">Entre com a sua conta</p>
 
             <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
-                    type="email" placeholder="name@example.com.br" [(ngModel)]="usuario.email" (keyup)="validarEmail()"
+                <mat-form-field class="example-full-width">
+               <!--  INPUT EMAIL-->
+                <input  matInput class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
+                    type="email" placeholder="Email" [(ngModel)]="usuario.email" (keyup)="validarEmail()"
                     maxlength="25" required>
                 <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
+                </mat-form-field>
             </div>
 
             <div class="form-group">
-                <label for="senha">Senha:</label>
-                <input class="form-control" id="senha" required="required" type="password" placeholder="ex. 1234"
+          <!--       <label for="senha">Senha:</label> -->
+          <mat-form-field class="example-full-width">
+                <input matInput class="form-control" id="senha" required="required" type="password" placeholder="Senha"
                     [(ngModel)]="usuario.senha" required>
                 <p class="linkfp"><a class="linkfp" href="forgot-password.html">Esqueceu sua senha?</a></p>
+            </mat-form-field>
+
             </div>
 
             <!-- <div class="col-8">

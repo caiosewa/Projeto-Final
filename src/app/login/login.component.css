@@ -50,7 +50,7 @@ label {
 input {
   background-color: transparent;
   padding: 2%;
-  width: 80% !important;
+  width: 100% !important;
   outline: none;
   border-bottom: 1.5px solid rgba(0, 0, 0, 0.5);
   border-left: transparent;
@@ -121,6 +121,16 @@ input {
   margin-top: 2rem;
   text-align: center;
 }
+/* Estilo para retirar o sublinhado do input Material Angular */
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+.example-full-width {
+  border-bottom: none;
+  width: 70%;
+}
+
 
 /* Responsividade CSS */
 @media (min-width: 576px) {

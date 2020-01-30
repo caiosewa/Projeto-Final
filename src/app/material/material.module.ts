@@ -4,7 +4,11 @@ import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 import { CheckboxModule, WavesModule, ButtonsModule, InputsModule, IconsModule, CardsModule } from 'angular-bootstrap-md'
+import { from } from 'rxjs';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -17,7 +21,12 @@ const MaterialComponents = [
   IconsModule,
   CardsModule,
   ReactiveFormsModule,
-  MatTableModule
+  MatTableModule,
+  MatFormFieldModule,
+  MatInputModule,
+
+  
+  
 ]
 
 @NgModule({
