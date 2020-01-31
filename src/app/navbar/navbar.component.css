@@ -1,38 +1,47 @@
 header {
-  background-color: #252f15!important;
+  background-color: #252f15 !important;
 }
+
 .navbar-logo {
-  background-color: #252f15!important;
+  background-color: #252f15 !important;
 }
-.nav-loginSenha{
-  color: #F8ECEC!important;
+
+.navbar-collapse {
+  background-color: rgba(37, 47, 21, 0.0) !important;
+  width: 30px;
+}
+
+.navbar-light {
+  background-color: rgba(37, 47, 21, 0.75) !important;
+  padding: 2px !important;
+}
+
+.nav-link {
+  color: #F8ECEC !important;
   text-transform: uppercase;
   font-family: 'Ubunto', sans-serif;
   font-size: .75em;
+  margin: auto;
 }
-.navbar-collapse{
-    background-color: rgba(37, 47, 21, 0.0)!important;
-    width: 30px;
+
+label {
+  color: rgb(175, 175, 175) !important;
+  text-transform: uppercase;
+  font-family: 'Ubunto', sans-serif;
+  font-size: .6em;
 }
-.navbar-light {
-    background-color: rgba(37, 47, 21, 0.75)!important;
-    padding: 2px!important;
+
+.mat-button {
+  border-radius: 10px;
+  outline: none;
 }
-.nav-link {
-    color: #F8ECEC!important;
-    text-transform: uppercase;
-    font-family: 'Ubunto', sans-serif;
-    font-size: .75em;
-}
-.mat-button{
-    border-radius: 10px;
-    outline: none; 
-}
+
 .logo {
-  text-align: center!important;
+  text-align: center !important;
   padding: 2%;
   margin-top: .3%;
 }
+
 /* pesquisa */
 
 .container {
@@ -43,39 +52,38 @@ header {
 }
 
 .searchbar {
-    float: right;
-    background-color: #252f15!important;
-    color: #F8ECEC;
-    padding: 6px 10px;
-    width: 110px;
-    border: none;
-    margin-top: 1px;
-    margin-right: 5px;
-    font-family: 'Ubunto', sans-serif;
-    font-size: .75em;
-    border-bottom: #F8ECEC solid 1px;
-    transition: 0.3s;
+  background-color: #252f15 !important;
+  color: #F8ECEC;
+  padding: 6px 10px;
+  width: 110px;
+  border: none;
+  margin-top: 1px;
+  margin-right: 5px;
+  font-family: 'Ubunto', sans-serif;
+  font-size: .75em;
+  border-bottom: #F8ECEC solid 1px;
+  transition: 0.3s;
 }
 
 .searchbar::placeholder {
-    color: rgba(248, 236, 236, 0.25);
+  color: rgba(248, 236, 236, 0.25);
 }
 
 .searchbar:focus {
-    width: 250px;
-    font-family: 'Ubunto', sans-serif;
-    font-size: 1em;
-    transition: 0.3s;
-    border-bottom: #F8ECEC solid 1px;
-    outline: none;
+  width: 250px;
+  font-family: 'Ubunto', sans-serif;
+  font-size: 1em;
+  transition: 0.3s;
+  border-bottom: #F8ECEC solid 1px;
+  outline: none;
 }
 
 .btn-search {
-    cursor: pointer;
-    color: #F8ECEC;
-    text-decoration: none !important;
-    font-family: 'Ubunto', sans-serif;
-    font-size: 1em;
-    padding-top: 5px;
-    margin-right: 10px;
+  cursor: pointer;
+  color: #F8ECEC;
+  text-decoration: none !important;
+  font-family: 'Ubunto', sans-serif;
+  font-size: 1em;
+  padding-top: 5px;
+  margin-right: 10px;
 }
