@@ -3,35 +3,33 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <div class="col-12">
-            <div class="row">
-                <div class="col-4">
-                    <div class="container justify-content-start">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-sm-6 col-12">
+                <div class="flex-xl-column order-xl-1 order-xl-2 flex-xl-row-reverse ">
+                    <div class="logo justify-content-center">   
+                        <a>
+                            <img src="assets/AMAZ2.png" width="45%" height="45 %">
+                        </a>
+                    </div>
+                </div>
+                <div class="flex-xl-column order-xl-2 order-xl-1">
+                    <div class="container justify-content-center">
                         <a id="btnSearch" class="btn-search"><i class="fa fa-search"></i></a>
                         <input id="searchBar" class="searchbar" type="text" placeholder="PESQUISAR...">
                     </div>
                 </div>
-
-                <div class="col-4">
-                    <div class="logo">
-                        <a>
-                            <img src="assets/AMAZ2.png" width="30%" height="30%">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <ul class="nav navbar-nav justify-content-end">
-                        <li class="nav-item">
-                            <button *ngIf="!usuario" [routerLink]="'/login'" class="nav-link mat-button"
-                                mat-button>Entre</button>
-                        </li>
-                        <li class="nav-link">|</li>
-                        <li class="nav-item">
-                            <button [routerLink]="'/cadastro'" class="nav-link mat-button"
-                                mat-button>Cadastre-se</button>
-                        </li>
-                    </ul>
-                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-sm-6 col-12">
+                <ul class="nav navbar-nav justify-content-end">
+                    <li class="nav-loginSenha">
+                        <button *ngIf="!usuario" [routerLink]="'/login'" class="nav-link mat-button nav-loginSenha"
+                            mat-button>Entre</button>
+                    </li>
+                    <li class="nav-link nav-loginSenha">ou</li>
+                    <li class="nav-loginSenha">
+                        <button [routerLink]="'/cadastro'" class="nav-link mat-button" mat-button>Cadastre-se</button>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -41,11 +39,11 @@
     <!-- <a class="navbar-brand">
         <img src="assets/LogoAmaZAimarrom-01.png" width="40" height="40" class="d-inline-block align-top">
     </a> -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
-    </button>
+    </button>-->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <div class="col-12">
+        <div class="col-12 ">
             <ul class="nav navbar-nav mr-lg-auto justify-content-center">
                 <li class="nav-item active">
                     <button [routerLink]="'/home'" class="nav-link mat-button" mat-button>Home</button><span
