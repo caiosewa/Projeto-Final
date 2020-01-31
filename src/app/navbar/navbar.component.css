@@ -4,8 +4,15 @@ header {
 .navbar-logo {
   background-color: #252f15!important;
 }
+.nav-loginSenha{
+  color: #F8ECEC!important;
+  text-transform: uppercase;
+  font-family: 'Ubunto', sans-serif;
+  font-size: .75em;
+}
 .navbar-collapse{
     background-color: rgba(37, 47, 21, 0.0)!important;
+    width: 30px;
 }
 .navbar-light {
     background-color: rgba(37, 47, 21, 0.75)!important;
@@ -40,10 +47,10 @@ header {
     background-color: #252f15!important;
     color: #F8ECEC;
     padding: 6px 10px;
-    width: 120px;
+    width: 110px;
     border: none;
     margin-top: 1px;
-    margin-right: 8px;
+    margin-right: 5px;
     font-family: 'Ubunto', sans-serif;
     font-size: .75em;
     border-bottom: #F8ECEC solid 1px;
