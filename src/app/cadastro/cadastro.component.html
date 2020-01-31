@@ -6,7 +6,7 @@
             <div class="form-group">
                 <mat-form-field class="example-full-width">  
                 <input matInput class="form-control" [ngClass]="{'is-invalid': _msgErroN}" id="nome" required="required"
-                    type="text" placeholder="Digite o seu Nome" [(ngModel)]="nome" (keyup)="validarNome()" maxlength="30"
+                    type="text" placeholder="Digite o seu Nome" [(ngModel)]="nome" (keyup)="validarNome()" maxlength="255"
                     required>
                     </mat-form-field>
             </div>
@@ -16,7 +16,7 @@
        <mat-form-field class="example-full-width">  
                 <input matInput class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
                     type="email" placeholder="Digite um Email valido" [(ngModel)]="email" (keyup)="validarEmail()"
-                    maxlength="25" required>
+                    maxlength="255" required>
        </mat-form-field >
             </div>
 

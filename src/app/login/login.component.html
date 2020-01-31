@@ -9,7 +9,7 @@
                <!--  INPUT EMAIL-->
                 <input  matInput class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
                     type="email" placeholder="Email" [(ngModel)]="usuario.email" (keyup)="validarEmail()"
-                    maxlength="25" required>
+                    maxlength="255" required>
                 <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
                 </mat-form-field>
             </div>

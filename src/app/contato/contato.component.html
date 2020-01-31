@@ -6,7 +6,7 @@
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input class="form-control" [ngClass]="{'is-invalid': _msgErroN}" id="nome" required="required"
-                    type="text" placeholder="Digite o nome" [(ngModel)]="nome" (keyup)="validarNome()" maxlength="30"
+                    type="text" placeholder="Digite o nome" [(ngModel)]="nome" (keyup)="validarNome()" maxlength="255"
                     required>
                 <span class="invalid-feedback" *ngIf='_msgErroN'>{{_msgErroN}}</span>
             </div>
@@ -15,7 +15,7 @@
                 <label for="email">E-mail:</label>
                 <input class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
                     type="email" placeholder="name@example.com.br" [(ngModel)]="email" (keyup)="validarEmail()"
-                    maxlength="25" required>
+                    maxlength="255" required>
                 <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
             </div>
 
