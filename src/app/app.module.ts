@@ -23,10 +23,27 @@ import { AdminComponent } from './admin/admin.component';
 import { ComunidadesComponent } from './comunidades/comunidades.component';
 import { InserirProdutoComponent } from './inserir-produto/inserir-produto.component';
 import { AlterarProdutoComponent } from './alterar-produto/alterar-produto.component';
+/* Modulos para o funcionamento do login por google e facebook */
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 /* Modulo do Material Angular que esta em pasta separada, afim de deixar o codigo mais Clean */
 import { MaterialModule } from './material/material.module';
 
 /* ----------------------------------------------------------------------------------------- */
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("966862955481-t2ffkkem7u1759n2oconh0lsvjkmtguk.apps.googleusercontent.com")
+  },
+  /* {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider("Facebook-App-Id")
+  } */
+]);
+ 
+export function provideConfig() {
+  return config;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,9 +70,21 @@ import { MaterialModule } from './material/material.module';
     AppRoutingModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    MaterialModule
+    MaterialModule,
+    SocialLoginModule
+
   ],
-  providers: [ConsultaUsuarioService],
-  bootstrap: [AppComponent]
+  providers: [
+     ConsultaUsuarioService,
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
+  ],
+  bootstrap: [AppComponent],
+
+
+
 })
 export class AppModule { }
+ ConsultaUsuarioService 

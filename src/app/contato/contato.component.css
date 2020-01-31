@@ -122,6 +122,17 @@ textarea {
 .login-box-msg {
   margin-top: -8%;
 }
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+.input{
+    width: 100% !important;
+}
+.example-full-width {
+  border-bottom: none;
+  width: 70%;
+}
+
 
 /* Responsividade CSS */
 @media (min-width: 576px) {
