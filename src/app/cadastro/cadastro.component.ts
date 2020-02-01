@@ -37,6 +37,7 @@ export class CadastroComponent implements OnInit {
   constructor(private route: ActivatedRoute, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
   }
 
 

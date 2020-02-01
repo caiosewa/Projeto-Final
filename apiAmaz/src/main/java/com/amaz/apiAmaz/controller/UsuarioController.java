@@ -77,21 +77,21 @@ public class UsuarioController {
 		return ResponseEntity.ok(usuario);
 	}
 	
-	@GetMapping("/usuario/{nome}")
+	@GetMapping("/usuario/nome/{nome}")
 	public ResponseEntity<List<Usuario>> getAllByNome(@PathVariable String nome){
 		return ResponseEntity.ok(this.usuarioService.getAllByNome(nome));
 	}
 	
-	@GetMapping("/usuario/nome/{nome}")
+	@GetMapping("/usuario/todos/{nome}")
 	public ResponseEntity<Usuario> getUsuarioByNome(@PathVariable String nome){
 		return ResponseEntity.ok(this.usuarioService.getUsuarioByNome(nome));
 	}
 	
 
-	@PostMapping("/login")
+	@PostMapping("/usuario/login")
 	@ResponseStatus(HttpStatus.OK)
 	public Usuario getByEmailAndSenha(@RequestBody Usuario usuario) {
-		Optional<Usuario> usuarioExistente = this.usuarioService.getByEmailAndSenha(usuario.getNome(), usuario.getSenha());
+		Optional<Usuario> usuarioExistente = this.usuarioService.getByEmailAndSenha(usuario.getEmail(), usuario.getSenha());
 
 		if (!usuarioExistente.isPresent()) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Usuário não encontrado!");

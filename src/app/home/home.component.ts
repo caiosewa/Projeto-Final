@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
    this.usuario = Globals.USUARIO;
   }
 }

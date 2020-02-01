@@ -30,6 +30,7 @@ export class ProdutosComponent implements OnInit {
   constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.usuario = Globals.USUARIO;
     this.findAllProduto();
   }

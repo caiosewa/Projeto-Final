@@ -21,6 +21,7 @@ export class AlterarProdutoComponent implements OnInit {
   constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     if (Globals.USUARIO == undefined) {
       this.router.navigate(['/login']);
     } else {

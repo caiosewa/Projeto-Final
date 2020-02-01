@@ -19,6 +19,7 @@ import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-logi
 
 export class LoginComponent implements OnInit {
 
+
   private user: SocialUser;
   private loggedIn: boolean;
 
@@ -49,6 +50,7 @@ export class LoginComponent implements OnInit {
   }
     //Função para notificar quando o usuario realizar o login, carregar a foto, nome, email etc
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
@@ -72,6 +74,8 @@ export class LoginComponent implements OnInit {
     } else {
       this.ConsultaUsuarioService.consulta(this.usuario).subscribe((usuario: Usuario) => {
         Globals.USUARIO = usuario;
+        localStorage.setItem("nome", Globals.USUARIO.nome);
+        this.ConsultaUsuarioService.log.next(true);
         this.router.navigate(['admin']);
       }, err => {
         alert("Usuário ou senha incorreta!");
