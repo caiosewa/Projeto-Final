@@ -6,7 +6,7 @@ import { Globals } from '../model/Globals';
 
 //Modulos importados para o funcionamento da API de login
 import { SocialUser } from "angularx-social-login";
-import { SocialLoginModule, AuthServiceConfig, AuthService } from "angularx-social-login";
+import { AuthService } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 //Fim dos modulos de login
 
@@ -41,16 +41,16 @@ export class LoginComponent implements OnInit {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
   //funcao para logar no facebook
-  signInWithFB(): void {
+  /* signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   } 
-  //Funcao para deslogar do google
+  //Funcao para deslogar do google e facebook */
   signOut(): void {
     this.authService.signOut();
   }
     //Função para notificar quando o usuario realizar o login, carregar a foto, nome, email etc
   ngOnInit() {
-    window.scrollTo(0, 0);
+  
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);

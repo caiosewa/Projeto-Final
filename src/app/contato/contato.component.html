@@ -4,33 +4,44 @@
             <h2>CONTATO</h2>
 
             <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input class="form-control" [ngClass]="{'is-invalid': _msgErroN}" id="nome" required="required"
-                    type="text" placeholder="Digite o nome" [(ngModel)]="nome" (keyup)="validarNome()" maxlength="255"
-                    required>
-                <span class="invalid-feedback" *ngIf='_msgErroN'>{{_msgErroN}}</span>
+
+                <!--          <label for="nome">Nome:</label> -->
+                <mat-form-field class="example-full-width">
+                    <input matInput class="form-control" [ngClass]="{'is-invalid': _msgErroN}" id="nome"
+                        required="required" type="text" placeholder="Digite o nome" [(ngModel)]="nome"
+                        (keyup)="validarNome()" maxlength="255" required>
+                    <span class="invalid-feedback" *ngIf='_msgErroN'>{{_msgErroN}}</span>
+                </mat-form-field>
+
+
             </div>
 
             <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required"
-                    type="email" placeholder="name@example.com.br" [(ngModel)]="email" (keyup)="validarEmail()"
-                    maxlength="255" required>
-                <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
+                <!--             <label for="email">E-mail:</label> -->
+                <mat-form-field class="example-full-width">
+                    <input matInput class="form-control" [ngClass]="{'is-invalid': _msgErroE}" id="email"
+                        required="required" type="email" placeholder="Email" [(ngModel)]="email"
+                        (keyup)="validarEmail()" maxlength="255" required>
+                    <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
+                </mat-form-field>
             </div>
 
             <div class="form-group">
-                <label for="telefone">Telefone:</label>
-                <input class="form-control" [ngClass]="{'is-invalid': _msgErroT}" id="tel" required="required"
-                    type="tel" placeholder="(XX) 99999-9999" [(ngModel)]="tel" (keyup)="validarTel()" maxlength="11"
-                    required>
-                <span class="invalid-feedback" *ngIf='_msgErroT'>{{_msgErroT}}</span>
+                <!--                 <label for="telefone">Telefone:</label> -->
+                <mat-form-field class="example-full-width">
+                    <input matInput class="form-control" [ngClass]="{'is-invalid': _msgErroT}" id="tel" required="required"
+                        type="tel" placeholder="Telefone com DDD" [(ngModel)]="tel" (keyup)="validarTel()" maxlength="11"
+                        required>
+                    <span class="invalid-feedback" *ngIf='_msgErroT'>{{_msgErroT}}</span>
+                </mat-form-field>
             </div>
             <div class="form-group">
-                <label for="msg">Mensagem:</label>
-                <textarea class="form-control" [ngClass]="{'is-invalid': _msgErroM}" [(ngModel)]="msg"
+           <!--      <label for="msg">Mensagem:</label> -->
+           <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Digite aqui sua Mensagem" class="form-control" [ngClass]="{'is-invalid': _msgErroM}" [(ngModel)]="msg"
                     (keyup)="validarMsg()" id="msg" rows="5" maxlength="400" required></textarea>
                 <span class="invalid-feedback" *ngIf='_msgErroM'>{{_msgErroM}}</span>
+           </mat-form-field>
             </div>
             <div class="logar justify-content-center">
                 <p class="login-box-msg">Alguma dúvida? Consulte nosso <a class="linkcadastro"

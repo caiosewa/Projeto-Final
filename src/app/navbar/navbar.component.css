@@ -53,6 +53,15 @@ label {
   padding-right: 7em;
   margin-top: .3%;
 }
+.botao-sair{
+
+  background: brown;
+  border-radius: 50%;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin: 2px;
+}
 
 /* pesquisa */
 

@@ -6,11 +6,20 @@
   <div class="order-lg-last">
     <ul class="nav navbar-nav justify-content-end">
       <li class="nav-loginSenha">
+        <!-- Facebook e google -->
+        <button *ngIf='user' [routerLink]="'/admin'" class="nav-link mat-button">{{user.name}}</button>
+         
+        <!-- Usuarios locais -->
         <button *ngIf='log' [routerLink]="'/admin'" class="nav-link mat-button">{{nome}}</button>
-        <button *ngIf='!log' [routerLink]="'/login'" class="nav-link mat-button">Entre</button>
+        <button *ngIf='!user || !log   ' [routerLink]="'/login'" class="nav-link mat-button">Entre</button>
         <h5>ou</h5>
-        <button *ngIf='log' (click)="logout()" class="nav-link mat-button">Sair</button>
-        <button *ngIf='!log' [routerLink]="'/cadastro'" class="nav-link mat-button">Cadastre-se</button>
+        <button *ngIf='log'  (click)="logout()" class="nav-link mat-button">Sair</button>
+        <button *ngIf='!user || !log   '[routerLink]="'/cadastro'" class="nav-link mat-button">Cadastre-se</button>
+
+        <button *ngIf="user" type="submit" class="botao-sair botao-login-social btn-primary" (click)="signOut()"><i
+            class="fas fa-sign-out-alt"></i> sair
+        </button>
+
       </li>
     </ul>
   </div>
@@ -18,20 +27,22 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
 
     <div style="height: 3em" class="d-flex flex-fill">
-     
-        <div style="padding-top: 0.4em" class="col-xl-3 order-xl-first justify-content-xl-start col-lg-3 order-lg-first justify-content-lg-start col-md-4 order-md-last justify-content-md-end col-sm-6 order-sm-last justify-content-sm-end col-6 order-last justify-content-end">
-          <a id="btnSearch" class="btn-search"><i class="fa fa-search"></i></a>
-          <input id="searchBar" class="searchbar" type="text" placeholder="PESQUISAR...">
-        </div>
-      
 
-      
-        <div class="logo col-xl-9 order-xl-last justify-content-xl-start col-lg-9 order-lg-last justify-content-lg-start col-md-8 order-md-first justify-content-md-end col-sm-6 order-sm-first justify-content-sm-end col-6 order-first justify-content-end">
-          <a>
-            <img src="assets/AMAZ2.png" width="130px" height="40px">
-          </a>
-        </div>
-      
+      <div style="padding-top: 0.4em"
+        class="col-xl-3 order-xl-first justify-content-xl-start col-lg-3 order-lg-first justify-content-lg-start col-md-4 order-md-last justify-content-md-end col-sm-6 order-sm-last justify-content-sm-end col-6 order-last justify-content-end">
+        <a id="btnSearch" class="btn-search"><i class="fa fa-search"></i></a>
+        <input id="searchBar" class="searchbar" type="text" placeholder="PESQUISAR...">
+      </div>
+
+
+
+      <div
+        class="logo col-xl-9 order-xl-last justify-content-xl-start col-lg-9 order-lg-last justify-content-lg-start col-md-8 order-md-first justify-content-md-end col-sm-6 order-sm-first justify-content-sm-end col-6 order-first justify-content-end">
+        <a>
+          <img src="assets/AMAZ2.png" width="130px" height="40px">
+        </a>
+      </div>
+
     </div>
   </div>
 
@@ -60,6 +71,7 @@
         <li class="nav-item">
           <button [routerLink]="'/faq'" class="nav-link mat-button" mat-button>Ajuda</button>
         </li>
+
       </ul>
     </div>
   </div>

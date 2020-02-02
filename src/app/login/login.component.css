@@ -75,6 +75,24 @@ input {
   font-family: "Open Sans", sans-serif;
   margin-top: -10%;
 }
+.button-google{
+
+  border-radius: 50%;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin: 2px;  
+
+}
+.button-facebook{
+  border-radius: 50%;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin: 2px;
+
+} 
+
 .link {
   margin-top: 10px;
 }
