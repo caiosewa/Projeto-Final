@@ -2,38 +2,47 @@
   margin-bottom: 5%;
 }
 
-.container-bg {
+.imagemfundo {
   background-image: url("../../assets/fundosobrenos.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  height: auto;
+  margin: 0 !important;
+  text-align: center;
 }
 
-.container-bg p {
-  margin: 2% 10%;
+.recuo {
+  padding: 15%;
+  padding-top: 1% !important;
+  padding-bottom: 3% !important;
+  margin: 0;
+  text-align: justify;
+  color: rgb(0, 0, 0);
+  text-indent: 2em;
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1 {
   text-align: center !important;
-  margin-top: 3%;
-  font-family: 'Ubuntu', sans-serif;
-  color: #F8ECEC;
-  
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  color: #a6641c;
+  padding: 5%;
+  padding-bottom: 1% !important;
+  font-weight: bold;
 }
 
 h3 {
   text-align: center !important;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   padding: 2%;
   margin-bottom: -5%;
   margin-top: 2%;
+  text-transform: uppercase;
+  color: #a6641c;
+  font-weight: bold;
 }
-
-.recuo{
-  text-align: justify;
-  color: #F8ECEC;
-  text-indent: 2em;
-}
-
 
 .single-team {
   padding-bottom: 70px;
@@ -52,7 +61,7 @@ h3 {
 
 .team-img img {
   width: 100%;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .single-team:hover .team-img img {
@@ -66,8 +75,8 @@ h3 {
   text-align: center;
   overflow: hidden;
   bottom: 0;
-  transition: all .4s;
-  background: rgba(37, 47, 21, 0.80);
+  transition: all 0.4s;
+  background: rgba(37, 47, 21, 0.8);
   z-index: 5;
 }
 
@@ -77,39 +86,77 @@ h3 {
 
 .team-info {
   padding: 5px 20px 5px 20px;
-  transition: all .5s;
-  font-family: 'Open sans', sans-serif;
+  transition: all 0.5s;
+  font-family: "Open sans", sans-serif;
 }
 
 .single-team:hover .team-content {
-  background: rgba(37, 47, 21, 0.80);
+  background: rgba(37, 47, 21, 0.8);
   height: 100%;
 }
 
 .single-team .team-content .team-info h3 {
   text-transform: uppercase;
-  color: #F8ECEC;
+  color: #f8ecec;
   font-size: 16px;
   margin: 5px;
-  font-family: 'Open sans', sans-serif;
+  font-family: "Open sans", sans-serif;
   padding: 2%;
-}
-
-.single-team:hover .team-info h3 {
-  color: tomato;
 }
 
 .team-info p {
   margin-top: 5px;
-  color: #BBD28E;
-  font-family: 'Open sans', sans-serif;
+  color: #bbd28e;
+  font-family: "Open sans", sans-serif;
 }
 
 .team-text {
-  color: #F8ECEC;
-  padding-left: 3% !important;
-  padding-right: 3% !important;
-  font-family: 'Open sans', sans-serif;
+  color: #f8ecec;
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+  font-family: "Open sans", sans-serif;
   text-align: center !important;
-  margin-top: -5%;
+  margin-top: 5%;
+}
+
+/* Ícones das redes sociais */
+.wrapper {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.list-inline li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.social-icons .fab {
+  font-size: 1.5em;
+}
+
+.social-icons .fab {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #f8ecec;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icons.icon-circle .fab {
+  border-radius: 50%;
+}
+
+.social-icons .fab:hover,
+.social-icons .fab:active {
+  color: #bbd28e;
+  box-shadow: 1px 1px 3px #333;
+}
+
+.social-icons .fa-github {
+  background-color: rgba(37, 47, 21, 0.8);
+}
+.social-icons .fa-linkedin-in {
+  background-color: rgba(37, 47, 21, 0.8);
 }
