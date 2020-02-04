@@ -17,21 +17,21 @@ export class AdminComponent implements OnInit {
   constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
-    // if (Globals.USUARIO == undefined) {
-    //   alert("É preciso estar logado para acessar!")
-    //   this.router.navigate(['/login']);
-    // } else {
-    //   this.usuario = Globals.USUARIO;
-    //   window.scrollTo(0, 0);
-    // }
+    if (Globals.USUARIO == undefined) {
+      alert("É preciso estar logado para acessar!")
+      this.router.navigate(['/login']);
+    } else {
+      this.usuario = Globals.USUARIO;
+      window.scrollTo(0, 0);
+    }
   }
 
-  // getAllUsuario() {
-  //   this.ConsultaUsuarioService.getAll().subscribe((usuario: Usuario) => {
-  //     this.usuario = usuario;
-  //   }, err => {
-  //   });
-  // }
+  getAllUsuario() {
+    this.ConsultaUsuarioService.getAll().subscribe((usuario: Usuario) => {
+      this.usuario = usuario;
+    }, err => {
+    });
+  }
 
 
 
