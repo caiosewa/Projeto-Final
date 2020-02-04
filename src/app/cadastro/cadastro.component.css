@@ -6,9 +6,8 @@
     height: 100ch;
   }
   .form-group {
-    margin-top: -4%;
+    margin-top: -2%;
     width: 100%;
-    padding: 1em;
     text-align: center!important;
   }
   .form-control {
@@ -32,24 +31,10 @@
     font-weight: bold;
     color: #a6641c;
   }
-  p {
-    font-family: "Open Sans", sans-serif;
-    padding: 2%;
-    font-size: 1.3em;
-  }
-  
-  label {
-    font-family: "Open Sans", sans-serif !important;
-    display: block;
-    margin-left: 12%;
-    width: 180px;
-    text-align: left;
-    font-size: 1.1em;
-  }
+
   
   input {
     background-color: transparent;
-    padding: 2%;
     width: 100% !important;
     outline: none;
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.5);
@@ -104,15 +89,18 @@
     width: 250px;
     font-size: 15px;
   }
-  .linkc {
-    color: rgba(72, 97, 77, 1);
+  .link {
+    color: rgb(0, 0, 0);
+    font-family: "Open Sans", sans-serif;
   }
-  .links {
-    font-size: 14px;
-    color: rgba(72, 97, 77, 1);
+  .linklogin {
+    font-size: 1em;
+    color: #252f15 !important;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
   }
   .logar {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     text-align: center;
   }
   

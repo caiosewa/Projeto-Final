@@ -1,7 +1,6 @@
 .container {
   margin-bottom: 5%;
 }
-
 .imagemfundo {
   background-image: url("../../assets/fundosobrenos.jpg");
   background-repeat: no-repeat;
@@ -16,7 +15,6 @@
   padding-top: 1% !important;
   padding-bottom: 3% !important;
   margin: 0;
-  text-align: justify;
   color: rgb(0, 0, 0);
   text-indent: 2em;
   font-size: 1em;
@@ -159,4 +157,10 @@ h3 {
 }
 .social-icons .fa-linkedin-in {
   background-color: rgba(37, 47, 21, 0.8);
+}
+
+@media only screen and (max-width: 600px) {
+  .imagemfundo {
+    opacity: .5;
+  }
 }

@@ -55,7 +55,6 @@ label {
 }
 
 .botao-sair {
-
   background: brown;
   border-radius: 50%;
   display: inline-block;
@@ -77,13 +76,12 @@ label {
   background-color: #252f15 !important;
   color: #F8ECEC;
   padding: 1%;
-  width: 100%;
+  width: 80%;
   border: none;
   font-family: 'Ubunto', sans-serif;
-  font-size: 60%;
+  font-size: 70%;
   border-bottom: #F8ECEC solid 1px;
   transition: 0.5s;
- 
 }
 
 .searchbar::placeholder {

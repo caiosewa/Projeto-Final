@@ -6,11 +6,6 @@
   font-family: "Ubuntu", sans-serif;
 }
 
-.carousel-item {
-  height: 100% !important;
-  width: 100% !important;
-}
-
 .carousel-caption {
   margin-bottom: 120px;
   background-color: rgba(248, 236, 236, 0.65);
@@ -81,19 +76,12 @@
   position: relative;
 }
 
-
-
 .carousel-control-prev {
   color: #252f15 !important;
 }
 
 .carousel-control-next {
   color: #252f15 !important;
-}
-
-.img-fluid {
-  height: 25%;
-  width: 25%;
 }
 
 /* animação de aproximação de imagem */
@@ -137,13 +125,6 @@ h1 {
   height: 100%;
 }
 
-body .carousel-control-prev-icon,
-body .carousel-indicators li,
-body .carousel-control-next-icon {
-  background-color: #000;
-  font-family: "Open Sans", sans-serif;
-}
-
 span.carousel-control-prev-icon {
   position: relative;
   bottom: 40px;
@@ -153,11 +134,7 @@ span.carousel-control-prev-icon {
 span.carousel-control-next-icon {
   position: relative;
   bottom: 40px;
-}
-
-.pwrap {
-  background-color: transparent;
-  border: 5px #252f15 !important;
+  right: -40px;
 }
 
 .descricao {
@@ -165,7 +142,6 @@ span.carousel-control-next-icon {
   font-size: 1em;
   font-family: "Open Sans", sans-serif;
 }
-
 .preco {
   text-align: center;
   font-size: 1em;
@@ -175,8 +151,8 @@ span.carousel-control-next-icon {
 .edit-button{
   margin-right: 50%;
 }
-.edit-a{
-  margin-left: 10em;
+.edit-a {
+  text-align: center;
   font-size: 0.8em;
   font-family: "Ubuntu", sans-serif;
   color: #a6641c;
@@ -186,8 +162,20 @@ span.carousel-control-next-icon {
 .edit-a:hover{
   box-shadow: 1px 1px 5px #a6631c75;
 }
+button {
+  justify-content: center;
+}
 .carousel-button{
 font-size: 35px;
+}
 
-
+.parag1 {
+  text-align: justify;
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+}
+.parag2 {
+  text-align: justify;
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
 }

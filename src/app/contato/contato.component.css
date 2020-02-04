@@ -6,9 +6,8 @@
   height: 100ch;
 }
 .form-group {
-  margin-top: -3%;
+  margin-top: -2%;
   width: 100%;
-  padding: 1em;
   text-align: center !important;
 }
 .form-control {
@@ -32,25 +31,10 @@ h2 {
   font-weight: bold;
   color: #a6641c;
 }
-p {
-  font-family: "Open Sans", sans-serif;
-  padding: 2%;
-  font-size: 1.3em;
-}
-
-label {
-  font-family: "Open Sans", sans-serif !important;
-  display: block;
-  margin-left: 12%;
-  width: 180px;
-  text-align: left;
-  font-size: 1.1em;
-}
 
 input {
   background-color: transparent;
-  padding: 2%;
-  width: 80% !important;
+  width: 100% !important;
   outline: none;
   border-bottom: 1.5px solid rgba(0, 0, 0, 0.5);
   border-left: transparent;
@@ -65,7 +49,8 @@ input {
 
 textarea {
   background-color: transparent;
-  width: 80% !important;
+  width: 100% !important;
+  height: 18ch;
   border: 1.5px solid rgba(0, 0, 0, 0.5);
   font-weight: 300;
   font-size: 1em;
@@ -83,15 +68,7 @@ textarea {
   border-radius: 25px;
   text-align: center !important;
   font-family: "Open Sans", sans-serif;
-}
-.link {
-  margin-top: 10px;
-}
-
-.linklogin {
-  color: #18211a;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1em;
+  margin-top: 2%;
 }
 
 #emailHelp {
@@ -108,11 +85,9 @@ textarea {
   width: 250px;
   font-size: 15px;
 }
-.linkc {
-  color: rgba(72, 97, 77, 1);
-}
-.links {
-  font-size: 14px;
+
+.linkcadastro {
+  font-size: 1em;
   color: rgba(72, 97, 77, 1);
 }
 .logar {
@@ -120,20 +95,20 @@ textarea {
   text-align: center;
 }
 .login-box-msg {
-  margin-top: -8%;
+  margin-top: -5%;
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
 }
 ::ng-deep .mat-form-field-underline {
   display: none;
 }
-.input{
-    width: 100% !important;
-}
+
 .example-full-width {
   border-bottom: none;
   width: 70%;
+  padding: 0!important;
+  font-family: "Open Sans", sans-serif!important;
 }
-
-
 
 /* Responsividade CSS */
 @media (min-width: 576px) {

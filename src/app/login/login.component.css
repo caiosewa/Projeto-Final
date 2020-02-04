@@ -4,11 +4,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100ch;
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 .form-group {
-  margin-top: -4%;
+  margin-top: -2%;
   width: 100%;
-  padding: 1em;
   text-align: center !important;
 }
 .form-control {
@@ -32,24 +31,9 @@ h2 {
   font-weight: bold;
   color: #a6641c;
 }
-p {
-  font-family: "Open Sans", sans-serif;
-  padding: 2%;
-  font-size: 1.3em;
-}
-
-label {
-  font-family: "Open Sans", sans-serif !important;
-  display: block;
-  margin-left: 12%;
-  width: 180px;
-  text-align: left;
-  font-size: 1.1em;
-}
 
 input {
   background-color: transparent;
-  padding: 2%;
   width: 100% !important;
   outline: none;
   border-bottom: 1.5px solid rgba(0, 0, 0, 0.5);
@@ -75,33 +59,22 @@ input {
   font-family: "Open Sans", sans-serif;
   margin-top: -10%;
 }
+
 .button-google{
-
   border-radius: 50%;
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    margin: 2px;  
-
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
 }
+
 .button-facebook{
   border-radius: 50%;
   display: inline-block;
   height: 50px;
   width: 50px;
-  margin: 2px;
-
+  margin: 5px;
 } 
-
-.link {
-  margin-top: 10px;
-}
-
-.linklogin {
-  color: #252f15 !important;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1em;
-}
 
 #emailHelp {
   display: block;
@@ -117,28 +90,37 @@ input {
   width: 250px;
   font-size: 15px;
 }
+
 .linkc {
   font-size: 1em;
   color: #252f15 !important;
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
 }
+
 .links {
-  font-size: 1.2em;
-  color: #202020 !important;
+  font-size: 1em;
+  color: #252f15  !important;
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
+  margin-top: -5%;
 }
 .linkfp {
   font-size: 1em;
-  color: #202020 !important;
+  color: #252f15 !important;
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
+  margin-top: 2%;
 }
 .logar {
   margin-top: 2rem;
   text-align: center;
 }
+.logar2 {
+  margin-top: .5rem;
+  text-align: center;
+}
+
 /* Estilo para retirar o sublinhado do input Material Angular */
 
 ::ng-deep .mat-form-field-underline {
@@ -148,7 +130,6 @@ input {
   border-bottom: none;
   width: 70%;
 }
-
 
 /* Responsividade CSS */
 @media (min-width: 576px) {
