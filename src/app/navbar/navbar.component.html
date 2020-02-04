@@ -8,13 +8,92 @@
       <li class="nav-loginSenha">
         <!-- Facebook e google -->
         <button *ngIf='user' [routerLink]="'/admin'" class="nav-link mat-button">{{user.name}}</button>
-         
+
         <!-- Usuarios locais -->
         <button *ngIf='log' [routerLink]="'/admin'" class="nav-link mat-button">{{nome}}</button>
-        <button *ngIf='!user || !log   ' [routerLink]="'/login'" class="nav-link mat-button">Entre</button>
+        <!--         <button *ngIf='!user || !log   ' [routerLink]="'/login'" class="nav-link mat-button">Entre</button>
         <h5>ou</h5>
         <button *ngIf='log'  (click)="logout()" class="nav-link mat-button">Sair</button>
-        <button *ngIf='!user || !log   '[routerLink]="'/cadastro'" class="nav-link mat-button">Cadastre-se</button>
+        <button *ngIf='!user || !log   '[routerLink]="'/cadastro'" class="nav-link mat-button">Cadastre-se</button> -->
+
+        <!--  INICIO DO MODAL  -->
+        <!-- Modal -->
+        <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <!--Content-->
+            <div class="modal-content form-elegant">
+              <!--Header-->
+              <div class="modal-header text-center">
+                <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel">
+                  <strong>ENTRE</strong></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <!--Body-->
+              <div class="modal-body mx-4">
+                <!--Body-->
+                <div class="md-form mb-5">
+                  <!-- EMAIL -->
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="email" id="Form-email1" class="form-control validate class-input"
+                      [ngClass]="{'is-invalid': _msgErroE}" id="email" required="required" type="email"
+                      placeholder="Seu email " [(ngModel)]="usuario.email" (keyup)="validarEmail()" maxlength="255"
+                      required>
+                    <span class="invalid-feedback" *ngIf='_msgErroE'>{{_msgErroE}}</span>
+                    <label data-error="wrong" data-success="right" for="Form-email1">Ex: amaz@amaz.com.br</label>
+                  </mat-form-field>
+                </div>
+                <!-- SENHA -->
+                <div class="md-form pb-3">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="password" id="Form-pass1" class="form-control validate class-input" id="senha"
+                      required="required" type="password" placeholder="Sua senha" [(ngModel)]="usuario.senha" required>
+                  </mat-form-field>
+                  <!-- FIM SENHA -->
+
+                  <p class="font-small blue-text d-flex justify-content-end "> Esqueceu sua <a href="#"
+                      class="blue-text ml-1">
+                      Senha ?</a></p>
+                  <p class="font-small blue-text d-flex justify-content-end"> Não possui conta: <a
+                      [routerLink]="'/cadastro'" class="blue-text ml-1">
+                      Cadastre-se ?</a></p>
+
+                </div>
+                <div class="text-center mb-3">
+                  <button type="submit" class="btn btn-block btn-rounded z-depth-1a" style="background: #252f15"
+                    class="btn btn-primary btn-block" (click)="enviar()">Logar </button>
+                </div>
+                <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> Ou entre por
+                  suas redes sociais:</p>
+
+                <div class="row my-3 d-flex justify-content-center">
+                  <!--Facebook-->
+                  <button type="submit" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"
+                    (click)="signInWithGoogle()"><i class="fab fa-facebook-f text-center"></i></button>
+
+                  <!--Google +-->
+                  <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a" (click)="signInWithGoogle()"><i
+                      class="fab fa-google-plus-g"></i></button>
+                </div>
+              </div>
+              <!--Footer-->
+
+            </div>
+            <!--/.Content-->  
+          </div>
+        </div>
+        <!-- Modal -->
+
+        <div class="text-center">
+          <a mat-button style="color: white;" href="" class="edit-btn btn btn-default btn btn-outline-transparent waves-effect"
+            data-toggle="modal" data-target="#elegantModalForm">
+            Entre</a>
+          <a  mat-button style="color: white;" [routerLink]="'/cadastro'" class="btn btn-default btn btn-outline-transparent waves-effect">Cadastre-se</a>
+        </div>
+
+        <!-- FIM DO MODAL -->
 
         <button *ngIf="user" type="submit" class="botao-sair botao-login-social btn-primary" (click)="signOut()"><i
             class="fas fa-sign-out-alt"></i> sair
@@ -53,23 +132,23 @@
     <div class="col-12 ">
       <ul class="nav navbar-nav mr-lg-auto justify-content-center">
         <li class="nav-item active">
-          <button [routerLink]="'/home'" class="nav-link mat-button" mat-button>Home</button><span
+          <button [routerLink]="'/home'" mat-button style="color: white;" href="" class="btn btn-default btn btn-outline-transparent waves-effect">Home</button><span
             class="sr-only">(current)</span>
         </li>
         <li class="nav-item">
-          <button [routerLink]="'/produtos'" class="nav-link mat-button hvr-float " mat-button>Produtos</button>
+          <button [routerLink]="'/produtos'" mat-button style="color: white;" href="" class="btn btn-default btn btn-outline-transparent waves-effect">Produtos</button>
         </li>
         <li class="nav-item">
-          <button [routerLink]="'/sobrenos'" class="nav-link mat-button" mat-button>Sobre Nós</button>
+          <button [routerLink]="'/sobrenos'" mat-button style="color: white;" href="" class="btn btn-default btn btn-outline-transparent waves-effect">Sobre Nós</button>
         </li>
         <li class="nav-item">
-          <button [routerLink]="'/comunidades'" class="nav-link mat-button" mat-button>Comunidades</button>
+          <button [routerLink]="'/comunidades'" mat-button style="color: white;" href="" class="btn btn-default btn btn-outline-transparent waves-effect">Comunidades</button>
         </li>
         <li class="nav-item">
-          <button [routerLink]="'/contato'" class="nav-link mat-button" mat-button>Contato</button>
+          <button [routerLink]="'/contato'" mat-button style="color: white;" href="" class="btn btn-default btn btn-outline-transparent waves-effect">Contato</button>
         </li>
         <li class="nav-item">
-          <button [routerLink]="'/faq'" class="nav-link mat-button" mat-button>Ajuda</button>
+          <button [routerLink]="'/faq'" mat-button style="color: white;" href="" class="btn btn-default btn btn-outline-transparent waves-effect">Ajuda</button>
         </li>
 
       </ul>

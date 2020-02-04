@@ -53,7 +53,8 @@ label {
   padding-right: 7em;
   margin-top: .3%;
 }
-.botao-sair{
+
+.botao-sair {
 
   background: brown;
   border-radius: 50%;
@@ -75,31 +76,32 @@ label {
 .searchbar {
   background-color: #252f15 !important;
   color: #F8ECEC;
-  padding: 4%;
-  width: 70%;
+  padding: 1%;
+  width: 100%;
   border: none;
-  /* margin-top: 1px;
-  margin-right: 5px; */
   font-family: 'Ubunto', sans-serif;
   font-size: 60%;
   border-bottom: #F8ECEC solid 1px;
-  transition: 0.3s;
-  line-height:initial;
+  transition: 0.5s;
+ 
 }
 
 .searchbar::placeholder {
-  color: rgba(248, 236, 236, 0.25);
+  color: rgba(248, 236, 236, 0.25); 
 }
 
 .searchbar:focus {
   width: 80%;
+  padding: auto;
   font-family: 'Ubunto', sans-serif;
   font-size: 75%;
-  transition: 0.3s;
+  transition: 0.5s;
   border-bottom: #F8ECEC solid 1px;
   outline: none;
 }
-
+.edit-btn {
+  border-color: #252f15;
+}
 .btn-search {
   cursor: pointer;
   color: #F8ECEC;
@@ -108,4 +110,60 @@ label {
   font-size: 1em;
   padding-top: 5px;
   margin-right: 10px;
+}
+
+/* Estilo do modal */
+.class-input {
+  background-color: transparent;
+  padding: 4%;
+  width: 100% !important;
+  outline: none;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.5);
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-weight: 300;
+  font-size: 1em;
+
+}
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+.example-full-width {
+  border-bottom: none;
+  width: 100%;
+}
+.form-elegant .font-small {
+  font-size: 0.8rem;
+}
+.form-elegant .z-depth-1a {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(66, 177, 62, 0.514), 0 4px 12px 0 rgba(66, 177, 62, 0.514);
+  box-shadow: 0 2px 5px 0 rgba(66, 177, 62, 0.514), 0 4px 12px 0 rgba(66, 177, 62, 0.514);
+  margin: 5px;
+}
+.form-elegant .z-depth-1-half,
+.form-elegant .btn:hover {
+  -webkit-box-shadow: 0 5px 11px 0 rgba(86, 182, 67, 0.28), 0 4px 15px 0 rgba(86, 182, 67, 0.28);
+  box-shadow: 0 5px 11px 0 rgba(86, 182, 67, 0.28), 0 4px 15px 0 rgba(86, 182, 67, 0.28);
+}
+.logar{
+  background: #252f15;
+}
+
+.form-elegant .modal-header {
+  border-bottom: none;
+}
+
+.modal-dialog .form-elegant .btn .fab {
+  color: #252f15 !important;
+}
+
+.form-elegant .modal-body,
+.form-elegant .modal-footer {
+  font-weight: 200;
+}
+.modal-header{
+  background: #252f15 transparent;
+  color: #a6641c;
+  font-family: "Open Sans", sans-serif;
 }
