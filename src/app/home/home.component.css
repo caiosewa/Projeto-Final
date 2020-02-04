@@ -81,15 +81,7 @@
   position: relative;
 }
 
-/* .logado {
-  z-index: 1;
-  margin-top: 15px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  float: left;
-  position: absolute;
-} */
+
 
 .carousel-control-prev {
   color: #252f15 !important;
@@ -179,4 +171,18 @@ span.carousel-control-next-icon {
   font-size: 1em;
   font-weight: bold;
   font-family: "Open Sans", sans-serif;
+}
+.edit-button{
+  margin-right: 50%;
+}
+.edit-a{
+  margin-left: 10em;
+  font-size: 0.8em;
+  font-family: "Ubuntu", sans-serif;
+  color: #a6641c;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.edit-a:hover{
+  box-shadow: 1px 1px 5px #a6631c75;
 }
