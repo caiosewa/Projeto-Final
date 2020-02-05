@@ -31,6 +31,7 @@ h3 {
 .hover-efect{
   transition: 0.8s;
   cursor: pointer;
+
 }
 .hover-efect img{
   width: 100%;
@@ -50,3 +51,11 @@ h3 {
   font-weight: bold;
 }
 
+.bg-midlle{
+  background: url("../../assets/folhasamaz.jpeg") ;
+  background-size: cover;
+  background-attachment: fixed; 
+  object-fit: cover; 
+  object-position: top;
+  
+}
