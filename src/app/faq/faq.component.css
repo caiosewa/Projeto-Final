@@ -100,7 +100,7 @@ h5 {
     height: 50px;
 }
 #accordion .panel-title a.collapsed {
-    background: rgba(249, 255, 237) none repeat scroll 0 0;
+    background: rgba(166, 99, 28, 0.02) none repeat scroll 0 0;
     border: 1px solid rgba(187, 210, 142, 0.5);
     color: rgb(88, 88, 88);
     height: 50px;

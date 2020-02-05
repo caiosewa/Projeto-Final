@@ -1,21 +1,25 @@
-/*ESTILO  BARRA LATERAL */
-.profile-sidebar{
-    background-color: rgba(166, 99, 28, 0.5);
-}
-.profile-userpic {
-text-align: center;
+.card {
+  margin-top: 5%;
 }
 
+.profile-sidebar{
+    background-color: rgba(166, 99, 28, 0.5);
+    text-align: center;
+    width: 100%;
+}
 h4 {
   color: #252f15 !important;
   font-family: "Ubuntu", sans-serif;
   font-size: 1.5em;
+  text-align: center;
+  margin-top: 3%;
 }
 h5 {
   color: rgba(37, 47, 21, 0.7) !important;
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
   font-size: 1.2em;
+  text-align: center;
 }
 img {
   height: 150px;
@@ -66,7 +70,9 @@ img {
 .sidebar-search {
   transition: all 0.3s ease;
   padding: 5% 10%;
-  margin-top: -5%;
+  margin-top: -2%;
+  width: 80%;
+  margin-left: 10%;
 }
 .search-menu {
   border-radius: 25px;
@@ -83,4 +89,7 @@ img {
 }
 #listvendas {
   margin-bottom: 20%;
+}
+.container {
+  padding: 0!important;
 }

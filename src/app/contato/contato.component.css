@@ -1,6 +1,6 @@
 .container-fluid {
   background-color: rgba(255, 255, 255);
-  background-image: url("../../assets/fundologin.jpg");
+  background-image: url("../../assets/fundocontato.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100ch;
@@ -57,6 +57,7 @@ textarea {
   resize: none;
   transition: all 0.2s ease;
   display: inline-block;
+  margin-top: 7%;
 }
 
 .btn {
@@ -88,7 +89,8 @@ textarea {
 
 .linkcadastro {
   font-size: 1em;
-  color: rgba(72, 97, 77, 1);
+  color: #252f15;
+  font-weight: bold;
 }
 .logar {
   margin-top: 2rem;
@@ -98,6 +100,7 @@ textarea {
   margin-top: -5%;
   font-size: 1em;
   font-family: "Open Sans", sans-serif;
+  color: #505050;
 }
 ::ng-deep .mat-form-field-underline {
   display: none;

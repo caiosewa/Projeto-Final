@@ -1,60 +1,55 @@
-<div class="row no-gutters">
-  <div class="col-xl-3 col-lg-3 col-md-3"></div>
-  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
-    <div class="profile-sidebar">
-      <!-- SIDEBAR USERPIC -->
-      <div class="profile-userpic">
-        <img src="assets/user.jpg" alt="">
-      </div>
-      <!-- END SIDEBAR USERPIC -->
+<section>
+  <div class="container">
 
-      <!--Card content-->
-      <mdb-card-body class="text-center">
-        <!--Title-->
-        <h4 class="card-title font-bold mb-2"><strong>{{usuario.nome}}</strong></h4>
+    <div class="row">
+      <div class="col-xl-2 col-lg-2 col-md-2"></div>
+      <div class="card col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 profile-sidebar">
+        <img src="assets/user.jpg" alt="Foto do Administrador">
+      </div>
+      <div class="card col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <h4 class="card-title font-bold mb-2"><strong>Mariana{{usuario.nome}}</strong></h4>
         <h5 class="indigo-text"><strong>Administrador</strong></h5>
-      </mdb-card-body>
-      <!--/.Card content-->
-      <!-- sidebar-header  -->
-      <div class="sidebar-search">
-        <div class="input-group">
-          <input type="text" class="form-control search-menu" placeholder="Pesquisar...">
-          <div class="input-group-append">
-            <span class="input-group-text">
-              <i class="fa fa-search" aria-hidden="true"></i>
-            </span>
+        <div class="sidebar-search">
+          <div class="input-group">
+            <input type="text" class="form-control search-menu" placeholder="Pesquisar...">
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- sidebar-search  -->
-      <div class="list-group list-group-flush">
+
         <div class="list-group list-group-flush">
           <a class="list-group-item list-group-item-action waves-effect">
-            <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>{{usuario.id}}
+            <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>aaaa{{usuario.id}}
           </a>
           <a class="list-group-item list-group-item-action waves-effect">
-            <mdb-icon fas icon="user" class="mr-3"></mdb-icon>{{usuario.telefone}}
+            <mdb-icon fas icon="user" class="mr-3"></mdb-icon>aaaa{{usuario.telefone}}
           </a>
           <a class="list-group-item list-group-item-action waves-effect">
-            <mdb-icon far icon="map" class="mr-3"></mdb-icon>{{usuario.email}}
+            <mdb-icon far icon="map" class="mr-3"></mdb-icon>aaaa{{usuario.email}}
           </a>
         </div>
       </div>
-      <!-- FIM DO MENU DE NAVEGAÇÃO LATERAL -->
+      <div class="col-xl-2 col-lg-2 col-md-2"></div>
     </div>
-  </div>
 
-  <div class="buttons col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
-    <button [routerLink]="'/produtos'" class="btn btn-info align-middle" id="produtos"><span><i
-          class="fas fa-box-open"></i></span><br>
-      Produtos</button>
-    <button class="btn btn-info align-middle" id="update">Alterar Produto</button>
-    <button class="btn btn-info align-middle" id="insert">Inserir Produto</button>
-    <button class="btn btn-info align-middle" id="listpedidos">Listar Pedidos</button>
-    <button class="btn btn-info align-middle" id="listvendas">Listar Vendas</button>
   </div>
-  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+</section>
+
+
+<div class="buttons col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+  <button [routerLink]="'/produtos'" class="btn btn-info align-middle" id="produtos"><span><i
+        class="fas fa-box-open"></i></span><br>
+    Produtos</button>
+  <button class="btn btn-info align-middle" id="update">Alterar Produto</button>
+  <button class="btn btn-info align-middle" id="insert">Inserir Produto</button>
+  <button class="btn btn-info align-middle" id="listpedidos">Listar Pedidos</button>
+  <button class="btn btn-info align-middle" id="listvendas">Listar Vendas</button>
 </div>
+<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+
 
 
 

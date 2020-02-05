@@ -18,7 +18,7 @@
         <mat-form-field class="example-full-width">
           <input matInput class="form-control" id="senha" required="required" type="password" placeholder="Senha"
             [(ngModel)]="usuario.senha" required>
-          <p class="linkfp"><a class="linkfp" href="forgot-password.html">Esqueceu sua senha?</a></p>
+          <p class="linkfp"><a class="linkfp" href="">Esqueceu sua senha?</a></p>
         </mat-form-field>
 
       </div>
@@ -26,24 +26,12 @@
       <div class="logar justify-content-center">
         <button type="submit" class="btn btn-primary btn-block" (click)="enviar()">Entrar</button>
       </div>
-      <div class="logar justify-content-center">
-        <button type="submit" class="button-google btn-danger btn-block" (click)="signInWithGoogle()">
-          <i class="fab fa-google-plus-g"></i>
-        </button>
-        <button type="submit" class="button-facebook btn-primary btn-block" (click)="signInWithGoogle()">
-          <i class="fab fa-facebook-f"></i>
-        </button>
-      </div>
       <br>
       <br>
       <div>
         <p class="links" style="text-align: center;">Ainda não é nosso cliente? <a class="linkc"
-            [routerLink]="'/cadastro'">Cadastrar-se</a></p>
+            [routerLink]="'/cadastro'">Cadastre-se</a></p>
       </div>
-
     </div>
-
-
-
   </div>
 </div>

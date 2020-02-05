@@ -162,9 +162,11 @@ span.carousel-control-next-icon {
 .edit-a:hover{
   box-shadow: 1px 1px 5px #a6631c75;
 }
-button {
-  justify-content: center;
+
+.botao{
+  text-align: center;
 }
+
 .carousel-button{
 font-size: 35px;
 }
@@ -181,4 +183,5 @@ font-size: 35px;
 }
 .edit-img{
   object-fit: cover; 
-  object-position: top; }  
+  object-position: top; 
+}  

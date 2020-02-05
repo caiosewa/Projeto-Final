@@ -60,22 +60,6 @@ input {
   margin-top: -10%;
 }
 
-.button-google{
-  border-radius: 50%;
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  margin: 5px;
-}
-
-.button-facebook{
-  border-radius: 50%;
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  margin: 5px;
-} 
-
 #emailHelp {
   display: block;
   margin-left: 10%;
@@ -100,17 +84,18 @@ input {
 
 .links {
   font-size: 1em;
-  color: #252f15  !important;
+  color: #505050 !important;
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   margin-top: -5%;
 }
 .linkfp {
   font-size: 1em;
-  color: #252f15 !important;
+  color: #505050 !important;
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   margin-top: 2%;
+  text-align: right;
 }
 .logar {
   margin-top: 2rem;
