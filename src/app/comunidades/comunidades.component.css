@@ -51,7 +51,7 @@ h3 {
 
 .bg-midlle{
   background: url("../../assets/folhasamaz.jpeg") ;
-  background-size: cover;
+  background-size: 100%;
   background-attachment: fixed; 
   object-fit: cover; 
   object-position: top;
