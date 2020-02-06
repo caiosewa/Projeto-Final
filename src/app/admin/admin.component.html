@@ -1,51 +1,129 @@
-<section>
-  <div class="container">
-
-    <div class="row">
-      <div class="col-xl-2 col-lg-2 col-md-2"></div>
-      <div class="card1 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 profile-sidebar">
-        <img src="assets/user.jpg" alt="Foto do Administrador">
-        <div class="sidebar-search">
-            <div class="input-group">
-              <input type="text" class="form-control search-menu" placeholder="Pesquisar...">
-              <div class="input-group-append">
-                <span class="input-group-text">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </span>
-              </div>
-            </div>
-          </div>
+<div id="wrapper">
+  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <div class="sidebar-brand-icon rotate-n-15">
+        <i class="fas fa-laugh-wink"></i>
       </div>
-      <div class="card2 col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 list-sidebar">
-        <h4 class="card-title font-bold mb-2"><strong>{{usuario.nome}}</strong></h4>
-        <h5 class="indigo-text"><strong>Administrador</strong></h5>
+      <div class="sidebar-brand-text mx-3">{{usuario.nome}} Admin <sup></sup></div>
+    </a>
 
-        <div class="list-group list-group-flush">
-          <a class="list-group-item list-group-item-action waves-effect">
-            <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>{{usuario.id}}
-          </a>
-          <a class="list-group-item list-group-item-action waves-effect">
-            <mdb-icon fas icon="user" class="mr-3"></mdb-icon>{{usuario.telefone}}
-          </a>
-          <a class="list-group-item list-group-item-action waves-effect">
-            <mdb-icon far icon="map" class="mr-3"></mdb-icon>{{usuario.email}}
-          </a>
+    <hr class="sidebar-divider my-0">
+    <hr class="sidebar-divider">
+
+    <div class="sidebar-heading">
+      Interface
+    </div>
+    <li class="nav-item active">
+      <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+        aria-controls="collapseTwo">
+        <i class="fas fa-fw fa-cog"></i>
+        <span>Funções</span>
+      </a>
+      <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Custom Components:</h6>
+          <a class="collapse-item  txt-color" [routerLink]="'/inserir-produto'">Inserir</a>
+          <a class="collapse-item txt-color" [routerLink]="'/alterar-produto'">Alterar produto</a>
         </div>
       </div>
-      <div class="col-xl-2 col-lg-2 col-md-2"></div>
+    </li>
+    <hr class="sidebar-divider">
+    <div class="sidebar-heading">
+
     </div>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+        aria-controls="collapsePages">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Paginas</span>
+      </a>
+      <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Acessos do site:</h6>
+          <a class="collapse-item" [routerLink]="'/login'">Login</a>
+          <a class="collapse-item" [routerLink]="'/cadastro'">Cadastro</a>
+          <a class="collapse-item" [routerLink]="'/faq'">Ajuda</a>
+          <a class="collapse-item" [routerLink]="'/sobrenos'">Sobre Nos</a>
+          <a class="collapse-item" [routerLink]="'/contato'">Contato</a>
+          <div class="collapse-divider"></div>
+          <h6 class="collapse-header">:</h6>
+          <a class="collapse-item" [routerLink]="'/home'">Home</a>
+          <a class="collapse-item" [routerLink]="'/produtos'">Produtos</a>
+          <a class="collapse-item" [routerLink]="'/produtos'">Comunidades</a>
 
-  </div>
-</section>
+        </div>
+      </div>
+    </li>
+    <hr class="sidebar-divider d-none d-md-block">
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+        aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-fw fa-wrench"></i>
+        <span>Configuração</span>
+      </a>
+      <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+      
+   
+          <button mat-button type="button" class="btn" data-toggle="modal" data-target="#basicExampleModal">
+            alterar informações
+          </button>
+        </div>
+      </div>
+    </li>
 
+  </ul>
 
-<div class="buttons col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
-  <button [routerLink]="'/produtos'" class="btn btn-info align-middle" id="produtos"><span><i
-        class="fas fa-box-open"></i></span><br>
-    Produtos</button>
-  <button class="btn btn-info align-middle" [routerLink]="'/alterar-produto'" id="update">Alterar Produto</button>
-  <button class="btn btn-info align-middle" [routerLink]="'/inserir-produto'" id="insert">Inserir Produto</button>
-  <button class="btn btn-info align-middle" id="listpedidos">Listar Pedidos</button>
-  <button class="btn btn-info align-middle" id="listvendas">Listar Vendas</button>
-</div>
-<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown no-arrow d-sm-none">
+            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-search fa-fw"></i>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+              aria-labelledby="searchDropdown">
+              <form class="form-inline mr-auto w-100 navbar-search">
+                <div class="input-group">
+                  <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                    aria-label="Search" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">
+                      <i class="fas fa-search fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </li>
+          <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{usuario.nome}}</span>
+              <img class="img-profile logo-amaz " src="../../assets/LogoAmaZAi2-01.png"
+                style="width: 60px; height:60px;">
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="container-fluid">
+        <h1 class="h3 mb-4">INFORMAÇÕES</h1>
+        <div class="row">
+          <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action waves-effect">
+              <i class="far fa-lightbulb mdb-gallery-view-icon mr-3"></i><strong>Id: </strong> {{usuario.id}}
+            </a>
+            <a class="list-group-item list-group-item-action waves-effect">
+              <i class="fas fa-phone mr-3"></i><strong>Telefone: </strong> {{usuario.telefone}}
+
+            </a>
+            <a class="list-group-item list-group-item-action waves-effect">
+              <i class="far fa-envelope mr-3"></i><strong>Email: </strong> {{usuario.email}}
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-2"></div>
+      </div>
