@@ -1,3 +1,4 @@
+import { ConsultaUsuarioService } from './../service/consulta-usuario.service';
 import { ConsultaProdutosService } from './../service/consulta-produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../model/Globals';
@@ -12,24 +13,28 @@ import { Router } from '@angular/router';
   providers: [Globals]
 })
 export class AlterarProdutoComponent implements OnInit {
+  
+  usuario: Usuario = new Usuario(0,"","","","");
 
-  usuario: Usuario;
   private produto: Produto = new Produto(0, "", "", "", null, null);
   private produtos: Array<Produto> = new Array<Produto>();
   private idProduto: number;
 
-  constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router) { }
+  constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router, public ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
-    if (Globals.USUARIO == undefined) {
-      this.router.navigate(['/login']);
+     if (localStorage.getItem("token")) {
+      this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
+        this.usuario = usuario;
+        Globals.USUARIO = usuario;
+        this.ConsultaProdutosService.getAll().subscribe((produtosOut: Produto[]) => {
+          this.produtos = produtosOut;
+        });
+      });
     } else {
-      this.usuario = Globals.USUARIO;
+      this.router.navigate(['login']);
     }
-    this.ConsultaProdutosService.getAll().subscribe((produtosOut: Produto[]) => {
-      this.produtos = produtosOut;
-    });
   }
 
 

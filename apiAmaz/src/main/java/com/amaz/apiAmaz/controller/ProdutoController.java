@@ -77,7 +77,7 @@ public class ProdutoController {
 	}
 	
 	
-	@GetMapping("/produto/{titulo}")
+	@GetMapping("/produto/todos/{titulo}")
 	public ResponseEntity<List<Produto>> getAllByTitulo(@PathVariable String titulo){
 		return ResponseEntity.ok(this.produtoService.getAllByTitulo(titulo));
 	}

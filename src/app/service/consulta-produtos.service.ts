@@ -10,11 +10,11 @@ export class ConsultaProdutosService {
   constructor(private http:HttpClient) { }
 
   getAll(){
-    return this.http.get("http://localhost:8080/produto/all");
+    return this.http.get("http://localhost:8080/produto");
   }
   
-  getById(idProduto:number){
-    return this.http.get(`http://localhost:8080/produto/${idProduto}`);
+  getById(id:number){
+    return this.http.get(`http://localhost:8080/produto/${id}`);
   }
 
    insert(produto:Produto){

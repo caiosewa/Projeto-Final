@@ -3,27 +3,20 @@ import { ConsultaUsuarioService } from './../service/consulta-usuario.service';
 import { Component, OnInit, NgModule } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Globals } from '../model/Globals';
+import { Token } from '../model/token';
 
-//Modulos importados para o funcionamento da API de login
-import { SocialUser } from "angularx-social-login";
-import { AuthService } from "angularx-social-login";
-import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
-//Fim dos modulos de login
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [ Globals ]
+  providers: [Globals]
 })
 
 export class LoginComponent implements OnInit {
 
-
-  private user: SocialUser;
-  private loggedIn: boolean;
-
   usuario: Usuario = new Usuario(0,"","","","");
+
 
   emailOk: boolean = false;
   private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
@@ -33,34 +26,27 @@ export class LoginComponent implements OnInit {
   private _msgErroT: string = null;
 
 
-  constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService,private authService: AuthService) { }
+  constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
 
-  //Funcao para logar no google
-  signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-  }
-  //funcao para logar no facebook
-  /* signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-  } 
-  //Funcao para deslogar do google e facebook */
-  signOut(): void {
-    this.authService.signOut();
-  }
-    //Função para notificar quando o usuario realizar o login, carregar a foto, nome, email etc
+
   ngOnInit() {
-  
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-    });
-  } 
+    
+    if (localStorage.getItem("token")) {
+      this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
+        this.usuario = usuario;
+        Globals.USUARIO = usuario;
+      });
+      this.router.navigate(['admin']);
+    } else {
+      console.log("Aguardando Login!")
+    }
+  }
 
   validarEmail() {
     if (this.usuario.email.indexOf("@") == -1 || this.usuario.email.indexOf(".") == -1) {
       this._msgErroE = "Email inválido!";
-      this.emailOk = false; 
+      this.emailOk = false;
     }
     else {
       this._msgErroE = "";
@@ -68,19 +54,30 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
   enviar() {
+    localStorage.clear();
+
     if (this.emailOk != true) {
       alert("Favor preencher todos os campos corretamente!");
     } else {
-      this.ConsultaUsuarioService.consulta(this.usuario).subscribe((usuario: Usuario) => {
-        Globals.USUARIO = usuario;
-        localStorage.setItem("nome", Globals.USUARIO.nome);
-        this.ConsultaUsuarioService.log.next(true);
-        this.router.navigate(['admin']);
+      this.ConsultaUsuarioService.consulta(this.usuario).subscribe((res: Token) => {
+        localStorage.setItem("token", res.token);
+        this.validar();
       }, err => {
+        console.log(`Erro cod: ${err.status}`);
         alert("Usuário ou senha incorreta!");
         this.router.navigate(['']);
       });
     }
   }
+
+  validar() {
+    this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
+      this.usuario = usuario;
+      Globals.USUARIO = usuario;
+      window.location.reload();
+    });
+  }
+
 }

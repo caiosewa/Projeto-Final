@@ -2,11 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ConsultaUsuarioService } from '../service/consulta-usuario.service';
 import { Globals } from '../model/Globals';
 import { Router } from '@angular/router';
-import { AuthService } from "angularx-social-login";
-
-import { SocialUser } from "angularx-social-login";
 import { Usuario } from 'src/app/model/usuario';
-import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+import { Token } from '../model/token';
 
 @Component({
   selector: 'app-navbar',
@@ -17,10 +14,7 @@ import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-logi
 })
 export class NavbarComponent implements OnInit {
 
-  private user: SocialUser;
-  private loggedIn: boolean;
-
-  usuario: Usuario = new Usuario(0, "", "", "", "");
+  usuario: Usuario = new Usuario(0,"","","","");
 
   emailOk: boolean = false;
   private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
@@ -29,68 +23,67 @@ export class NavbarComponent implements OnInit {
   private _msgErroE: string = null;
   private _msgErroT: string = null;
 
-  constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService, private login: ConsultaUsuarioService, private authService: AuthService) { }
+  constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
-  nome: string;
   log: boolean; // recebe o valor do log do login service,  sendo utilizado pelo button do menu component
 
-  //Funcao para logar no google
-  signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-  }
-  //funcao para logar no facebook
-  /* signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-  } 
-    //Funcao para deslogar do google e facebook */
-  signOut(): void {
-    this.authService.signOut();
+  ngOnInit() {
+    if(localStorage.getItem("login")){
+      this.router.navigate(['/admin']);
+    }
+    if (localStorage.getItem("token")) {
+      this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
+        this.usuario = usuario;
+        Globals.USUARIO = usuario;
+      });
+      console.log("Você não está logado!!")
+    }
   }
 
-  ngOnInit() {
-    this.login.log.subscribe(value => {
-      this.log = value;
-      this.nome = localStorage.getItem("nome");
-    });
-    /* metodo para subscrever os dados do usuario logado
-      pelo facebook e google
-    */
-    this.authService.authState.subscribe((user) => {
-      ''
-      this.user = user;
-      this.loggedIn = (user != null);
-    });
-  }
+
   validarEmail() {
     if (this.usuario.email.indexOf("@") == -1 || this.usuario.email.indexOf(".") == -1) {
       this._msgErroE = "Email inválido!";
-      this.emailOk = false; 
+      this.emailOk = false;
     }
     else {
       this._msgErroE = "";
       this.emailOk = true;
     }
   }
+
   enviar() {
+    localStorage.clear();
+
     if (this.emailOk != true) {
       alert("Favor preencher todos os campos corretamente!");
     } else {
-      this.ConsultaUsuarioService.consulta(this.usuario).subscribe((usuario: Usuario) => {
-        Globals.USUARIO = usuario;
-        localStorage.setItem("nome", Globals.USUARIO.nome);
-        this.ConsultaUsuarioService.log.next(true);
-        this.router.navigate(['admin']);
+      this.ConsultaUsuarioService.consulta(this.usuario).subscribe((res: Token) => {
+        localStorage.setItem("token", res.token);        
+        this.validar();
       }, err => {
+        console.log(`Erro cod: ${err.status}`);
         alert("Usuário ou senha incorreta!");
-        this.router.navigate(['']);
+        this.router.navigate(['/login']);
       });
     }
   }
 
+  validar() {
+    this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
+      this.usuario = usuario;
+      Globals.USUARIO = usuario;
+      localStorage.setItem("login", "click");
+      window.location.reload();
+    });
+  }
 
   logout() {
-    this.login.log.next(false);
-    Globals.USUARIO = undefined;
+    this.usuario.id = 0;
+    this.usuario.email = "";
+    this.usuario.nome = "";
+    this.usuario.senha = "";
+    this.usuario.telefone = "";
     localStorage.clear();
     this.router.navigate(['/login']);
   }

@@ -17,18 +17,18 @@
           </div>
       </div>
       <div class="card2 col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 list-sidebar">
-        <h4 class="card-title font-bold mb-2"><strong>Mariana{{usuario.nome}}</strong></h4>
+        <h4 class="card-title font-bold mb-2"><strong>{{usuario.nome}}</strong></h4>
         <h5 class="indigo-text"><strong>Administrador</strong></h5>
 
         <div class="list-group list-group-flush">
           <a class="list-group-item list-group-item-action waves-effect">
-            <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>aaaa{{usuario.id}}
+            <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>{{usuario.id}}
           </a>
           <a class="list-group-item list-group-item-action waves-effect">
-            <mdb-icon fas icon="user" class="mr-3"></mdb-icon>aaaa{{usuario.telefone}}
+            <mdb-icon fas icon="user" class="mr-3"></mdb-icon>{{usuario.telefone}}
           </a>
           <a class="list-group-item list-group-item-action waves-effect">
-            <mdb-icon far icon="map" class="mr-3"></mdb-icon>aaaa{{usuario.email}}
+            <mdb-icon far icon="map" class="mr-3"></mdb-icon>{{usuario.email}}
           </a>
         </div>
       </div>
@@ -43,16 +43,9 @@
   <button [routerLink]="'/produtos'" class="btn btn-info align-middle" id="produtos"><span><i
         class="fas fa-box-open"></i></span><br>
     Produtos</button>
-  <button class="btn btn-info align-middle" id="update">Alterar Produto</button>
-  <button class="btn btn-info align-middle" id="insert">Inserir Produto</button>
+  <button class="btn btn-info align-middle" [routerLink]="'/alterar-produto'" id="update">Alterar Produto</button>
+  <button class="btn btn-info align-middle" [routerLink]="'/inserir-produto'" id="insert">Inserir Produto</button>
   <button class="btn btn-info align-middle" id="listpedidos">Listar Pedidos</button>
   <button class="btn btn-info align-middle" id="listvendas">Listar Vendas</button>
 </div>
 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
-
-
-
-
-
-<!-- *ngIf="usuario" [routerLink]="'/alterar-produto'"
-  *ngIf="usuario" [routerLink]="'/inserir-produto'" -->

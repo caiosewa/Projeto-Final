@@ -18,15 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.amaz.apiAmaz.model.Usuario;
+import com.amaz.apiAmaz.model.security.Auth;
+import com.amaz.apiAmaz.model.security.Token;
 import com.amaz.apiAmaz.service.UsuarioService;
 
 @RestController
 @CrossOrigin("*")
 public class UsuarioController {
-	
+
 	@Autowired
 	private UsuarioService usuarioService;
-	
+
 	@PostMapping("/usuario")
 	public ResponseEntity<Usuario> post(@RequestBody Usuario entity) {
 		try {
@@ -76,19 +78,44 @@ public class UsuarioController {
 		}
 		return ResponseEntity.ok(usuario);
 	}
-	
+
 	@GetMapping("/usuario/nome/{nome}")
-	public ResponseEntity<List<Usuario>> getAllByNome(@PathVariable String nome){
+	public ResponseEntity<List<Usuario>> getAllByNome(@PathVariable String nome) {
 		return ResponseEntity.ok(this.usuarioService.getAllByNome(nome));
 	}
-	
+
 	@GetMapping("/usuario/todos/{nome}")
-	public ResponseEntity<Usuario> getUsuarioByNome(@PathVariable String nome){
+	public ResponseEntity<Usuario> getUsuarioByNome(@PathVariable String nome) {
 		return ResponseEntity.ok(this.usuarioService.getUsuarioByNome(nome));
 	}
 	
-
+	
 	@PostMapping("/usuario/login")
+    public ResponseEntity<Token> loginUser(@RequestBody Usuario usuario){
+		Optional<Usuario> usuarioExistente = this.usuarioService.getByEmailAndSenha(usuario.getEmail(),
+				usuario.getSenha());
+		
+		if (!usuarioExistente.isPresent()) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Usuário não encontrado!");
+		} else {
+			Token token = Auth.generateToken(usuarioExistente.get());
+			return ResponseEntity.ok(token);
+		}
+    }
+	
+	
+	@GetMapping("/usuario/logado/{token}")
+	public ResponseEntity<Usuario> loginValid(@PathVariable String token){
+		if(Auth.isValid(token)) {
+			Usuario usuario = Auth.extractUser(token);
+			return ResponseEntity.ok(usuario);
+		}
+		return ResponseEntity.notFound().build();
+	}
+	
+	
+	
+	@PostMapping("/usuario/valido")
 	@ResponseStatus(HttpStatus.OK)
 	public Usuario getByEmailAndSenha(@RequestBody Usuario usuario) {
 		Optional<Usuario> usuarioExistente = this.usuarioService.getByEmailAndSenha(usuario.getEmail(), usuario.getSenha());
@@ -98,5 +125,5 @@ public class UsuarioController {
 		}
 		return usuarioExistente.get();
 	}
- 
+
 }

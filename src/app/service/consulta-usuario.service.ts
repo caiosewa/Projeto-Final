@@ -1,3 +1,4 @@
+import { Token } from './../model/token';
 import { Usuario } from 'src/app/model/usuario';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,7 +9,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ConsultaUsuarioService {
 
-  public log: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http:HttpClient) { }
 
@@ -30,6 +30,10 @@ export class ConsultaUsuarioService {
 
   consulta(usuario: Usuario){
     return this.http.post(`http://localhost:8080/usuario/login`, usuario);
+  }
+
+  valida(token: String){
+    return this.http.get(`http://localhost:8080/usuario/logado/${token}`);
   }
 
 }

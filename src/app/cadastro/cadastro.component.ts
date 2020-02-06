@@ -1,7 +1,7 @@
 import { ConsultaUsuarioService } from './../service/consulta-usuario.service';
 import { Usuario } from '../model/usuario';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -34,12 +34,16 @@ export class CadastroComponent implements OnInit {
   private _msgErroT: string = null;
 
 
-  constructor(private route: ActivatedRoute, private ConsultaUsuarioService: ConsultaUsuarioService) { }
+  constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
+    if (localStorage.getItem("token")) {
+      this.router.navigate(['admin']);
+    } else {
+      console.log("Cadastre-se e tenha acesso a página de Administrador");
+    }
   }
-
 
   validarNome() {
 

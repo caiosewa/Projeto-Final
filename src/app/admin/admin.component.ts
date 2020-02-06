@@ -1,6 +1,6 @@
+import { Usuario } from '../model/usuario';
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../model/Globals';
-import { Usuario } from '../model/usuario';
 import { Router } from '@angular/router';
 import { ConsultaUsuarioService } from '../service/consulta-usuario.service';
 
@@ -12,17 +12,19 @@ import { ConsultaUsuarioService } from '../service/consulta-usuario.service';
 })
 export class AdminComponent implements OnInit {
 
-  usuario: Usuario;
-  username: String;
+  usuario: Usuario = new Usuario(0,"","","","");
+
   constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
-    if (Globals.USUARIO == undefined) {
-      alert("É preciso estar logado para acessar!")
-      this.router.navigate(['/login']);
+    window.scrollTo(0, 0);
+     if (localStorage.getItem("token")) {
+      this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
+        this.usuario = usuario;
+        Globals.USUARIO = usuario;
+      });
     } else {
-      this.usuario = Globals.USUARIO;
-      window.scrollTo(0, 0);
+      this.router.navigate(['login']);
     }
   }
 
@@ -32,7 +34,6 @@ export class AdminComponent implements OnInit {
     }, err => {
     });
   }
-
 
 
 }

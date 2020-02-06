@@ -15,7 +15,7 @@ import { InserirProdutoComponent } from './inserir-produto/inserir-produto.compo
 
 
 const routes: Routes = [
-  {path: '', component:LoginComponent},
+  {path: '', component:HomeComponent},
   {path:'home', component:HomeComponent},
   {path:'sobrenos', component:SobrenosComponent},
   {path:'contato', component:ContatoComponent},

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  usuario: Usuario;
+  usuario: Usuario = new Usuario(0, "", "", "", "");
 
   constructor(private router: Router) { }
 

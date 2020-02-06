@@ -16,7 +16,7 @@
                 </p>
                 <div class="collapse" id="collapseExample">
                     <div class="card card-body">
-                        <input class="align-middle" id="idProduto" type="number" [(ngModel)]="idProduto" />
+                        <input class="align-middle" id="id" type="number" [(ngModel)]="id" />
                         <button class="btn btn-info align-middle" id="btnId" (click)="findIdProduto()">
                             Ok
                         </button>
@@ -24,9 +24,9 @@
                 </div>
                 <!-- <button class="btn btn-info align-middle" id="update" (click)="ativarUpdateProduto()">Alterar </button>
             <br /> -->
-                <button *ngIf="usuario" [routerLink]="'/alterar-produto'" class="btn btn-info align-middle"
+                <button *ngIf="usuario.id != 0" [routerLink]="'/alterar-produto'" class="btn btn-info align-middle"
                     id="update">Alterar</button>
-                <button *ngIf="usuario" [routerLink]="'/inserir-produto'" class="btn btn-info align-middle"
+                <button *ngIf="usuario.id != 0" [routerLink]="'/inserir-produto'" class="btn btn-info align-middle"
                     id="insert">Inserir</button>
             </ul>
         </div>
@@ -36,11 +36,11 @@
 
                 <div class="col-12 col-md-6 col-lg-4" *ngIf="showAll == true">
                     <div class="card" *ngFor="let produto of produtos">
-                        <img src="{{produto.linkfoto}}" class="card-img" alt="...">
+                        <img src="{{produto.linkFoto}}" class="card-img" alt="...">
                         <div class="card-body">
                             <h4 class="card-title">{{produto.titulo}}</h4>
                             <p class="card-text">{{produto.descricao}}</p>
-                            <h5 class="card-text">R$ {{produto.preco}},00</h5>
+                            <h5 class="card-text">R$ {{produto.preco}}</h5>
                             <!-- <p class="card-text"><small class="text-muted">Quantidade no
                                     Estoque:{{produto.qtdEstoque}}</small>
                             </p> -->
@@ -81,8 +81,8 @@
                             <li class="page-item disabled">
                                 <a class="page-link" href="#" tabindex="-1">Anterior</a>
                             </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item active">
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item">
                                 <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
@@ -102,12 +102,12 @@
     <div class="card mb-3 align-middle" style="max-width: 720px;">
         <div class="row no-gutters">
             <div class="col-xl-5 col-lg-5 col-sm-12">
-                <img src="{{produto.linkfoto}}" class="card-img" alt="...">
+                <img src="{{produto.linkFoto}}" class="card-img" alt="...">
             </div>
             <div style="background-color: rgb(170, 170, 170)" class="col-xl-7 col-lg-7 col-sm-12">
                 <div class="card-body">
-                    <h5 class="card-title">{{produto.idProduto}} - {{produto.titulo}}</h5>
-                    <h6 class="card-text">Preço: R$ {{produto.preco}},00</h6>
+                    <h5 class="card-title">{{produto.id}} - {{produto.titulo}}</h5>
+                    <h6 class="card-text">Preço: R$ {{produto.preco}}</h6>
                     <p class="card-text">Descricao: {{produto.descricao}}</p>
                     <p class="card-text"><small class="text-muted">Quantidade no Estoque:
                             {{produto.qtdEstoque}}</small></p>

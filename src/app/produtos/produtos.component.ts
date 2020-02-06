@@ -1,3 +1,4 @@
+import { ConsultaUsuarioService } from './../service/consulta-usuario.service';
 import { ConsultaProdutosService } from './../service/consulta-produtos.service';
 import { Produto } from '../model/produto';
 import { Component, OnInit } from '@angular/core';
@@ -11,10 +12,12 @@ import { Usuario } from '../model/usuario';
   styleUrls: ['./produtos.component.css'],
   providers: [Globals]
 })
+
 export class ProdutosComponent implements OnInit {
 
-  private usuario: Usuario;
-  private idProduto: number;
+  usuario: Usuario = new Usuario(0, "", "", "", "");
+
+  private id: number;
   private titulo: string;
   private descricao: string;
   private linkFoto: string;
@@ -27,12 +30,23 @@ export class ProdutosComponent implements OnInit {
   private produtoNao: boolean;
   private ativarAlterar: boolean;
 
-  constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router) { }
+  constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router, public ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
-    window.scrollTo(0, 0);
-    this.usuario = Globals.USUARIO;
     this.findAllProduto();
+    window.scrollTo(0, 0);
+     if (localStorage.getItem("token")) {
+      this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
+        this.usuario = usuario;
+        Globals.USUARIO = usuario;
+      });
+    } else {
+      this.usuario.id = 0;
+      this.usuario.email = "";
+      this.usuario.nome = "";
+      this.usuario.senha = "";
+      this.usuario.telefone = "";
+    }
   }
 
   insert() {
@@ -42,8 +56,6 @@ export class ProdutosComponent implements OnInit {
       this.produtoNao = false;
     });
   }
-
-
 
   ativarUpdateProduto() {
     this.ativarAlterar = true;
@@ -59,8 +71,8 @@ export class ProdutosComponent implements OnInit {
   }
 
   findIdProduto() {
-    this.ConsultaProdutosService.getById(this.idProduto).subscribe((produtoOut: Produto) => {
-        if (this.idProduto <= 0) {
+    this.ConsultaProdutosService.getById(this.id).subscribe((produtoOut: Produto) => {
+        if (this.id <= 0) {
           this.showAll = false;
           this.showId = false;
           this.produtoNao = true;
@@ -72,5 +84,6 @@ export class ProdutosComponent implements OnInit {
         }
     });
   }
+
 }
 
