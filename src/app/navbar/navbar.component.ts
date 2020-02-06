@@ -1,3 +1,5 @@
+import { Produto } from './../model/produto';
+import { ConsultaProdutosService } from './../service/consulta-produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { ConsultaUsuarioService } from '../service/consulta-usuario.service';
 import { Globals } from '../model/Globals';
@@ -14,7 +16,10 @@ import { Token } from '../model/token';
 })
 export class NavbarComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0,"","","","");
+  usuario: Usuario = new Usuario(0, "", "", "", "", true);
+  produto: Produto = new Produto(0, "", "", "", null, null, true);
+
+  titulo: string;
 
   emailOk: boolean = false;
   private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
@@ -23,12 +28,12 @@ export class NavbarComponent implements OnInit {
   private _msgErroE: string = null;
   private _msgErroT: string = null;
 
-  constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }
+  constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService, private ConsultaProdutosService: ConsultaProdutosService) { }
 
   log: boolean; // recebe o valor do log do login service,  sendo utilizado pelo button do menu component
 
   ngOnInit() {
-    if(localStorage.getItem("login")){
+    if (localStorage.getItem("login")) {
       this.router.navigate(['/admin']);
     }
     if (localStorage.getItem("token")) {
@@ -36,6 +41,7 @@ export class NavbarComponent implements OnInit {
         this.usuario = usuario;
         Globals.USUARIO = usuario;
       });
+    } else {
       console.log("Você não está logado!!")
     }
   }
@@ -59,7 +65,7 @@ export class NavbarComponent implements OnInit {
       alert("Favor preencher todos os campos corretamente!");
     } else {
       this.ConsultaUsuarioService.consulta(this.usuario).subscribe((res: Token) => {
-        localStorage.setItem("token", res.token);        
+        localStorage.setItem("token", res.token);
         this.validar();
       }, err => {
         console.log(`Erro cod: ${err.status}`);
@@ -71,11 +77,16 @@ export class NavbarComponent implements OnInit {
 
   validar() {
     this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
-      this.usuario = usuario;
-      Globals.USUARIO = usuario;
-      localStorage.setItem("login", "click");
-      window.location.reload();
+        this.usuario = usuario;
+        Globals.USUARIO = usuario;
+        localStorage.setItem("login", "click");
+        window.location.reload();
     });
+  }
+
+  capturar() {
+    Globals.titulo = this.titulo;
+    this.router.navigate(['/produtos']);
   }
 
   logout() {

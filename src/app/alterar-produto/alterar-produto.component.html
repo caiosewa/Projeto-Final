@@ -1,19 +1,20 @@
 <div class="container-fluid">
     <div class="row no-gutters">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 md-mb-30 sm-mb-30 justify-content-center">
-            <h3>Alterar Produto</h3>
+            <h3>Alterar/Deletar Produto</h3>
 
             <div class="form-group">
-                <label for="singleSelect"> Selecione o produto: </label>
-                <select name="singleSelect" [(ngModel)]="idProduto" (click)="findIdProduto()">
-                    <option *ngFor="let produto of produtos" name="idProduto" value="{{produto.idProduto}}">
-                        {{produto.idProduto}} -
-                        {{produto.titulo}}</option>
-                </select>
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecione um produto: </label>
+                    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="id" (mouseup)="findIdProduto()" id="inlineFormCustomSelectPref">
+                      <option selected>-------- ESCOLHA UM PRODUTO ---------</option>
+                      <option *ngFor="let produto of produtos" name="id" value="{{produto.id}}">
+                            {{produto.id}} -
+                            {{produto.titulo}}</option>
+                    </select>
             </div>
 
             <div class="form-group">
-                <label for="nome" class="card-title">{{produto.idProduto}} -</label>
+                <label for="nome" class="card-title">{{produto.id}} -</label>
                 <input name="titulo" class="form-control" required="required" type="text" value="{{produto.titulo}}"
                     [(ngModel)]="produto.titulo" required>
             </div>
@@ -37,24 +38,45 @@
             </div>
 
             <div class="form-group">
-                <button class="btn" id="alterar" (click)="alterar()">Confirmar</button>
+                <a class="btn" id="alterar" (click)="alterar()">Confirmar</a>
+                <a class="btn" id="alterar" (click)="deletar()">Deletar</a>
             </div>
-
         </div>
     </div>
 </div>
 
+<!--  INICIO DO MODAL  -->
+<!-- Modal -->
+<div class="modal fade" id="deletarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <!--Content-->
+        <div class="modal-content form-elegant">
+            <!--Header-->
+            <div class="modal-header text-center">
+                <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel">
+                    <strong>DELETAR</strong></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body mx-4">
+                <!--Body-->
+                <div class="md-form mb-5">
+                    <p class="font-small blue-text d-flex justify-content-start "> Tem certeza que deseja
+                        deletar? </p>
+                </div>
+                <div class="logar">
+                    <button type="button" class="btn btn-block entrar recolhe" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-block entrar recolhe" data-dismiss="modal"
+                        (click)="deletar(produto.id)">Sim</button>
+                </div>
+            </div>
+            <!--Footer-->
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Modal -->
 
-<!-- <h5 class="card-title">{{produto.idProduto}} - </h5> <input name="titulo" class="form-control" required="required"
-    type="text" value="{{produto.titulo}}" [(ngModel)]="produto.titulo" required>
-
-<h6 class="card-text">Preço: <input name="preco" class="form-control" required="required" type="text"
-        value="{{produto.preco}}" [(ngModel)]="produto.preco" required> </h6>
-
-<p class="card-text">Descricao: <input name="descricao" class="form-control" required="required" type="text"
-        value="{{produto.descricao}}" [(ngModel)]="produto.descricao" required></p>
-
-<p class="card-text"><small class="text-muted">Quantidade no Estoque:
-        <input name="qtdEstoque" class="form-control" required="required" type="text" value="{{produto.qtdEstoque}}"
-            [(ngModel)]="produto.qtdEstoque" required></small>
-</p> -->
+<!-- FIM DO MODAL -->

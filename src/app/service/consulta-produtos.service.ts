@@ -18,11 +18,19 @@ export class ConsultaProdutosService {
   }
 
    insert(produto:Produto){
-    return this.http.post(`http://localhost:8080/produto/`, produto);
+    return this.http.post(`http://localhost:8080/produto`, produto);
   }
 
   update(produto:Produto){
-     return this.http.put(`http://localhost:8080/produto/`, produto);
+     return this.http.put(`http://localhost:8080/produto`, produto);
+   }
+
+   delete(id:number){
+    return this.http.put(`http://localhost:8080/produto/delete/${id}`, null);
+   }
+
+   busca(titulo: string){
+     return this.http.get(`http://localhost:8080/produto/todos/${titulo}`);
    }
 
 }

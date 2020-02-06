@@ -15,8 +15,7 @@ import { Token } from '../model/token';
 
 export class LoginComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0,"","","","");
-
+  usuario: Usuario = new Usuario(0,"","","","",false);
 
   emailOk: boolean = false;
   private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;

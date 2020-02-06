@@ -8,8 +8,7 @@ import com.amaz.apiAmaz.model.Produto;
 
 public interface ProdutoRepository extends CrudRepository<Produto, Integer>{
 
-	List<Produto> findAllByTitulo (String titulo);
-	Produto findProdutoByTitulo (String titulo);
+	List<Produto> findAllByTituloContainingIgnoreCase (String titulo);
 	
 
 }

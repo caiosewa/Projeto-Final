@@ -15,7 +15,7 @@ import { Usuario } from '../model/usuario';
 
 export class ProdutosComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0, "", "", "", "");
+  usuario: Usuario = new Usuario(0, "", "", "", "", true);
 
   private id: number;
   private titulo: string;
@@ -23,7 +23,7 @@ export class ProdutosComponent implements OnInit {
   private linkFoto: string;
   private preco: number;
   private qtdEstoque: number;
-  private produto: Produto = new Produto(0, "", "", "", null, null);
+  private produto: Produto = new Produto(0, "", "", "", null, null, true);
   private produtos: Array<Produto> = new Array<Produto>();
   private showId: boolean;
   private showAll: boolean;
@@ -33,9 +33,19 @@ export class ProdutosComponent implements OnInit {
   constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router, public ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
-    this.findAllProduto();
     window.scrollTo(0, 0);
-     if (localStorage.getItem("token")) {
+    if (Globals.titulo) {
+      this.ConsultaProdutosService.busca(Globals.titulo).subscribe((produtosOut: Produto[]) => {
+        this.produtos = produtosOut;
+        this.showAll = true;
+        this.showId = false;
+        this.produtoNao = false;
+      });
+    } else {
+      this.findAllProduto();
+    }
+
+    if (localStorage.getItem("token")) {
       this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
         this.usuario = usuario;
         Globals.USUARIO = usuario;
@@ -72,16 +82,16 @@ export class ProdutosComponent implements OnInit {
 
   findIdProduto() {
     this.ConsultaProdutosService.getById(this.id).subscribe((produtoOut: Produto) => {
-        if (this.id <= 0) {
-          this.showAll = false;
-          this.showId = false;
-          this.produtoNao = true;
-        } else {
-          this.produto = produtoOut;
-          this.showAll = false;
-          this.showId = true;
-          this.produtoNao = false;
-        }
+      if (this.id <= 0) {
+        this.showAll = false;
+        this.showId = false;
+        this.produtoNao = true;
+      } else {
+        this.produto = produtoOut;
+        this.showAll = false;
+        this.showId = true;
+        this.produtoNao = false;
+      }
     });
   }
 

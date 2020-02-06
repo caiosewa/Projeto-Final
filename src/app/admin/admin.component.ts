@@ -12,7 +12,7 @@ import { ConsultaUsuarioService } from '../service/consulta-usuario.service';
 })
 export class AdminComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0,"","","","");
+  usuario: Usuario = new Usuario(0,"","","","",true);
 
   constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
@@ -22,18 +22,11 @@ export class AdminComponent implements OnInit {
       this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
         this.usuario = usuario;
         Globals.USUARIO = usuario;
+        localStorage.setItem("login", "");
       });
     } else {
       this.router.navigate(['login']);
     }
   }
-
-  getAllUsuario() {
-    this.ConsultaUsuarioService.getAll().subscribe((usuario: Usuario) => {
-      this.usuario = usuario;
-    }, err => {
-    });
-  }
-
 
 }

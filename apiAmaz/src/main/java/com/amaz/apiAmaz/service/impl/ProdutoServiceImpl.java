@@ -22,12 +22,6 @@ public class ProdutoServiceImpl implements ProdutoService {
 	}
 
 	@Override
-	public void delete(int id) {
-		produtoRepository.deleteById(id);
-		
-	}
-
-	@Override
 	public List<Produto> getAll() {
 		return (List<Produto>) this.produtoRepository.findAll();
 	}
@@ -40,12 +34,8 @@ public class ProdutoServiceImpl implements ProdutoService {
 	
 	@Override
 	public List<Produto> getAllByTitulo(String titulo) {
-		return (List<Produto>) this.produtoRepository.findAllByTitulo(titulo);
+		return (List<Produto>) this.produtoRepository.findAllByTituloContainingIgnoreCase(titulo);
 	}
 
-	@Override
-	public Produto getProdutoByTitulo(String titulo) {
-		return this.produtoRepository.findProdutoByTitulo(titulo);
-	}
 
 }

@@ -13,18 +13,18 @@ import { Router } from '@angular/router';
   providers: [Globals]
 })
 export class AlterarProdutoComponent implements OnInit {
-  
-  usuario: Usuario = new Usuario(0,"","","","");
 
-  private produto: Produto = new Produto(0, "", "", "", null, null);
-  private produtos: Array<Produto> = new Array<Produto>();
-  private idProduto: number;
+  usuario: Usuario = new Usuario(0, "", "", "", "", true);
+
+  produto: Produto = new Produto(0, "", "", "", null, null, true);
+  produtos: Array<Produto> = new Array<Produto>();
+  id: number;
 
   constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router, public ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
-     if (localStorage.getItem("token")) {
+    if (localStorage.getItem("token")) {
       this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
         this.usuario = usuario;
         Globals.USUARIO = usuario;
@@ -41,14 +41,26 @@ export class AlterarProdutoComponent implements OnInit {
   alterar() {
     this.ConsultaProdutosService.update(this.produto).subscribe((produtoOut: Produto) => {
       this.produto = produtoOut;
+      alert("Alterado com Sucesso!");
+    }, err => {
+      alert("")
     });
     this.router.navigate(['/produtos']);
   }
 
+  deletar() {
+    this.ConsultaProdutosService.delete(this.id).subscribe(() => {
+      alert("Deletado com Sucesso!");
+      this.router.navigate(['/produtos']);
+    }, err => {
+      alert("Produto não deletado! Tente novamente");
+    });
+  }
+
   findIdProduto() {
-    this.ConsultaProdutosService.getById(this.idProduto).subscribe((produtoOut: Produto) => {
+    this.ConsultaProdutosService.getById(this.id).subscribe((produtoOut: Produto) => {
       this.produto = produtoOut;
     });
-    
+
   }
 }

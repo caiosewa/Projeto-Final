@@ -4,6 +4,7 @@ constructor(
     public nome: string,
     public telefone: string,
     public email: string,
-    public senha: string 
+    public senha: string,
+    public ativo: boolean
     ){}
 }

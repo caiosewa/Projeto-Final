@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 
 export class CadastroComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0, "", "", "", "");
+  usuario: Usuario = new Usuario(0, "", "", "", "",true);
 
   private nome: string = "";
   private nomeOk: boolean;

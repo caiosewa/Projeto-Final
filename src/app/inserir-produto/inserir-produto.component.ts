@@ -13,9 +13,10 @@ import { Globals } from '../model/Globals';
 })
 export class InserirProdutoComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0, "", "", "", "");
+  usuario: Usuario = new Usuario(0, "", "", "", "",true);
 
-  private produto: Produto = new Produto(0, "", "", "", null, null);
+  produto: Produto = new Produto(0, "", "", "", null, null, true);
+  
   private produtos: Array<Produto> = new Array<Produto>();
   private idProduto: number;
 

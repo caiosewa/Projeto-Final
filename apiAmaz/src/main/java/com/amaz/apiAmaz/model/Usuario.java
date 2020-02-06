@@ -37,8 +37,17 @@ public class Usuario {
 	@NotEmpty(message = "O campo deve ser preenchido")
 	private String senha;
 
+	private boolean ativo;
 	
 	
+	public boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+
 	public int getId() {
 		return id;
 	}

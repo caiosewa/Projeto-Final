@@ -42,8 +42,16 @@ public class Produto {
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
 
+	private boolean visivel;
 	
-	
+	public boolean getVisivel() {
+		return visivel;
+	}
+
+	public void setVisivel(boolean visivel) {
+		this.visivel = visivel;
+	}
+
 	public int getId() {
 		return id;
 	}

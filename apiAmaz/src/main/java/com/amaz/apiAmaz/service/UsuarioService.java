@@ -21,5 +21,6 @@ public interface UsuarioService {
 	Usuario getUsuarioByNome (String nome);
 	
 	Optional<Usuario> getByEmailAndSenha (String email, String senha);
+	
 
 }

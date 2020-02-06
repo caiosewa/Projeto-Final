@@ -52,5 +52,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public Optional<Usuario> getByEmailAndSenha(String email, String senha) {
 		return this.usuarioRepository.findByEmailAndSenha(email, senha);
 	}
+	
+
 
 }
