@@ -50,14 +50,14 @@ h3 {
 }
 
 .bg-midlle{
-  background: url("../../assets/folhasamaz.jpeg") ;
+  background: url("../../assets/fundocomu2.jpg") ;
   background-size: 100%;
   background-attachment: fixed; 
   object-fit: cover; 
   object-position: top;
 }
 .bg-cover{
-  background: url("../../assets/folhasamaz.jpeg") ;
+  background: url("../../assets/fundocomu1.jpg");
   background-size: cover;
   background-attachment: fixed; 
   object-fit: cover; 
