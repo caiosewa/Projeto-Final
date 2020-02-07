@@ -12,7 +12,7 @@ import { ConsultaUsuarioService } from '../service/consulta-usuario.service';
 })
 export class AdminComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0,"","","","",true);
+  usuario: Usuario = new Usuario(0,"","","","",1);
 
   constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 

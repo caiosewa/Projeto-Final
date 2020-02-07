@@ -5,6 +5,6 @@ constructor(
     public telefone: string,
     public email: string,
     public senha: string,
-    public ativo: boolean
+    public ativo: number
     ){}
 }

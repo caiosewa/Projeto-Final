@@ -15,7 +15,7 @@ import { Token } from '../model/token';
 
 export class LoginComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0,"","","","",false);
+  usuario: Usuario = new Usuario(0,"","","","",0);
 
   emailOk: boolean = false;
    filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
@@ -75,7 +75,8 @@ export class LoginComponent implements OnInit {
     this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
       this.usuario = usuario;
       Globals.USUARIO = usuario;
-      window.location.reload();
+      this.router.navigate(['admin']);
+      location.reload();
     });
   }
 

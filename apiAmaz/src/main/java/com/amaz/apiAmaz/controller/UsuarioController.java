@@ -31,7 +31,7 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> post(@RequestBody Usuario entity) {
 		try {
 			Usuario usuarioSalvo = this.usuarioService.insertOrUpdate(entity);
-			usuarioSalvo.setAtivo(true);
+			usuarioSalvo.setAtivo(1);
 			return ResponseEntity.ok(usuarioSalvo);
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(null);
@@ -42,7 +42,7 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> put(@RequestBody Usuario entity) {
 		try {
 			Usuario usuarioSalvo = this.usuarioService.insertOrUpdate(entity);
-			usuarioSalvo.setAtivo(true);
+			usuarioSalvo.setAtivo(1);
 			return ResponseEntity.ok(usuarioSalvo);
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(null);

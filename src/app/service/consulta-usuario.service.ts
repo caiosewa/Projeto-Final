@@ -13,27 +13,27 @@ export class ConsultaUsuarioService {
   constructor(private http:HttpClient) { }
 
   getAll(){
-    return this.http.get(`http://localhost:8080/usuario`);
+    return this.http.get(`http://93.188.162.193:8080/usuario`);
   }
 
   getById(id: number){
-    return this.http.get(`http://localhost:8080/usuario/${id}`);
+    return this.http.get(`http://93.188.162.193:8080/usuario/${id}`);
   }
 
   insert(usuario: Usuario){
-    return this.http.post(`http://localhost:8080/usuario`, usuario);
+    return this.http.post(`http://93.188.162.193:8080/usuario`, usuario);
   }
 
   update(usuario: Usuario){
-    return this.http.put(`http://localhost:8080/usuario`, usuario);
+    return this.http.put(`http://93.188.162.193:8080/usuario`, usuario);
   }
 
   consulta(usuario: Usuario){
-    return this.http.post(`http://localhost:8080/usuario/login`, usuario);
+    return this.http.post(`http://93.188.162.193:8080/usuario/login`, usuario);
   }
 
   valida(token: String){
-    return this.http.get(`http://localhost:8080/usuario/logado/${token}`);
+    return this.http.get(`http://93.188.162.193:8080/usuario/logado/${token}`);
   }
 
 }

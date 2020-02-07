@@ -16,17 +16,17 @@ import { Token } from '../model/token';
 })
 export class NavbarComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0, "", "", "", "", true);
-  produto: Produto = new Produto(0, "", "", "", null, null, true);
+  usuario: Usuario = new Usuario(0, "", "", "", "", 1);
+  produto: Produto = new Produto(0, "", "", "", null, null, 1);
 
   titulo: string;
 
   emailOk: boolean = false;
-   filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
-   num: any = /^[0-9]+$/;
-   _msgErroN: string = null;
-   _msgErroE: string = null;
-   _msgErroT: string = null;
+  filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
+  num: any = /^[0-9]+$/;
+  _msgErroN: string = null;
+  _msgErroE: string = null;
+  _msgErroT: string = null;
 
   constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService, private ConsultaProdutosService: ConsultaProdutosService) { }
 
@@ -77,16 +77,20 @@ export class NavbarComponent implements OnInit {
 
   validar() {
     this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
-        this.usuario = usuario;
-        Globals.USUARIO = usuario;
-        localStorage.setItem("login", "click");
-        window.location.reload();
+      this.usuario = usuario;
+      Globals.USUARIO = usuario;
+      localStorage.setItem("login", "click");
+      window.location.reload();
     });
   }
 
   capturar() {
-    Globals.titulo = this.titulo;
-    this.router.navigate(['/produtos']);
+    if (this.router.isActive('/produtos', true)) {
+      Globals.titulo = this.titulo;
+    } else {
+      Globals.titulo = this.titulo;
+      this.router.navigate(['/produtos']);
+    }
   }
 
   logout() {

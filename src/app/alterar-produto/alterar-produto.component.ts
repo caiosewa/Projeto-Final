@@ -14,9 +14,9 @@ import { Router } from '@angular/router';
 })
 export class AlterarProdutoComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0, "", "", "", "", true);
+  usuario: Usuario = new Usuario(0, "", "", "", "", 1);
 
-  produto: Produto = new Produto(0, "", "", "", null, null, true);
+  produto: Produto = new Produto(0, "", "", "", null, null, 1);
   produtos: Array<Produto> = new Array<Produto>();
   id: number;
 

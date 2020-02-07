@@ -10,27 +10,27 @@ export class ConsultaProdutosService {
   constructor(private http:HttpClient) { }
 
   getAll(){
-    return this.http.get("http://localhost:8080/produto");
+    return this.http.get("http://93.188.162.193:8080/produto");
   }
   
   getById(id:number){
-    return this.http.get(`http://localhost:8080/produto/${id}`);
+    return this.http.get(`http://93.188.162.193:8080/produto/${id}`);
   }
 
    insert(produto:Produto){
-    return this.http.post(`http://localhost:8080/produto`, produto);
+    return this.http.post(`http://93.188.162.193:8080/produto`, produto);
   }
 
   update(produto:Produto){
-     return this.http.put(`http://localhost:8080/produto`, produto);
+     return this.http.put(`http://93.188.162.193:8080/produto`, produto);
    }
 
    delete(id:number){
-    return this.http.put(`http://localhost:8080/produto/delete/${id}`, null);
+    return this.http.put(`http://93.188.162.193:8080/produto/delete/${id}`, null);
    }
 
    busca(titulo: string){
-     return this.http.get(`http://localhost:8080/produto/todos/${titulo}`);
+     return this.http.get(`http://93.188.162.193:8080/produto/todos/${titulo}`);
    }
 
 }

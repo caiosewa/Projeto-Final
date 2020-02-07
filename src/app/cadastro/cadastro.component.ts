@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 
 export class CadastroComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0, "", "", "", "",true);
+  usuario: Usuario = new Usuario(0, "", "", "", "",1);
 
    nome: string = "";
    nomeOk: boolean;
@@ -130,6 +130,7 @@ export class CadastroComponent implements OnInit {
         this.senhaOk = false;
         this.csenhaOk = false;
         alert("Dados enviados com sucesso!");
+        this.router.navigate(['login']);
       }, err => {
         this._msgErroE = "Email inválido!";
         alert(`Usuário já cadastrado!`);

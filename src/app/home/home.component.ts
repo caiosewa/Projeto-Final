@@ -13,9 +13,9 @@ import { ConsultaProdutosService } from '../service/consulta-produtos.service';
 })
 export class HomeComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0, "", "", "", "", true);
+  usuario: Usuario = new Usuario(0, "", "", "", "", 1);
 
-  produto: Produto = new Produto(0, "", "", "", null, null, true);
+  produto: Produto = new Produto(0, "", "", "", null, null, 1);
   id: number;
 
 

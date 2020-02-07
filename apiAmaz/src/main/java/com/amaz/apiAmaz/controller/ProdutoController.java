@@ -30,7 +30,7 @@ public class ProdutoController {
 	public ResponseEntity<Produto> post(@RequestBody Produto entity) {
 		try {
 			Produto produtoSalvo = this.produtoService.insertOrUpdate(entity);
-			produtoSalvo.setVisivel(true);
+			produtoSalvo.setVisivel(1);
 			return ResponseEntity.ok(produtoSalvo);
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(null);
@@ -41,7 +41,7 @@ public class ProdutoController {
 	public ResponseEntity<Produto> put(@RequestBody Produto entity) {
 		try {
 			Produto produtoSalvo = this.produtoService.insertOrUpdate(entity);
-			produtoSalvo.setVisivel(true);
+			produtoSalvo.setVisivel(1);
 			return ResponseEntity.ok(produtoSalvo);
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(null);
@@ -51,7 +51,7 @@ public class ProdutoController {
 	@PutMapping("/produto/delete/{id}")
 	public ResponseEntity<Produto> desativarProduto(@PathVariable int id) {
 		Produto produtoExist = this.produtoService.getById(id);
-		produtoExist.setVisivel(false);
+		produtoExist.setVisivel(0);
 		return ResponseEntity.ok(this.produtoService.insertOrUpdate(produtoExist));
 	}
 
@@ -61,7 +61,7 @@ public class ProdutoController {
 		List<Produto> produtos = new ArrayList<Produto>();
 
 		for (Produto produto : this.produtoService.getAll()) {
-			if (produto.getVisivel())
+			if (produto.getVisivel() == 1 )
 				produtos.add(produto);
 			}
 

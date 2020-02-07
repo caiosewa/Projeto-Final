@@ -6,5 +6,5 @@ export class Produto {
     public linkFoto: string,
     public preco: number,
     public qtdEstoque: number,
-    public visivel: boolean){}
+    public visivel: number){}
 }
