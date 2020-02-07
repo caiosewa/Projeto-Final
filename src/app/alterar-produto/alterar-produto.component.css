@@ -48,7 +48,7 @@
   }
   
   .btn {
-    background-color: #252f15 !important;
+    background-color: #3a4922 !important;
     padding: 1%;
     color: #F8ECEC;
     width: 10%;
@@ -60,7 +60,18 @@
     font-family: "Open Sans", sans-serif;
   }
   
-  
+  .botao{
+    text-align: center;
+  }
+  .edit-a {
+    background: #F8ECEC;
+    text-align: center;
+    font-size: 0.8em;
+    font-family: "Ubuntu", sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
   /* Responsividade CSS */
   @media (min-width: 576px) {
     .container {

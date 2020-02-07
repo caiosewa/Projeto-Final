@@ -82,3 +82,15 @@
       width: 1200px!important;
     }
   }
+
+  ::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+  .example-full-width {
+    border-bottom: none;
+    width: 80%;
+    margin-left: 33%;
+
+
+    
+  } 

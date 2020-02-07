@@ -6,6 +6,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 import { CheckboxModule, WavesModule, ButtonsModule, InputsModule, IconsModule, CardsModule } from 'angular-bootstrap-md'
 import { from } from 'rxjs';
@@ -24,6 +25,7 @@ const MaterialComponents = [
   MatTableModule,
   MatFormFieldModule,
   MatInputModule,
+  MatSelectModule
 
   
   
