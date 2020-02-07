@@ -23,36 +23,37 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 ">
             <div class="card-deck" *ngIf="showAll == true">
                 <!-- Card -->
                 <div class="col-md-4 mb-5" *ngFor="let produto of produtos">
-                    <mdb-card>
-                        <div class="view overlay waves-light" mdbWavesEffect>
-                            <!-- Card img -->
-                            <mdb-card-img src="{{produto.linkFoto}}" class="card-img" alt="...">
-                            </mdb-card-img>
-                            <a>
+                    <a (click)="mostrar(produto)" >
+                        <mdb-card>
+                            <div class="view overlay waves-light" mdbWavesEffect>
+                                <!-- Card img -->
+                                <mdb-card-img src="{{produto.linkFoto}}" class="card-img" alt="...">
+                                </mdb-card-img>
+
                                 <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                        <!--Card content-->
-                        <mdb-card-body>
-                            <div class="product-rating" style="text-align: center;">
-                                <span>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span>
+
                             </div>
-                            <!--Title-->
-                            <mdb-card-title>
-                                <h4>{{produto.titulo}}</h4>
-                            </mdb-card-title>
-                            <!--Text-->
-                            <!-- <div class="panel panel-default" id="panel">
+                            <!--Card content-->
+                            <mdb-card-body>
+                                <div class="product-rating" style="text-align: center;">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </div>
+                                <!--Title-->
+                                <mdb-card-title>
+                                    <h4>{{produto.titulo}}</h4>
+                                </mdb-card-title>
+                                <!--Text-->
+                                <!-- <div class="panel panel-default" id="panel">
                                 <div class="panel-heading" style="text-align: center;">
                                     <a data-toggle="collapse" data-target="#collapse{{produto.id}}" href="#collapse{{produto.id}}"
                                         class="collapsed">
@@ -63,57 +64,65 @@
                                     <div class="panel-body">{{produto.descricao}}</div>
                                 </div>
                             </div> -->
-                            <h5 class="card-text"><i class="fas fa-shopping-cart"></i> R$ {{produto.preco}}</h5>
-                            <!-- <p class="card-text"><small class="text-muted">Quantidade no
+                                <h5 class="card-text"><i class="fas fa-shopping-cart"></i> R$ {{produto.preco}}</h5>
+                                <!-- <p class="card-text"><small class="text-muted">Quantidade no
                                     Estoque:{{produto.qtdEstoque}}</small></p> -->
-                        </mdb-card-body>
-                    </mdb-card>
+                            </mdb-card-body>
+                        </mdb-card>
+                    </a>
                 </div>
             </div>
-        </div>
-
-
-        <div class="col-md-9 mb-5 lib-item" data-category="view">
-            <div class="lib-panel" *ngIf="showId == true">
-                <div class="row box-shadow">
-                    <div class="col-md-6">
-                        <mdb-card-img src="{{produto.linkFoto}}" class="card-img" alt="...">
-                        </mdb-card-img>
-                    </div>
-                    <div class="col-md-6" style="background-color: rgba(187, 210, 142, 0.3);">
-                        <div class="lib-row lib-header">
-                            <h3 class="card-title">{{produto.id}} - {{produto.titulo}} <i class="fas fa-leaf"></i></h3>
-                            <div class="lib-header-seperator"></div>
-                        </div>
-                        <div class="lib-row lib-desc">
-                            <h5 class="preco"><i class="fas fa-shopping-cart"></i> R$ {{produto.preco}}</h5>
-                            <h6 class="card-text">{{produto.descricao}}</h6>
-                            <p class="card-text"><small class="text-muted">Quantidade em Estoque:
-                                    {{produto.qtdEstoque}}</small></p>
-                            <div class="product-rating" style="text-align: center;">
-                                <span>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span>
+<div class="d-flex justify-content-center">
+            <div class="col-md-9 mb-5 lib-item " data-category="view">
+                    <div class="lib-panel" *ngIf="showId == true">
+                        <div class="row box-shadow">
+                            <div class="col-md-6">
+                                <mdb-card-img src="{{produto.linkFoto}}" class="card-img" alt="...">
+                                </mdb-card-img>
+                            </div>
+                            <div class="col-md-6" style="background-color: rgba(187, 210, 142, 0.3);">
+                                <div class="lib-row lib-header">
+                                    <h3 class="card-title">{{produto.id}} - {{produto.titulo}} <i class="fas fa-leaf"></i></h3>
+                                    <div class="lib-header-seperator"></div>
+                                </div>
+                                <div class="lib-row lib-desc">
+                                    <h5 class="preco"><i class="fas fa-shopping-cart"></i> R$ {{produto.preco}}</h5>
+                                    <h6 class="card-text">{{produto.descricao}}</h6>
+                                    <p class="card-text"><small class="text-muted">Quantidade em Estoque:
+                                            {{produto.qtdEstoque}}</small></p>
+                                    <div class="product-rating" style="text-align: center;">
+                                        <span>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-md-9 mb-5 align-middle" *ngIf="produtoNao == true">
-    <div class="row">
-        <div style="background-color: rgba(187, 210, 142, 0.3);">
-            <div class="card-body">
-                <h5 class="card-title">PRODUTO NÃO ENCONTRADO!</h5>
+            <div class="d-flex justify-content-center">
+                    <div class="col-md-9 mb-5 align-middle" *ngIf="produtoNao == true">
+                    
+                            <div style="background-color: rgba(187, 210, 142, 0.3);">
+                                <div class="card-body">
+                                    <h5 class="card-title">PRODUTO NÃO ENCONTRADO!</h5>
+                                </div>
+                            </div>
+                        
+                    </div>
             </div>
+            
+
         </div>
+
+
+        
     </div>
 </div>
+
+

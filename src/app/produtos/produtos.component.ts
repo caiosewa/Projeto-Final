@@ -15,20 +15,20 @@ import { Usuario } from '../model/usuario';
 
 export class ProdutosComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0, "", "", "", "", true);
+  usuario: Usuario = new Usuario(0, "", "", "", "", 1);
 
-   id: number;
-   titulo: string;
-   descricao: string;
-   linkFoto: string;
-   preco: number;
-   qtdEstoque: number;
-   produto: Produto = new Produto(0, "", "", "", null, null, true);
-   produtos: Array<Produto> = new Array<Produto>();
-   showId: boolean;
-   showAll: boolean;
-   produtoNao: boolean;
-   ativarAlterar: boolean;
+  id: number;
+  titulo: string;
+  descricao: string;
+  linkFoto: string;
+  preco: number;
+  qtdEstoque: number;
+  produto: Produto = new Produto(0, "", "", "", null, null, 1);
+  produtos: Array<Produto> = new Array<Produto>();
+  showId: boolean;
+  showAll: boolean;
+  produtoNao: boolean;
+  ativarAlterar: boolean;
 
   constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router, public ConsultaUsuarioService: ConsultaUsuarioService) { }
 
@@ -58,6 +58,12 @@ export class ProdutosComponent implements OnInit {
       this.usuario.telefone = "";
     }
   }
+
+  mostrar(produto: Produto) {
+      this.id = produto.id;
+      this.findIdProduto();
+  }
+
 
   insert() {
     this.ConsultaProdutosService.insert(this.produto).subscribe((produtoOut: Produto) => {
