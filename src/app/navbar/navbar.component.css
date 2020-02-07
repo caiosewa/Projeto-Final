@@ -18,14 +18,6 @@
   padding: 2px !important;
 }
 
-.nav-link {
-  color: #F8ECEC !important;
-  text-transform: uppercase;
-  font-family: 'Ubunto', sans-serif;
-  font-size: .75em;
-  margin: auto;
-}
-
 h5 {
   color: rgb(175, 175, 175) !important;
   text-transform: uppercase;
@@ -46,6 +38,12 @@ label {
 .mat-button {
   border-radius: 10px;
   outline: none;
+  text-transform: uppercase;
+  color: #F8ECEC !important;
+  text-transform: uppercase!important;
+  font-family: 'Ubunto', sans-serif;
+  font-size: .75em;
+  margin: auto;
 }
 
 .logo {

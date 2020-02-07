@@ -10,11 +10,6 @@
   width: 100%;
   text-align: center !important;
 }
-.form-control {
-  cursor: Text;
-  font-size: 0.9em;
-  font-family: "Open Sans", sans-serif;
-}
 
 .form-control.erro {
   cursor: Text;

@@ -29,6 +29,7 @@ h1 {
   padding: 5%;
   padding-bottom: 1% !important;
   font-weight: bold;
+  margin-bottom: 0;
 }
 
 h3 {
@@ -160,7 +161,14 @@ h3 {
 }
 
 @media only screen and (max-width: 600px) {
-  .imagemfundo {
-    opacity: .5;
+  .recuo {
+    text-shadow: 2px 2px 10px rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease-in-out;
+  }
+  h1 {
+    text-shadow: 2px 2px 10px rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.s ease-in-out;
   }
 }

@@ -10,12 +10,7 @@
     width: 100%;
     text-align: center!important;
   }
-  .form-control {
-    cursor: Text;
-    font-size: 0.9em;
-    font-family: "Open Sans", sans-serif;
-  }
-  
+
   .form-control.erro {
     cursor: Text;
     border: 1.5px solid rgba(175, 0, 0, 0.8);
@@ -102,6 +97,13 @@
   .logar {
     margin-top: 1.5rem;
     text-align: center;
+  }
+  
+  .example-full-width {
+    border-bottom: none;
+    width: 70%;
+    padding: 0!important;
+    font-family: "Open Sans", sans-serif!important;
   }
   
   /* Responsividade CSS */
