@@ -105,6 +105,7 @@
 </div>
 <br>
 
+
 <!-- CAROUSEL MAIS VENDIDOS -->
 <div class="container justify-content-center">
   <h1>Mais vendidos</h1>
@@ -117,17 +118,18 @@
     </ul>
 
     <div class="carousel-inner no-padding my-5">
+
       <div class="carousel-item active">
-        <div class="col-xs-4 col-sm-4 col-md-4">
-          <a (click)=produtos() class="slider_info pointer">
-            <img class="img-fluid card-img-top" src="../../assets/bonecoindio.jpg">
+        <div class="col-xs-4 col-sm-4 col-md-4" *ngFor="let produtoTemp of produtoList1">
+          <a (click)="mostrar(produtoTemp)" class="slider_info pointer">
+            <img class="img-fluid card-img-top" src="{{produtoTemp.linkFoto}}">
             <div class="card-img-overlay t_img">
             </div>
           </a>
-          <p class="descricao">boneco índio da amazônia em tecido</p>
-          <p class="preco">R$ 70,00</p>
+          <p class="descricao">{{produtoTemp.titulo}}</p>
+          <p class="preco"> R$ {{produtoTemp.preco}}</p>
         </div>
-        <div class="col-xs-4 col-sm-4 col-md-4">
+        <!-- <div class="col-xs-4 col-sm-4 col-md-4">
           <a (click)=produtos() class="slider_info pointer">
             <img class="img-fluid card-img-top rounded-bottom" src="../../assets/fruteira.jpg">
             <div class="card-img-overlay t_img">
@@ -145,18 +147,19 @@
           <p class="descricao">bolsa colorida com alça em sementes de açaí</p>
           <p class="preco">R$ 79,90</p>
         </div>
-      </div>
-      <div class="carousel-item">
-        <div class="col-xs-4 col-sm-4 col-md-4">
-          <a (click)=produtos() class="slider_info pointer">
-            <img class="img-fluid card-img-top" src="../../assets/cafeapui.jpg">
-            <div class="card-img-overlay t_img">
-            </div>
-          </a>
-          <p class="descricao">café apuí agroflorestal da amazônia orgânico</p>
-          <p class="preco">R$ 23,90</p>
+      </div> -->
+        <div class="carousel-item">
+          <div class="col-xs-4 col-sm-4 col-md-4" *ngFor="let produtoTemp of produtoList2">
+            <a (click)="mostrar(produtoTemp)" class="slider_info pointer">
+              <img class="img-fluid card-img-top" src="{{produtoTemp.linkFoto}}">
+              <div class="card-img-overlay t_img">
+              </div>
+            </a>
+            <p class="descricao">{{produtoTemp.titulo}}</p>
+            <p class="preco"> R$ {{produtoTemp.preco}}</p>
+          </div>
         </div>
-        <div class="col-xs-4 col-sm-4 col-md-4">
+        <!-- <div class="col-xs-4 col-sm-4 col-md-4">
           <a (click)=produtos() class="slider_info pointer">
             <img class="img-fluid card-img-top" src="../../assets/bonecaemtecido.jpg">
             <div class="card-img-overlay t_img">
@@ -175,13 +178,13 @@
           <p class="preco">R$ 429,00</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon sp"><i class="carousel-button fas fa-angle-left"></i></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-prev-icon sp"><i class="carousel-button fas fa-angle-right"></i></span>
-    </a>
-  </div>
-</div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon sp"><i class="carousel-button fas fa-angle-left"></i></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-prev-icon sp"><i class="carousel-button fas fa-angle-right"></i></span>
+        </a>
+      </div>
+    </div>
