@@ -6,11 +6,17 @@
 <div class="container-fluid mt-5">
     <div class="row">
         <div class="col-md-3 mb-5">
-            <button class="btn btn-info align-middle" id="btnAll" (click)="findAllProduto()">
+            <button class="edit-a align-content-center" type="button" mat-stroked-button color="gradient"
+                (click)="findAllProduto()">
                 VOLTAR
             </button>
 
-            <button class="btn btn-info align-middle" data-toggle="collapse" href="#collapseExample" role="button"
+            <div class="form-group has-search">
+                <span class="fa fa-search form-control-feedback"></span>
+                <input type="text" class="form-control" placeholder="BUSCAR POR NOME...">
+            </div>
+
+            <!-- <button class="btn btn-info align-middle" data-toggle="collapse" href="#collapseExample" role="button"
                 aria-expanded="false" aria-controls="collapseExample">
                 Filtrar
             </button>
@@ -21,13 +27,18 @@
                         Ok
                     </button>
                 </div>
-            </div>
+            </div> -->
+
+            <button class="edit-a align-content-center" type="button" mat-stroked-button color="gradient"><a
+                    class="txt-color" [routerLink]="'/inserir-produto'">Inserir</a></button>
+            <button class="edit-a align-content-center" type="button" mat-stroked-button color="gradient"><a
+                    class="txt-color" [routerLink]="'/alterar-produto'">Alterar produto</a></button>
         </div>
         <div class="col-md-9 ">
             <div class="card-deck" *ngIf="showAll == true">
                 <!-- Card -->
                 <div class="col-md-4 mb-5" *ngFor="let produto of produtos">
-                    <a (click)="mostrar(produto)" >
+                    <a (click)="mostrar(produto)">
                         <mdb-card>
                             <div class="view overlay waves-light" mdbWavesEffect>
                                 <!-- Card img -->
@@ -72,8 +83,8 @@
                     </a>
                 </div>
             </div>
-<div class="d-flex justify-content-center">
-            <div class="col-md-9 mb-5 lib-item " data-category="view">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-9 mb-5 lib-item " data-category="view">
                     <div class="lib-panel" *ngIf="showId == true">
                         <div class="row box-shadow">
                             <div class="col-md-6">
@@ -82,7 +93,8 @@
                             </div>
                             <div class="col-md-6" style="background-color: rgba(187, 210, 142, 0.3);">
                                 <div class="lib-row lib-header">
-                                    <h3 class="card-title">{{produto.id}} - {{produto.titulo}} <i class="fas fa-leaf"></i></h3>
+                                    <h3 class="card-title">{{produto.id}} - {{produto.titulo}} <i
+                                            class="fas fa-leaf"></i></h3>
                                     <div class="lib-header-seperator"></div>
                                 </div>
                                 <div class="lib-row lib-desc">
@@ -106,23 +118,21 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center">
-                    <div class="col-md-9 mb-5 align-middle" *ngIf="produtoNao == true">
-                    
-                            <div style="background-color: rgba(187, 210, 142, 0.3);">
-                                <div class="card-body">
-                                    <h5 class="card-title">PRODUTO NÃO ENCONTRADO!</h5>
-                                </div>
-                            </div>
-                        
+                <div class="col-md-9 mb-5 align-middle" *ngIf="produtoNao == true">
+
+                    <div style="background-color: rgba(187, 210, 142, 0.3);">
+                        <div class="card-body">
+                            <h5 class="card-title">PRODUTO NÃO ENCONTRADO!</h5>
+                        </div>
                     </div>
+
+                </div>
             </div>
-            
+
 
         </div>
 
 
-        
+
     </div>
 </div>
-
-
