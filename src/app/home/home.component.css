@@ -11,7 +11,7 @@
 }
 
 .carousel-caption {
-  margin-bottom: 120px;
+  margin-bottom: 100px;
   background-color: rgba(248, 236, 236, 0.65);
   box-shadow: 1px 1px 5px 0px rgba(248, 236, 236);
   width: 99.5%;
@@ -36,7 +36,7 @@
   color: rgb(0, 0, 0);
   font-family: "Open Sans", sans-serif;
   font-size: 1.2em;
-  text-align: justify;
+  text-align: center;
   margin-right: 15%;
   margin-left: 15%;
   margin-bottom: 0;
@@ -54,26 +54,13 @@
 
 .carousel-caption a {
   background: #252f15;
-  padding: 12px 35px;
+  padding: 5px 35px;
   display: inline-block;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: -5px;
   color: rgba(248, 236, 236);
   text-transform: uppercase;
   border-radius: 25px;
-  margin-bottom: -15px;
-}
-
-.carousel-control.right {
-  background-image: none;
-}
-
-.carousel-control.left {
-  background-image: none;
-}
-
-.carousel-indicators {
-  color: #252f15 !important;
 }
 
 .carousel {
@@ -87,6 +74,7 @@
 .carousel-control-next {
   color: #252f15 !important;
 }
+
 
 /* animação de aproximação de imagem */
 #carouselExampleIndicators .carousel-inner .carousel-item img {
@@ -179,13 +167,22 @@ font-size: 35px;
   text-align: justify;
   font-size: 1em;
   font-family: "Open Sans", sans-serif;
+  padding-left: 5%;
+  padding-right: 5%;
+  
 }
 .parag2 {
   text-align: justify;
   font-size: 1em;
   font-family: "Open Sans", sans-serif;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 .edit-img{
   object-fit: cover; 
   object-position: top; 
 }  
+
+i .carousel-button {
+  margin-right: -80px;
+}
