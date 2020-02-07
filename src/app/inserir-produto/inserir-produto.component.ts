@@ -17,8 +17,8 @@ export class InserirProdutoComponent implements OnInit {
 
   produto: Produto = new Produto(0, "", "", "", null, null, true);
   
-  private produtos: Array<Produto> = new Array<Produto>();
-  private idProduto: number;
+   produtos: Array<Produto> = new Array<Produto>();
+   idProduto: number;
 
   constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router, public ConsultaUsuarioService: ConsultaUsuarioService) { }
 

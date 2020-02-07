@@ -22,11 +22,11 @@ export class NavbarComponent implements OnInit {
   titulo: string;
 
   emailOk: boolean = false;
-  private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
-  private num: any = /^[0-9]+$/;
-  private _msgErroN: string = null;
-  private _msgErroE: string = null;
-  private _msgErroT: string = null;
+   filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
+   num: any = /^[0-9]+$/;
+   _msgErroN: string = null;
+   _msgErroE: string = null;
+   _msgErroT: string = null;
 
   constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService, private ConsultaProdutosService: ConsultaProdutosService) { }
 

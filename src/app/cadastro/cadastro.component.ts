@@ -14,24 +14,24 @@ export class CadastroComponent implements OnInit {
 
   usuario: Usuario = new Usuario(0, "", "", "", "",true);
 
-  private nome: string = "";
-  private nomeOk: boolean;
-  private email: string = "";
-  private emailOk: boolean;
-  private tel: string = "";
-  private telOk: boolean;
-  private senha: any = "";
-  private senhaOk: boolean;
-  private csenha: any = "";
-  private csenhaOk: boolean;
-  private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
-  private num: any = /^[0-9]+$/;
-  private _msgErroN: string = null;
-  private _msgErroS: string = null;
-  private _msgErroSF: string = null;
-  private _msgErroCS: string = null;
-  private _msgErroE: string = null;
-  private _msgErroT: string = null;
+   nome: string = "";
+   nomeOk: boolean;
+   email: string = "";
+   emailOk: boolean;
+   tel: string = "";
+   telOk: boolean;
+   senha: any = "";
+   senhaOk: boolean;
+   csenha: any = "";
+   csenhaOk: boolean;
+   filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
+   num: any = /^[0-9]+$/;
+   _msgErroN: string = null;
+   _msgErroS: string = null;
+   _msgErroSF: string = null;
+   _msgErroCS: string = null;
+   _msgErroE: string = null;
+   _msgErroT: string = null;
 
 
   constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }

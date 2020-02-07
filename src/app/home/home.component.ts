@@ -1,7 +1,9 @@
+import { Produto } from './../model/produto';
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../model/Globals';
 import { Usuario } from '../model/usuario';
 import { Router } from '@angular/router';
+import { ConsultaProdutosService } from '../service/consulta-produtos.service';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +13,21 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0, "", "", "", "",true);
+  usuario: Usuario = new Usuario(0, "", "", "", "", true);
 
-  constructor(private router: Router) { }
+  produto: Produto = new Produto(0, "", "", "", null, null, true);
+  id: number;
+
+
+  constructor(private router: Router, public ConsultaProdutoService: ConsultaProdutosService) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
-   this.usuario = Globals.USUARIO;
+    this.usuario = Globals.USUARIO;
   }
+
+  produtos() {
+        this.router.navigate(['produtos']);
+ }
+
 }

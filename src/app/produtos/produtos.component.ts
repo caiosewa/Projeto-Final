@@ -17,18 +17,18 @@ export class ProdutosComponent implements OnInit {
 
   usuario: Usuario = new Usuario(0, "", "", "", "", true);
 
-  private id: number;
-  private titulo: string;
-  private descricao: string;
-  private linkFoto: string;
-  private preco: number;
-  private qtdEstoque: number;
-  private produto: Produto = new Produto(0, "", "", "", null, null, true);
-  private produtos: Array<Produto> = new Array<Produto>();
-  private showId: boolean;
-  private showAll: boolean;
-  private produtoNao: boolean;
-  private ativarAlterar: boolean;
+   id: number;
+   titulo: string;
+   descricao: string;
+   linkFoto: string;
+   preco: number;
+   qtdEstoque: number;
+   produto: Produto = new Produto(0, "", "", "", null, null, true);
+   produtos: Array<Produto> = new Array<Produto>();
+   showId: boolean;
+   showAll: boolean;
+   produtoNao: boolean;
+   ativarAlterar: boolean;
 
   constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router, public ConsultaUsuarioService: ConsultaUsuarioService) { }
 

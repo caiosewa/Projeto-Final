@@ -8,20 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoComponent implements OnInit {
 
-  private nome: string = "";
-  private nomeOk: boolean;
-  private email: string = "";
-  private emailOk: boolean;
-  private tel: string = "";
-  private telOk: boolean;
-  private msg: any = "";
-  private msgOk: boolean;
-  private filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
-  private num: any = /^[0-9]+$/;
-  private _msgErroN: string = null;
-  private _msgErroM: string = null;
-  private _msgErroE: string = null;
-  private _msgErroT: string = null;
+   nome: string = "";
+   nomeOk: boolean;
+   email: string = "";
+   emailOk: boolean;
+   tel: string = "";
+   telOk: boolean;
+   msg: any = "";
+   msgOk: boolean;
+   filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
+   num: any = /^[0-9]+$/;
+   _msgErroN: string = null;
+   _msgErroM: string = null;
+   _msgErroE: string = null;
+   _msgErroT: string = null;
 
   constructor() { }
 
