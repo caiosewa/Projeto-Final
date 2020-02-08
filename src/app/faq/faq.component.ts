@@ -10,6 +10,7 @@ export class FaqComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.clear();
     console.log( "  _________ __        ___ ________ ________");
     console.log( " |         |   |_   _|   |        |___    / ");
     console.log( " |   (_)   |     |_|     |  (_)   |  /   /  ");

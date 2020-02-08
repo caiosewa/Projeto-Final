@@ -6,6 +6,7 @@ import { Globals } from '../model/Globals';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
 import { Token } from '../model/token';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-navbar',
@@ -86,7 +87,8 @@ export class NavbarComponent implements OnInit {
 
   capturar() {
     if (this.router.isActive('/produtos', true)) {
-      Globals.titulo = this.titulo;
+      localStorage.setItem("busca",  this.titulo);
+      window.location.reload();
     } else {
       Globals.titulo = this.titulo;
       this.router.navigate(['/produtos']);

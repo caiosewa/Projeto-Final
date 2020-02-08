@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, public ConsultaProdutosService: ConsultaProdutosService) { }
 
   ngOnInit() {
+    console.clear();
     console.log( "  _________ __        ___ ________ ________");
     console.log( " |         |   |_   _|   |        |___    / ");
     console.log( " |   (_)   |     |_|     |  (_)   |  /   /  ");
@@ -61,8 +62,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  mostrar(produto: Produto) {
-    Globals.id = produto.id;
+  mostrar(produtoTemp: Produto) {
+    Globals.id = produtoTemp.id;
     this.irProdutos();
 }
 

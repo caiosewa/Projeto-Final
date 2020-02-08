@@ -37,6 +37,7 @@ export class CadastroComponent implements OnInit {
   constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
+    console.clear();
     console.log( "  _________ __        ___ ________ ________");
     console.log( " |         |   |_   _|   |        |___    / ");
     console.log( " |   (_)   |     |_|     |  (_)   |  /   /  ");

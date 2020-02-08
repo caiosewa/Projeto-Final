@@ -148,6 +148,8 @@ p {
 }
 .fa {
     margin-left: 10%;
+    cursor: pointer;
+    
 }
 .has-search .form-control-feedback {
     position: absolute;
@@ -157,6 +159,6 @@ p {
     height: 2.375rem;
     line-height: 2.375rem;
     text-align: center;
-    pointer-events: none;
+    /* pointer-events: none; */
     color: rgba(166, 99, 28);
 }

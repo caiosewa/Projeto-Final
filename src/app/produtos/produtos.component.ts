@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Globals } from '../model/Globals';
 import { Usuario } from '../model/usuario';
+import { ok } from 'assert';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-produtos',
@@ -40,6 +42,26 @@ export class ProdutosComponent implements OnInit {
         this.showAll = true;
         this.showId = false;
         this.produtoNao = false;
+        Globals.titulo = "";
+      });
+    } else if (localStorage.getItem("busca")) {
+      this.titulo = localStorage.getItem("busca");
+
+      this.ConsultaProdutosService.busca(this.titulo).subscribe((produtosOut: Produto[]) => {
+        this.produtos = produtosOut;
+        this.showAll = true;
+        this.showId = false;
+        this.produtoNao = false;
+        Globals.titulo = "";
+        localStorage.setItem("busca", "");
+      });
+    } else if (Globals.id) {
+      this.ConsultaProdutosService.getById(Globals.id).subscribe((produtoOut: Produto) => {
+        this.produto = produtoOut;
+        this.showAll = false;
+        this.showId = true;
+        this.produtoNao = false;
+        Globals.id = null;
       });
     } else {
       this.findAllProduto();
@@ -59,9 +81,31 @@ export class ProdutosComponent implements OnInit {
     }
   }
 
+  buscar() {
+    if (this.titulo != null) {
+      this.ConsultaProdutosService.busca(this.titulo).subscribe((produtosOut: Produto[]) => {
+        this.produtos = produtosOut;
+      });
+    }
+    this.ok();
+  }
+
+  ok(){
+    if (this.produtos.length == 0) {
+      this.showAll = false;
+      this.showId = false;
+      this.produtoNao = true;
+    } else {
+      this.showAll = true;
+      this.showId = false;
+      this.produtoNao = false;
+    }
+  }
+
+
   mostrar(produto: Produto) {
-      this.id = produto.id;
-      this.findIdProduto();
+    this.id = produto.id;
+    this.findIdProduto();
   }
 
 
@@ -97,6 +141,7 @@ export class ProdutosComponent implements OnInit {
         this.showAll = false;
         this.showId = true;
         this.produtoNao = false;
+        window.scrollTo(0, 0);
       }
     });
   }

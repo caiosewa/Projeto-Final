@@ -7,7 +7,8 @@
   </ol>
   <div class="carousel-inner">
     <div class=" carousel-item active">
-      <img class="edit-img d-block w-100 img-fluid" src="../../assets/amazoniafundo.jpg" alt="Imagem 1 carousel Amazônia">
+      <img class="edit-img d-block w-100 img-fluid" src="../../assets/amazoniafundo.jpg"
+        alt="Imagem 1 carousel Amazônia">
       <div class="carousel-caption">
         <h2 class="edit-font-carousel">conheça a
           <span>AMAZÔNIA</span>
@@ -43,7 +44,8 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img class="edit-img d-block w-100 img-fluid" src="../../assets/vilafranca.jpg" alt="Imagem 3 carousel Comunidade">
+      <img class="edit-img d-block w-100 img-fluid" src="../../assets/vilafranca.jpg"
+        alt="Imagem 3 carousel Comunidade">
       <div class="carousel-caption">
         <h2 class="edit-font-carousel">conheça as
           <span>COMUNIDADES</span></h2>
@@ -109,7 +111,7 @@
 <!-- CAROUSEL MAIS VENDIDOS -->
 <div class="container justify-content-center">
   <h1>Mais vendidos</h1>
-  <div id="demo" class="carousel slide justify-content-center carousel-fade" data-ride="carousel">
+  <div id="demo" class="carousel slide justify-content-center" data-ride="carousel">
 
     <ul class="carousel-indicators mb-0 pb-0">
       <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -120,6 +122,7 @@
     <div class="carousel-inner no-padding my-5">
 
       <div class="carousel-item active">
+
         <div class="col-xs-4 col-sm-4 col-md-4" *ngFor="let produtoTemp of produtoList1">
           <a (click)="mostrar(produtoTemp)" class="slider_info pointer">
             <img class="img-fluid card-img-top" src="{{produtoTemp.linkFoto}}">
@@ -129,7 +132,8 @@
           <p class="descricao">{{produtoTemp.titulo}}</p>
           <p class="preco"> R$ {{produtoTemp.preco}}</p>
         </div>
-        <!-- <div class="col-xs-4 col-sm-4 col-md-4">
+      </div>
+      <!-- <div class="col-xs-4 col-sm-4 col-md-4">
           <a (click)=produtos() class="slider_info pointer">
             <img class="img-fluid card-img-top rounded-bottom" src="../../assets/fruteira.jpg">
             <div class="card-img-overlay t_img">
@@ -148,18 +152,18 @@
           <p class="preco">R$ 79,90</p>
         </div>
       </div> -->
-        <div class="carousel-item">
-          <div class="col-xs-4 col-sm-4 col-md-4" *ngFor="let produtoTemp of produtoList2">
-            <a (click)="mostrar(produtoTemp)" class="slider_info pointer">
-              <img class="img-fluid card-img-top" src="{{produtoTemp.linkFoto}}">
-              <div class="card-img-overlay t_img">
-              </div>
-            </a>
-            <p class="descricao">{{produtoTemp.titulo}}</p>
-            <p class="preco"> R$ {{produtoTemp.preco}}</p>
-          </div>
+      <div class="carousel-item">
+        <div class="col-xs-4 col-sm-4 col-md-4" *ngFor="let produtoTemp of produtoList2">
+          <a (click)="mostrar(produtoTemp)" class="slider_info pointer">
+            <img class="img-fluid card-img-top" src="{{produtoTemp.linkFoto}}">
+            <div class="card-img-overlay t_img">
+            </div>
+          </a>
+          <p class="descricao">{{produtoTemp.titulo}}</p>
+          <p class="preco"> R$ {{produtoTemp.preco}}</p>
         </div>
-        <!-- <div class="col-xs-4 col-sm-4 col-md-4">
+      </div>
+      <!-- <div class="col-xs-4 col-sm-4 col-md-4">
           <a (click)=produtos() class="slider_info pointer">
             <img class="img-fluid card-img-top" src="../../assets/bonecaemtecido.jpg">
             <div class="card-img-overlay t_img">
@@ -180,11 +184,11 @@
       </div>
     </div> -->
 
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-          <span class="carousel-control-prev-icon sp"><i class="carousel-button fas fa-angle-left"></i></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-          <span class="carousel-control-prev-icon sp"><i class="carousel-button fas fa-angle-right"></i></span>
-        </a>
-      </div>
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon sp"><i class="carousel-button fas fa-angle-left"></i></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-prev-icon sp"><i class="carousel-button fas fa-angle-right"></i></span>
+      </a>
     </div>
+  </div>

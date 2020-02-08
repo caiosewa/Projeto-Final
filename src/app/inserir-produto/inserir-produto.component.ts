@@ -23,6 +23,7 @@ export class InserirProdutoComponent implements OnInit {
   constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router, public ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
+    console.clear();
     console.log( "  _________ __        ___ ________ ________");
     console.log( " |         |   |_   _|   |        |___    / ");
     console.log( " |   (_)   |     |_|     |  (_)   |  /   /  ");
