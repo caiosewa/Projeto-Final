@@ -37,6 +37,13 @@ export class CadastroComponent implements OnInit {
   constructor(private router: Router, private ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
+    console.log( "  _________ __        ___ ________ ________");
+    console.log( " |         |   |_   _|   |        |___    / ");
+    console.log( " |   (_)   |     |_|     |  (_)   |  /   /  ");
+    console.log( " |    _    |             |   _    | /   /   ");
+    console.log( " |     |   |   |    /|   |    |   |/   /___ "); 
+    console.log( " |__   |___|___|  _/ |___|__  |___|________|");
+    console.log( "\n        SEJA BEM VINDO A LOJA AMAZ.\n\n");
     window.scrollTo(0, 0);
     if (localStorage.getItem("token")) {
       this.router.navigate(['admin']);
