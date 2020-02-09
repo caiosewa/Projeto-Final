@@ -48,13 +48,13 @@ input {
 }
 
 .btn {
-  background-color: #252f15 !important;
+  background-color: rgba(37, 47, 21, 0.8) !important;
   padding: 1%;
   color: #f8ecec;
   width: 20%;
   display: inline-block;
   margin-bottom: 1%;
-  border-radius: 25px;
+  border-radius: 5px;
   text-align: center !important;
   font-family: "Open Sans", sans-serif;
   margin-top: -10%;

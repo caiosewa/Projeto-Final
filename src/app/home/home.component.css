@@ -53,14 +53,15 @@
 }
 
 .carousel-caption a {
-  background: #252f15;
-  padding: 5px 35px;
+  background: rgba(37, 47, 21, 0.8);
+  padding: 1%;
   display: inline-block;
   margin-top: 10px;
   margin-bottom: -5px;
   color: rgba(248, 236, 236);
   text-transform: uppercase;
-  border-radius: 25px;
+  border-radius: 5px;
+  width: 10%;
 }
 
 .carousel {

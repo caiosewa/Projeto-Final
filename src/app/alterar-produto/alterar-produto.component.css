@@ -1,95 +1,103 @@
 .container-fluid {
-    background-color: rgba(255, 255, 255);
-  }
-  .form-group {
-    margin-top: -2%;
-    width: 100%;
-    padding: 1em;
-    text-align: center!important;
-  }
-  .form-control {
-    cursor: Text;
-    font-size: 0.9em;
-    font-family: "Open Sans", sans-serif;
-  }
-  
-  h3 {
-    margin-top: 3%;
-    margin-bottom: 2%;
-    text-align: center;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: bold;
-    color: #a6641c;
-    text-transform: uppercase;
-  }
+  background-color: rgba(255, 255, 255);
+}
+.form-group {
+  margin-top: -2%;
+  width: 100%;
+  text-align: center !important;
+  padding: 0 !important;
+}
+.form-group {
+  margin-top: -2%;
+  width: 100%;
+  text-align: center !important;
+}
+h2 {
+  margin-bottom: 5%;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  color: #a6641c;
+}
 
-  label {
-    font-family: "Open Sans", sans-serif !important;
-    display: block;
-    margin-left: 31%;
-    width: 200px;
-    text-align: left;
-    font-size: 1.1em;
+h5 {
+  font-size: 1em;
+  color: #858585;
+  font-family: "Open Sans", sans-serif !important;
+  width: 80%px;
+  margin-left: 9%!important;
+}
+
+input {
+  background-color: transparent;
+  width: 100% !important;
+  outline: none;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.5);
+  border-left: transparent;
+  border-right: transparent;
+  border-top: transparent;
+  font-weight: 300;
+  font-size: 1em;
+  resize: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.btn {
+  background-color: rgba(37, 47, 21, 0.8) !important;
+  padding: 1%;
+  color: #f8ecec;
+  width: 20%;
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center !important;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 2%;
+}
+
+.mat-select {
+  width: 81%;
+  margin-left: 9%;
+}
+
+#enviar {
+  margin-top: -3%!important;
+}
+#alterar {
+  margin-right: 1.5%!important;
+}
+#deletar {
+  margin-left: 1.5%!important;
+}
+
+/* Responsividade CSS */
+@media (min-width: 576px) {
+  .container {
+    width: 576px !important;
   }
-  
-  input {
-    background-color: transparent;
-    width: 40% !important;
-    outline: none;
-    border-bottom: 1.5px solid rgba(0, 0, 0, 0.5);
-    border-left: transparent;
-    border-right: transparent;
-    border-top: transparent;
-    font-weight: 300;
-    font-size: 1em;
-    resize: none;
-    transition: all 0.2s ease;
-    display: inline-block;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 768px !important;
   }
-  
-  .btn {
-    background-color: #3a4922 !important;
-    padding: 1%;
-    color: #F8ECEC;
-    width: 10%;
-    display: inline-block;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    border-radius: 25px;
-    text-align: center !important;
-    font-family: "Open Sans", sans-serif;
+}
+@media (min-width: 992px) {
+  .container {
+    width: 992px !important;
   }
-  
-  .botao{
-    text-align: center;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px !important;
   }
-  .edit-a {
-    background: #F8ECEC;
-    text-align: center;
-    font-size: 0.8em;
-    font-family: "Ubuntu", sans-serif;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  /* Responsividade CSS */
-  @media (min-width: 576px) {
-    .container {
-      width: 576px!important;
-    }
-  }
-  @media (min-width: 768px) {
-    .container {
-      width: 768px!important;
-    }
-  }
-  @media (min-width: 992px) {
-    .container {
-      width: 992px!important;
-    }
-  }
-  @media (min-width: 1200px) {
-    .container {
-      width: 1200px!important;
-    }
-  }
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+.example-full-width {
+  border-bottom: none;
+  width: 85%;
+  padding: 0 !important;
+  font-family: "Open Sans", sans-serif !important;
+}
