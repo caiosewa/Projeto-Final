@@ -16,18 +16,6 @@ public class VendaServiceImpl implements VendaService {
 	private VendaRepository vendaRepository;
 	
 	@Override
-	public Venda insertOrUpdate(Venda entity) {
-		return vendaRepository.save(entity); 
-		
-	}
-
-	@Override
-	public void delete(int id) {
-		vendaRepository.deleteById(id);
-		
-	}
-
-	@Override
 	public List<Venda> getAll() {
 		return (List<Venda>) this.vendaRepository.findAll();
 	}

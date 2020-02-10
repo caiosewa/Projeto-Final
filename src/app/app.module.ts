@@ -23,6 +23,9 @@ import { AlterarProdutoComponent } from './alterar-produto/alterar-produto.compo
 
 /* Modulo do Material Angular que esta em pasta separada, afim de deixar o codigo mais Clean */
 import { MaterialModule } from './material/material.module';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { AdminMenuComponent } from './admin-menu/admin-menu.component';
+import { ListarVendasComponent } from './listar-vendas/listar-vendas.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { MaterialModule } from './material/material.module';
     ComunidadesComponent,
     InserirProdutoComponent,
     AlterarProdutoComponent,
+    SidebarComponent,
+    AdminMenuComponent,
+    ListarVendasComponent,
 
   ],
   imports: [

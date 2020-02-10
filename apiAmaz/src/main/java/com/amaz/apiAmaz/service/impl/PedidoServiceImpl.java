@@ -14,18 +14,6 @@ public class PedidoServiceImpl implements PedidoService{
 
 	@Autowired
 	private PedidoRepository pedidoRepository;
-	
-	@Override
-	public Pedido insertOrUpdate(Pedido entity) {
-		Pedido pedidoSalvo = this.pedidoRepository.save(entity);
-		return pedidoSalvo;
-	}
-
-	@Override
-	public void delete(int id) {
-		pedidoRepository.deleteById(id);
-		
-	}
 
 	@Override
 	public List<Pedido> getAll() {

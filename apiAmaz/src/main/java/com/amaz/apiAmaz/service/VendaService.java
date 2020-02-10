@@ -6,10 +6,6 @@ import com.amaz.apiAmaz.model.Venda;
 
 public interface VendaService {
 	
-	Venda insertOrUpdate(Venda entity);
-
-	void delete(int id);
-
 	List<Venda> getAll();
 
 	Venda getById(int id);

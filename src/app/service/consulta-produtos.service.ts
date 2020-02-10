@@ -41,4 +41,8 @@ export class ConsultaProdutosService {
     return this.http.get(`http://localhost:8080/categoria/${id}`);
    }
 
+   getAllVendas(){
+    return this.http.get(`http://localhost:8080/venda`);
+   }
+
 }

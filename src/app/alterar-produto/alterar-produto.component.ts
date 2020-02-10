@@ -26,6 +26,7 @@ export class AlterarProdutoComponent implements OnInit {
   produtos: Array<Produto> = new Array<Produto>();
   categorias: Array<Categoria> = new Array<Categoria>();
   id: number;
+  idCat: number;
   cat: Categoria = new Categoria(0, "", "");
 
   constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router, public ConsultaUsuarioService: ConsultaUsuarioService) { }
@@ -47,9 +48,6 @@ export class AlterarProdutoComponent implements OnInit {
         this.ConsultaProdutosService.getAll().subscribe((produtosOut: Produto[]) => {
           this.produtos = produtosOut;
         });
-        this.ConsultaProdutosService.getAllCategoria().subscribe((categoriasOut: Categoria[]) => {
-          this.categorias = categoriasOut;
-        })
       });
     } else {
       this.router.navigate(['login']);
@@ -79,24 +77,8 @@ export class AlterarProdutoComponent implements OnInit {
   findIdProduto() {
     this.ConsultaProdutosService.getById(this.id).subscribe((produtoOut: Produto) => {
       this.produto = produtoOut;
-      this.cat = this.produto.categoria;
     });
 
   }
-
-  getAllCategoria() {
-    this.ConsultaProdutosService.getAllCategoria().subscribe((categoriasOut: Categoria[]) => {
-      this.categorias = categoriasOut;
-    })
-  }
-
-  getIdCategoria() {
-    this.ConsultaProdutosService.getIdCategoria(this.cat.id).subscribe((categoriaOut: Categoria) => {
-      this.categoria = categoriaOut;
-      this.produto.categoria.id = this.categoria.id;
-    });
-  }
-
-
 
 }

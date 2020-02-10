@@ -43,13 +43,13 @@ export class ProdutosComponent implements OnInit {
         this.produtos = produtosOut;
       });
       if (this.produtos.length == 0) {
-        this.showAll = false;
-        this.showId = false;
-        this.produtoNao = true;
-      } else {
         this.showAll = true;
         this.showId = false;
         this.produtoNao = false;
+      } else {
+        this.showAll = false;
+        this.showId = false;
+        this.produtoNao = true;
       }
       Globals.titulo = "";
     } else if (localStorage.getItem("busca")) {
@@ -59,13 +59,13 @@ export class ProdutosComponent implements OnInit {
         this.produtos = produtosOut;
       });
       if (this.produtos.length == 0) {
-        this.showAll = false;
-        this.showId = false;
-        this.produtoNao = true;
-      } else {
         this.showAll = true;
         this.showId = false;
         this.produtoNao = false;
+      } else {
+        this.showAll = false;
+        this.showId = false;
+        this.produtoNao = true;
       }
       Globals.titulo = "";
       localStorage.setItem("busca", "");
@@ -100,19 +100,17 @@ export class ProdutosComponent implements OnInit {
       this.ConsultaProdutosService.busca(this.tituloProd).subscribe((produtosOut: Produto[]) => {
         this.produtos = produtosOut;
       });
-      if (this.produtos.length != 0) {
-        this.showAll = false;
-        this.showId = false;
-        this.produtoNao = true;
-      } else {
+      if (this.produtos.length == 0) {
         this.showAll = true;
         this.showId = false;
         this.produtoNao = false;
+      } else {
+        this.showAll = false;
+        this.showId = false;
+        this.produtoNao = true;
       }
     }
   }
-
-
 
 
   mostrar(produto: Produto) {
