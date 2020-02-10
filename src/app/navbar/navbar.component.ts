@@ -18,7 +18,7 @@ import { Route } from '@angular/compiler/src/core';
 export class NavbarComponent implements OnInit {
 
   usuario: Usuario = new Usuario(0, "", "", "", "", 1);
-  produto: Produto = new Produto(0, "", "", "", null, null, 1);
+  produto: Produto = new Produto(0, "", "", "", null, null, 1, null);
 
   tituloNav: string;
 

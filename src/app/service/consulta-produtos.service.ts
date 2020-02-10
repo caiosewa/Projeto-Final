@@ -32,5 +32,13 @@ export class ConsultaProdutosService {
    busca(titulo: string){
      return this.http.get(`http://localhost:8080/produto/todos/${titulo}`);
    }
+   
+   getAllCategoria(){
+    return this.http.get(`http://localhost:8080/categoria`);
+   }
+
+   getIdCategoria(id:number){
+    return this.http.get(`http://localhost:8080/categoria/${id}`);
+   }
 
 }

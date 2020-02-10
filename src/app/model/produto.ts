@@ -1,3 +1,4 @@
+import { Categoria } from './categoria';
 export class Produto {
     constructor(
     public id : number,
@@ -6,5 +7,6 @@ export class Produto {
     public linkFoto: string,
     public preco: number,
     public qtdEstoque: number,
-    public visivel: number){}
+    public visivel: number,
+    public categoria: Categoria){}
 }

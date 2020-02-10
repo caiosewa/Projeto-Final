@@ -1,3 +1,4 @@
+import { Categoria } from './../model/categoria';
 import { ConsultaUsuarioService } from './../service/consulta-usuario.service';
 import { ConsultaProdutosService } from './../service/consulta-produtos.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,24 +14,31 @@ import { Router } from '@angular/router';
   providers: [Globals]
 })
 export class AlterarProdutoComponent implements OnInit {
+  
+  categoria: Categoria = new Categoria(0, "", "");
 
   usuario: Usuario = new Usuario(0, "", "", "", "", 1);
 
-  produto: Produto = new Produto(0, "", "", "", null, null, 1);
+  produto: Produto = new Produto(0, "", "", "", null, null, 1, this.categoria);
+
+  
+
   produtos: Array<Produto> = new Array<Produto>();
+  categorias: Array<Categoria> = new Array<Categoria>();
   id: number;
+  cat: Categoria = new Categoria(0, "", "");
 
   constructor(public ConsultaProdutosService: ConsultaProdutosService, public router: Router, public ConsultaUsuarioService: ConsultaUsuarioService) { }
 
   ngOnInit() {
     console.clear();
-    console.log( "  _________ __        ___ ________ ________");
-    console.log( " |         |   |_   _|   |        |___    / ");
-    console.log( " |   (_)   |     |_|     |  (_)   |  /   /  ");
-    console.log( " |    _    |             |   _    | /   /   ");
-    console.log( " |     |   |   |    /|   |    |   |/   /___ "); 
-    console.log( " |__   |___|___|  _/ |___|__  |___|________|");
-    console.log( "\n        SEJA BEM VINDO A LOJA AMAZ.\n\n");
+    console.log("  _________ __        ___ ________ ________");
+    console.log(" |         |   |_   _|   |        |___    / ");
+    console.log(" |   (_)   |     |_|     |  (_)   |  /   /  ");
+    console.log(" |    _    |             |   _    | /   /   ");
+    console.log(" |     |   |   |    /|   |    |   |/   /___ ");
+    console.log(" |__   |___|___|  _/ |___|__  |___|________|");
+    console.log("\n        SEJA BEM VINDO A LOJA AMAZ.\n\n");
     window.scrollTo(0, 0);
     if (localStorage.getItem("token")) {
       this.ConsultaUsuarioService.valida(localStorage.getItem("token")).subscribe((usuario: Usuario) => {
@@ -39,6 +47,9 @@ export class AlterarProdutoComponent implements OnInit {
         this.ConsultaProdutosService.getAll().subscribe((produtosOut: Produto[]) => {
           this.produtos = produtosOut;
         });
+        this.ConsultaProdutosService.getAllCategoria().subscribe((categoriasOut: Categoria[]) => {
+          this.categorias = categoriasOut;
+        })
       });
     } else {
       this.router.navigate(['login']);
@@ -68,7 +79,24 @@ export class AlterarProdutoComponent implements OnInit {
   findIdProduto() {
     this.ConsultaProdutosService.getById(this.id).subscribe((produtoOut: Produto) => {
       this.produto = produtoOut;
+      this.cat = this.produto.categoria;
     });
 
   }
+
+  getAllCategoria() {
+    this.ConsultaProdutosService.getAllCategoria().subscribe((categoriasOut: Categoria[]) => {
+      this.categorias = categoriasOut;
+    })
+  }
+
+  getIdCategoria() {
+    this.ConsultaProdutosService.getIdCategoria(this.cat.id).subscribe((categoriaOut: Categoria) => {
+      this.categoria = categoriaOut;
+      this.produto.categoria.id = this.categoria.id;
+    });
+  }
+
+
+
 }

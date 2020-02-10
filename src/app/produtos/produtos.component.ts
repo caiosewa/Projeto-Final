@@ -27,7 +27,7 @@ export class ProdutosComponent implements OnInit {
   linkFoto: string;
   preco: number;
   qtdEstoque: number;
-  produto: Produto = new Produto(0, "", "", "", null, null, 1);
+  produto: Produto = new Produto(0, "", "", "", null, null, 1, null);
   produtos: Array<Produto> = new Array<Produto>();
   showId: boolean;
   showAll: boolean;
