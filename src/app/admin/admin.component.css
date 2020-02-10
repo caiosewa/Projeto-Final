@@ -3,6 +3,10 @@
   object-position: middle; 
 }
 
+.link{
+  cursor: pointer;
+}
+
 .txt-color{
   color: #fff;
 }
@@ -78,18 +82,11 @@ a:focus {
   }
 }
 
-
-
-
-
-
 .bg-gradient-primary {
  
   background-image: linear-gradient(#252f158f, rgba(37, 47, 21, 0.75), rgb(167, 187, 127));
 
 }
-
-
 
 
 .sidebar .nav-item.dropdown.show .dropdown-toggle::after,

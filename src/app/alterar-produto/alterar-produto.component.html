@@ -7,27 +7,26 @@
 
       <div class="row mb-5">
         <h5>Selecione um produto * </h5>
-        <mat-select class="custom-select my-1 mr-sm-2" [(ngModel)]="id" (mouseup)="findIdProduto()"
+        <mat-select class="custom-select my-1 mr-sm-2" [(ngModel)]="id" (selectionChange)="findIdProduto()"
           id="inlineFormCustomSelectPref">
           <mat-option class="option" selected>-------- ESCOLHA UM PRODUTO ---------</mat-option>
-          <mat-option *ngFor="let produto of produtos" name="id" value="{{produto.id}}">
+          <mat-option *ngFor="let produto of produtos" name="id" [value]="produto.id">
             {{produto.id}} -
             {{produto.titulo}}</mat-option>
         </mat-select>
       </div>
 
       <div class="form-group">
-          <mat-form-field class="example-full-width" id="foto">
-            <input matInput placeholder="Link da foto" name="foto" class="form-control" required="required" type="url"
-              required>
-          </mat-form-field>
-          <a class="edit-a btn  align-middle" id="enviar" (click)="enviar()">Enviar</a>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Titulo" name="titulo" class="form-control" required="required" type="text"
+            value="{{produto.titulo}}" [(ngModel)]="produto.titulo" required>
+        </mat-form-field>
       </div>
 
       <div class="form-group">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Id - Titulo" name="titulo" class="form-control" required="required" type="text"
-            value="{{produto.id}} - {{produto.titulo}}" [(ngModel)]="produto.titulo" required>
+          <textarea style="border-bottom: 2px solid gray;border-right: 2px solid gray" matInput placeholder="Descrição" name="descricao" class="form-control" required="required" type="text"
+            value="{{produto.descricao}}" [(ngModel)]="produto.descricao" rows="4" required></textarea>
         </mat-form-field>
       </div>
 
@@ -40,8 +39,8 @@
 
       <div class="form-group">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Descrição" name="descricao" class="form-control" required="required" type="text"
-            value="{{produto.descricao}}" [(ngModel)]="produto.descricao" required>
+          <input matInput placeholder="URL Foto" name="linkFoto" class="form-control" required="required" type="text"
+            value="{{produto.linkFoto}}" [(ngModel)]="produto.linkFoto" required>
         </mat-form-field>
       </div>
 
@@ -53,7 +52,7 @@
       </div>
 
       <div class="form-group">
-        <a class="edit-a btn  align-middle" id="alterar" (click)="alterar()">Confirmar</a>
+        <a class="edit-a btn  align-middle" id="alterar" (click)="alterar()">Alterar</a>
         <a class="edit-a btn  align-middle" id="deletar" (click)="deletar()">Deletar</a>
       </div>
     </div>

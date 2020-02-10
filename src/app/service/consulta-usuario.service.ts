@@ -12,10 +12,6 @@ export class ConsultaUsuarioService {
 
   constructor(private http:HttpClient) { }
 
-  getAll(){
-    return this.http.get(`http://localhost:8080/usuario`);
-  }
-
   getById(id: number){
     return this.http.get(`http://localhost:8080/usuario/${id}`);
   }

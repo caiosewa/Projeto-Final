@@ -21,6 +21,8 @@ export class ProdutosComponent implements OnInit {
 
   id: number;
   titulo: string;
+  tituloProd: string;
+  tituloNav: string;
   descricao: string;
   linkFoto: string;
   preco: number;
@@ -39,22 +41,34 @@ export class ProdutosComponent implements OnInit {
     if (Globals.titulo) {
       this.ConsultaProdutosService.busca(Globals.titulo).subscribe((produtosOut: Produto[]) => {
         this.produtos = produtosOut;
+      });
+      if (this.produtos.length == 0) {
+        this.showAll = false;
+        this.showId = false;
+        this.produtoNao = true;
+      } else {
         this.showAll = true;
         this.showId = false;
         this.produtoNao = false;
-        Globals.titulo = "";
-      });
+      }
+      Globals.titulo = "";
     } else if (localStorage.getItem("busca")) {
-      this.titulo = localStorage.getItem("busca");
+      this.tituloNav = localStorage.getItem("busca");
 
-      this.ConsultaProdutosService.busca(this.titulo).subscribe((produtosOut: Produto[]) => {
+      this.ConsultaProdutosService.busca(this.tituloNav).subscribe((produtosOut: Produto[]) => {
         this.produtos = produtosOut;
+      });
+      if (this.produtos.length == 0) {
+        this.showAll = false;
+        this.showId = false;
+        this.produtoNao = true;
+      } else {
         this.showAll = true;
         this.showId = false;
         this.produtoNao = false;
-        Globals.titulo = "";
-        localStorage.setItem("busca", "");
-      });
+      }
+      Globals.titulo = "";
+      localStorage.setItem("busca", "");
     } else if (Globals.id) {
       this.ConsultaProdutosService.getById(Globals.id).subscribe((produtoOut: Produto) => {
         this.produto = produtoOut;
@@ -82,25 +96,23 @@ export class ProdutosComponent implements OnInit {
   }
 
   buscar() {
-    if (this.titulo != null) {
-      this.ConsultaProdutosService.busca(this.titulo).subscribe((produtosOut: Produto[]) => {
+    if (this.tituloProd != null) {
+      this.ConsultaProdutosService.busca(this.tituloProd).subscribe((produtosOut: Produto[]) => {
         this.produtos = produtosOut;
       });
+      if (this.produtos.length != 0) {
+        this.showAll = false;
+        this.showId = false;
+        this.produtoNao = true;
+      } else {
+        this.showAll = true;
+        this.showId = false;
+        this.produtoNao = false;
+      }
     }
-    this.ok();
   }
 
-  ok(){
-    if (this.produtos.length == 0) {
-      this.showAll = false;
-      this.showId = false;
-      this.produtoNao = true;
-    } else {
-      this.showAll = true;
-      this.showId = false;
-      this.produtoNao = false;
-    }
-  }
+
 
 
   mostrar(produto: Produto) {

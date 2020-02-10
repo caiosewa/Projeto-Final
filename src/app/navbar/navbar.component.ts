@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
   usuario: Usuario = new Usuario(0, "", "", "", "", 1);
   produto: Produto = new Produto(0, "", "", "", null, null, 1);
 
-  titulo: string;
+  tituloNav: string;
 
   emailOk: boolean = false;
   filtro: any = /^([a-zA-zà-úÀ-Ú]|\s+)+$/;
@@ -87,10 +87,10 @@ export class NavbarComponent implements OnInit {
 
   capturar() {
     if (this.router.isActive('/produtos', true)) {
-      localStorage.setItem("busca",  this.titulo);
+      localStorage.setItem("busca",  this.tituloNav);
       window.location.reload();
     } else {
-      Globals.titulo = this.titulo;
+      Globals.titulo = this.tituloNav;
       this.router.navigate(['/produtos']);
     }
   }

@@ -13,7 +13,7 @@
 
             <div class="form-group has-search">
                 <a (click)="buscar()" class="fa fa-search form-control-feedback"></a>
-                <input type="text"  [(ngModel)]="titulo" class="form-control" placeholder="BUSCAR POR NOME...">
+                <input type="text" [(ngModel)]="tituloProd" class="form-control" placeholder="BUSCAR POR NOME...">
             </div>
 
             <!-- <button class="btn btn-info align-middle" data-toggle="collapse" href="#collapseExample" role="button"
@@ -29,10 +29,10 @@
                 </div>
             </div> -->
 
-            <button *ngIf="usuario.id != 0" class="edit-a align-content-center" type="button" mat-stroked-button color="gradient"><a
-                    class="txt-color" [routerLink]="'/inserir-produto'">Inserir</a></button>
-            <button *ngIf="usuario.id != 0" class="edit-a align-content-center" type="button" mat-stroked-button color="gradient"><a
-                    class="txt-color" [routerLink]="'/alterar-produto'">Alterar produto</a></button>
+            <button *ngIf="usuario.id != 0" class="edit-a align-content-center" type="button" mat-stroked-button
+                color="gradient" [routerLink]="'/inserir-produto'">Inserir</button>
+            <button *ngIf="usuario.id != 0" class="edit-a align-content-center" type="button" mat-stroked-button
+                color="gradient" [routerLink]="'/alterar-produto'">Alterar produto</button>
         </div>
         <div class="col-md-9 ">
             <div class="card-deck" *ngIf="showAll == true">

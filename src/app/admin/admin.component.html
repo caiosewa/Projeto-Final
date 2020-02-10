@@ -1,18 +1,15 @@
 <div id="wrapper">
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center mt-4 mb-4">
       <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
       </div>
-      <div class="sidebar-brand-text mx-3">{{usuario.nome}} Admin <sup></sup></div>
+      <div class="sidebar-brand-text mx-3">{{usuario.nome}}</div>
     </a>
 
     <hr class="sidebar-divider my-0">
     <hr class="sidebar-divider">
 
-    <div class="sidebar-heading">
-      Interface
-    </div>
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
         aria-controls="collapseTwo">
@@ -21,9 +18,9 @@
       </a>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Custom Components:</h6>
-          <a class="collapse-item  txt-color" [routerLink]="'/inserir-produto'">Inserir</a>
-          <a class="collapse-item txt-color" [routerLink]="'/alterar-produto'">Alterar produto</a>
+          <h6 class="collapse-header">Você pode:</h6>
+          <a class="collapse-item  txt-color" [routerLink]="'/inserir-produto'">Inserir produtos</a>
+          <a class="collapse-item txt-color" [routerLink]="'/alterar-produto'">Alterar/Deletar produtos</a>
         </div>
       </div>
     </li>
@@ -35,22 +32,17 @@
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
         aria-controls="collapsePages">
         <i class="fas fa-fw fa-folder"></i>
-        <span>Paginas</span>
+        <span>Mapa do Site</span>
       </a>
       <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Acessos do site:</h6>
-          <a class="collapse-item" [routerLink]="'/login'">Login</a>
-          <a class="collapse-item" [routerLink]="'/cadastro'">Cadastro</a>
-          <a class="collapse-item" [routerLink]="'/faq'">Ajuda</a>
-          <a class="collapse-item" [routerLink]="'/sobrenos'">Sobre Nos</a>
-          <a class="collapse-item" [routerLink]="'/contato'">Contato</a>
-          <div class="collapse-divider"></div>
-          <h6 class="collapse-header">:</h6>
           <a class="collapse-item" [routerLink]="'/home'">Home</a>
           <a class="collapse-item" [routerLink]="'/produtos'">Produtos</a>
-          <a class="collapse-item" [routerLink]="'/produtos'">Comunidades</a>
-
+          <a class="collapse-item" [routerLink]="'/sobrenos'">Sobre Nós</a>
+          <a class="collapse-item" [routerLink]="'/comunidades'">Comunidades</a>
+          <a class="collapse-item" [routerLink]="'/contato'">Contato</a>
+          <a class="collapse-item" [routerLink]="'/faq'">Ajuda</a>
         </div>
       </div>
     </li>
@@ -63,11 +55,8 @@
       </a>
       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-
-
-          <button mat-button type="button" class="btn" data-toggle="modal" data-target="#basicExampleModal">
-            alterar informações
-          </button>
+          <h6 class="collapse-header">Minha conta:</h6>
+          <a class="collapse-item link" (click)="alterarDados()">Alterar dados</a>
         </div>
       </div>
     </li>
@@ -76,46 +65,41 @@
 
   <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
-      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown no-arrow d-sm-none">
-            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-search fa-fw"></i>
-            </a>
-
-            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-              aria-labelledby="searchDropdown">
-              <form class="form-inline mr-auto w-100 navbar-search">
-                <div class="input-group">
-                  <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                    aria-label="Search" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
-                      <i class="fas fa-search fa-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </li>
-        </ul>
-      </nav>
       <div class="container-fluid">
-        <h1 class="h3 mb-4">INFORMAÇÕES</h1>
+        <h1 class="h3 mt-4 mb-4">INFORMAÇÕES</h1>
         <div class="row">
-          <div class="list-group list-group-flush">
+          <div style="min-width: 250px;" class="list-group list-group-flush">
+
             <a class="list-group-item list-group-item-action waves-effect">
               <i class="far fa-lightbulb mdb-gallery-view-icon mr-3"></i><strong>Id: </strong> {{usuario.id}}
             </a>
-            <a class="list-group-item list-group-item-action waves-effect">
-              <i class="fas fa-phone mr-3"></i><strong>Telefone: </strong> {{usuario.telefone}}
 
-            </a>
             <a class="list-group-item list-group-item-action waves-effect">
-              <i class="far fa-envelope mr-3"></i><strong>Email: </strong> {{usuario.email}}
+              <i class="fas fa-phone mr-3"></i><strong>Telefone: </strong>
+              <p class="mt-2 mb-0" *ngIf="alterar == false">{{usuario.telefone}}</p>
+              <input style="max-height: 40px; border:1.5px solid gray" *ngIf="alterar == true" matInput
+                placeholder="Telefone" name="telefone" class="form-control" type="text" value="{{usuario.telefone}}"
+                [(ngModel)]="telefone">
+            </a>
+
+
+
+            <a class="list-group-item list-group-item-action waves-effect">
+              <i class="far fa-envelope mr-3"></i><strong>Email: </strong>
+              <p class="mt-2 mb-0" *ngIf="alterar == false">{{usuario.email}}</p>
+              <input style="max-height: 40px; border:1.5px solid gray" *ngIf="alterar == true" matInput
+                placeholder="Email" name="email" class="form-control" type="text" value="{{usuario.email}}"
+                [(ngModel)]="email">
+            </a>
+            
+            <a *ngIf="alterar == true" id="alterarOk" class="list-group-item list-group-item-action waves-effect text-center link" (click)="alterarOk()">
+             Alterar
             </a>
           </div>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-2"></div>
       </div>
+    </div>
+  </div>
+
+</div>
